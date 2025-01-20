@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: '../dist', // Output folder for the build (relative to the root directory)
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'foodexer/src/index.html'), // Entry point for your main page
+        main: resolve(__dirname, 'foodexer/src/index.html'), // Entry point for my main page
       },
     },
   },
