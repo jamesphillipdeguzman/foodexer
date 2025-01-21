@@ -1,1 +1,1 @@
-console.log("This is for exercise scripts!")
+console.log("This is for exercise scripts!");

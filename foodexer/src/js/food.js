@@ -1,1 +1,1 @@
-console.log("This is for food scripts!")
+console.log("This is for food scripts!");
