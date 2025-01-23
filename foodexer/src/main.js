@@ -1,4 +1,4 @@
-const chooseActivity = document.querySelector("#verse-choose");  // Add this line
+const chooseActivity = document.querySelector("#choose-activity");  // Add this line
 const myActivity = document.querySelector("pre");
 
 // Event listener for recipe change
