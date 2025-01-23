@@ -4,7 +4,7 @@ const myActivity = document.querySelector("pre");
 // Event listener for recipe change
 chooseActivity.addEventListener("change", () => {
     const activity = chooseActivity.value;
-    if (activity == "food") {
+    if (activity == "Food") {
         fetchFoodAPI();
     } else {
         fetchExerAPI();
