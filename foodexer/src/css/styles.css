@@ -43,3 +43,19 @@ select {
     width: 350px;
     padding: 5px;
 }
+
+form {
+    display: flex;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.submit {
+    width: 100px;
+    padding: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
