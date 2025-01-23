@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     submitButton.addEventListener("click", (event) => {
         event.preventDefault();
         const activity = chooseActivity.value;
-        // alert(activity);
+        alert(activity);
         myActivity.innerHTML = `Loading ${activity}...`;
         if (activity == "food") {
 
