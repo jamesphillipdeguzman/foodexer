@@ -1,4 +1,4 @@
-import { activity, fetchedData, myActivity } from "./app.js";
+import { activity, fetchedData, myActivity } from "./app.mjs";
 // This function grabs the the food local json data asynchronously
 export async function fetchExerciseData() {
     myActivity.innerHTML = `Loading ${activity} local json...`;
@@ -8,7 +8,7 @@ export async function fetchExerciseData() {
     try {
         // Convert promise to a response object
         const response = await fetch(url);
-
+        debugger;
         // Check if response returned between 200-299, otherwise, throw error of "Data not found"
         if (response.ok) {
             const data = await response.json();
