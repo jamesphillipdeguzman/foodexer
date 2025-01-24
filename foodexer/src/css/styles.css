@@ -1,61 +1,59 @@
 html,
 pre {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-    max-width: 80vw;
-    background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 80vw;
+  background-color: #ccc;
 }
 
 main {
-
-    margin: 0 auto;
-    width: 100%;
-    max-width: 50vw;
-
+  margin: 0 auto;
+  width: 100%;
+  max-width: 50vw;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 pre {
-    line-height: 1.5;
-    letter-spacing: 0.05rem;
-    padding: 1rem;
-    background-color: white;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+  padding: 1rem;
+  background-color: white;
 }
 
 label {
-    width: 200px;
-    margin-right: 33px;
+  width: 200px;
+  margin-right: 33px;
 }
 
 select {
-    width: 350px;
-    padding: 5px;
+  width: 350px;
+  padding: 5px;
 }
 
 form {
-    display: flex;
-    margin: 0 auto;
-    gap: 1rem;
+  display: flex;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
 .submit {
-    width: 100px;
-    padding: 5px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  width: 100px;
+  padding: 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

@@ -1,5 +1,5 @@
 // eslint.config.js
-module.exports = [
+export default [
   {
     files: ["*.js", "src/**/*.js"], // Define which files ESLint should lint
     rules: {
