@@ -56,6 +56,7 @@ export async function fetchFoodAPI() {
         const response = await fetch(apiUrl, options);
         const result = await response.json();  // Assuming the response is in JSON format
         // alert(result);
+        console.log(result);
         // Display result in pre tag
         myActivity.innerHTML = JSON.stringify(result, null, 2);
         // Determine if local data or API was fetched
