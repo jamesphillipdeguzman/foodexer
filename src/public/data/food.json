@@ -1,0 +1,100 @@
+{
+  "results": [
+    {
+      "id": 991010,
+      "usedIngredientCount": 1,
+      "missedIngredientCount": 4,
+      "likes": 0,
+      "title": "Chicken Ranch Burgers",
+      "image": "https://img.spoonacular.com/recipes/991010-312x231.jpg",
+      "imageType": "jpg",
+      "calories": 365,
+      "protein": "41g",
+      "fat": "11g",
+      "carbs": "20g"
+    },
+    {
+      "id": 681713,
+      "usedIngredientCount": 1,
+      "missedIngredientCount": 7,
+      "likes": 0,
+      "title": "Everything Bagel Cheese Burger",
+      "image": "https://img.spoonacular.com/recipes/681713-312x231.png",
+      "imageType": "png",
+      "calories": 820,
+      "protein": "42g",
+      "fat": "37g",
+      "carbs": "76g"
+    },
+    {
+      "id": 775621,
+      "usedIngredientCount": 1,
+      "missedIngredientCount": 8,
+      "likes": 0,
+      "title": "Gorgonzola & Grilled Peach Burger",
+      "image": "https://img.spoonacular.com/recipes/775621-312x231.jpg",
+      "imageType": "jpg",
+      "calories": 971,
+      "protein": "51g",
+      "fat": "70g",
+      "carbs": "31g"
+    },
+    {
+      "id": 632502,
+      "usedIngredientCount": 1,
+      "missedIngredientCount": 8,
+      "likes": 0,
+      "title": "Apple Cheddar Turkey Burgers With Chipotle Yogurt Sauce",
+      "image": "https://img.spoonacular.com/recipes/632502-312x231.jpg",
+      "imageType": "jpg",
+      "calories": 362,
+      "protein": "38g",
+      "fat": "15g",
+      "carbs": "19g"
+    },
+    {
+      "id": 664080,
+      "usedIngredientCount": 1,
+      "missedIngredientCount": 10,
+      "likes": 0,
+      "title": "Turkey-Spinach Burgers With Sweet Soy-Ginger Sauce",
+      "image": "https://img.spoonacular.com/recipes/664080-312x231.jpg",
+      "imageType": "jpg",
+      "calories": 219,
+      "protein": "29g",
+      "fat": "7g",
+      "carbs": "11g"
+    },
+    {
+      "id": 645680,
+      "usedIngredientCount": 1,
+      "missedIngredientCount": 12,
+      "likes": 0,
+      "title": "Grilled Chuck Burgers with Extra Sharp Cheddar and Lemon Garlic Aioli",
+      "image": "https://img.spoonacular.com/recipes/645680-312x231.jpg",
+      "imageType": "jpg",
+      "calories": 803,
+      "protein": "35g",
+      "fat": "55g",
+      "carbs": "39g"
+    },
+    {
+      "id": 637631,
+      "usedIngredientCount": 1,
+      "missedIngredientCount": 13,
+      "likes": 0,
+      "title": "Cheesy Bacon Burger with Spicy Chipotle Aiolo Sauce",
+      "image": "https://img.spoonacular.com/recipes/637631-312x231.jpg",
+      "imageType": "jpg",
+      "calories": 475,
+      "protein": "49g",
+      "fat": "18g",
+      "carbs": "24g"
+    }
+  ],
+  "baseUri": "https://img.spoonacular.com/recipes/",
+  "offset": 0,
+  "number": 10,
+  "totalResults": 7,
+  "processingTimeMs": 1055
+}

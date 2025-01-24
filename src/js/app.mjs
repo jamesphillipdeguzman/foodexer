@@ -3,19 +3,24 @@ import { fetchExerciseData, fetchExerciseAPI } from "./exercise.mjs";
 
 export const chooseActivity = document.querySelector("#choose-activity");
 export const myActivity = document.querySelector("pre");
-export const activity = chooseActivity.value;
+export let activity = chooseActivity.value;
 // Local JSON data (cached for testing purposes)
 export let fetchedData = document.querySelector("#fetched-data");
 
 // Update the URL query string withouth reloading the page
 export const currentUrl = new URL(window.location.href);
-currentUrl.searchParams.get("choose-activity", activity);
-
-// Push the updated URL to the browser history
-window.history.pushState({}, "", currentUrl);
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Listen for changes in dropdown menu
+  chooseActivity.addEventListener("change", () => {
+    activity = chooseActivity.value;
+    // Update the URL query string withouth reloading the page
+    currentUrl.searchParams.set("choose-activity", activity);
+    // Push the updated URL to the browser history
+    window.history.pushState({}, "", currentUrl);
+  });
   const submitButton = document.querySelector("#submit-button");
   const checkLocalJson = document.querySelector("#localjson-check");
 
@@ -34,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // debugger;
 
-    alert(activity);
+    // alert(activity);
 
     if (activity === "food" && isLocalJson) {
       fetchFoodData();

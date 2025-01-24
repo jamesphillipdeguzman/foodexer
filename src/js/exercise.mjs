@@ -2,19 +2,22 @@ import { activity, fetchedData, myActivity } from "./app.mjs";
 // This function grabs the the food local json data asynchronously
 export async function fetchExerciseData() {
     myActivity.innerHTML = `Loading ${activity} local json...`;
-    // Local json for food
-    const url = "./src/data/exercise.json";
+    debugger;
+
 
     try {
+
+        // Local json for exercise
+        let url = "/data/exercise.json";
         // Convert promise to a response object
         const response = await fetch(url);
-        debugger;
+
         // Check if response returned between 200-299, otherwise, throw error of "Data not found"
         if (response.ok) {
             const data = await response.json();
             const exerciseData = data;
             // Display it in the console
-            alert(exerciseData);
+            // alert(exerciseData);
             // Display results on the HTML page
             myActivity.innerHTML = JSON.stringify(exerciseData, null, 2);
             // Determine if local data or API was fetched
@@ -55,7 +58,7 @@ export async function fetchExerciseAPI() {
         // const response = await fetch(url, options); // Uncomment if you are having issues with CORS policy
         const response = await fetch(apiUrl, options);
         const result = await response.json();  // Assuming the response is in JSON format
-        alert(result);
+        // alert(result);
         // Display result in pre tag
         myActivity.innerHTML = JSON.stringify(result, null, 2);
         // Determine if local data or API was fetched
