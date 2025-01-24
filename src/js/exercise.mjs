@@ -18,6 +18,7 @@ export async function fetchExerciseData() {
             const exerciseData = data;
             // Display it in the console
             // alert(exerciseData);
+            console.log(exerciseData);
             // Display results on the HTML page
             myActivity.innerHTML = JSON.stringify(exerciseData, null, 2);
             // Determine if local data or API was fetched

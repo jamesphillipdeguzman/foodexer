@@ -18,6 +18,7 @@ export async function fetchFoodData() {
             const foodData = data;
             // Display it in the console
             // alert(foodData);
+            console.log(foodData);
             // Display results on the HTML page
             myActivity.innerHTML = JSON.stringify(foodData, null, 2);
             // Determine if local data or API was fetched
