@@ -8,7 +8,7 @@ export async function fetchExerciseData() {
     try {
 
         // Local json for exercise
-        let url = "/data/exercise.json";
+        let url = "/json/exercise.json";
         // Convert promise to a response object
         const response = await fetch(url);
 

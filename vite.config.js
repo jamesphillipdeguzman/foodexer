@@ -2,12 +2,22 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
-  root: "src", // Root folder for your app source code
+  root: "src",
   build: {
-    outDir: "../dist", // Where the build output will go
+    outDir: "../dist", // Build output directory
+    rollupOptions: {
+      // This ensures that .mjs files are resolved properly in the build process
+      input: resolve(__dirname, 'src/index.html'),
+    },
   },
   server: {
-    root: "src", // Vite serves from src folder
-    open: true, // Opens the browser automatically
+    root: "src", // Vite will serve from the src folder
+    open: true, // Open the browser automatically
+  },
+  resolve: {
+    extensions: ['.mjs', '.js', '.ts', '.json'],
+    alias: {
+      '@js': resolve(__dirname, 'src/js'),
+    },
   },
 });

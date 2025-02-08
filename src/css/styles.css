@@ -3,6 +3,12 @@ pre {
   font-family: sans-serif;
 }
 
+
+/* HEADER styles */
+#logo {
+  padding: 1rem;
+}
+
 body {
   display: flex;
   flex-direction: column;
