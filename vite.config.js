@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: "../dist", // Build output directory
     rollupOptions: {
       // This ensures that .mjs files are resolved properly in the build process
-      input: resolve(__dirname, 'src/index.html'),
+      input: resolve(__dirname, "src/index.html"),
     },
   },
   server: {
@@ -15,9 +15,9 @@ export default defineConfig({
     open: true, // Open the browser automatically
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.ts', '.json'],
+    extensions: [".mjs", ".js", ".ts", ".json"],
     alias: {
-      '@js': resolve(__dirname, 'src/js'),
+      "@js": resolve(__dirname, "src/js"),
     },
   },
 });

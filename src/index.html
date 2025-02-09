@@ -1,70 +1,132 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Food Exer | Food and Exercise Web App</title>
+    <meta
+      name="description"
+      content="Everything about food and exercise Single-Page Application"
+    />
+    <meta name="author" content="James Phillip K. De Guzman" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Food Exer | Food and Exercise Web App</title>
-  <meta name="description" content="Everything about food and exercise Single-Page Application" />
-  <meta name="author" content="James Phillip K. De Guzman" />
-  <script src="js/app.mjs" type="module"></script>
-  <link rel="stylesheet" href="css/styles.css" />
-  <!-- <a href="https://www.flaticon.com/free-icons/lifestyle" title="lifestyle icons">Lifestyle icons created by Freepik - Flaticon</a> -->
-  <link rel="icon" href="assets/icons/foodexer-logo.ico" type="image/x-icon" />
-</head>
+    <!-- Consolidated Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<body>
-  <header>
-    <img id="logo" src="assets/icons/foodexer-logo.png" alt="foodexer logo" width="50" height="50">
-    <img src="assets/images/foodexer-banner-1.webp" alt="foodexer banner hero image from benzoix in freepik.com"
-      width="1200" height="300" />
-    <!-- https://www.freepik.com/free-photo/sport-wellbeing-active-lifestyle-concept-slim-healthy-cute-female-gym-coach-fitness-trainer_32348710.htm#fromView=search&page=1&position=5&uuid=3c5fb1d5-6b1f-48a6-8f8b-fdfb1d721c30&new_detail=true&query=food+and+exercise -->
-    <h1>Welcome to FoodExer!</h1>
-  </header>
+    <link rel="stylesheet" href="css/styles.css" />
 
-  <main>
-    <p>
-      At FoodExer, we believe that a healthy lifestyle is a perfect balance of
-      good food and regular exercise. Whether you're looking to discover
-      nutritious recipes, track your fitness journey, or simply stay motivated
-      to live healthier, FoodExer is your go-to platform.
-    </p>
-    <p>
-      We combine the best of food and exercise into one easy-to-use, inspiring
-      space. Our mission is to empower you with the tools, resources, and
-      knowledge to make healthier choices every day. From delicious meal ideas
-      to personalized workout plans, we’re here to support you on your
-      wellness journey.
-    </p>
-    <p>
-      Explore the site and start your path to a better, balanced life today!
-    </p>
+    <script src="js/app.mjs" type="module"></script>
 
-    <h1>What would you like to do?</h1>
+    <link
+      rel="icon"
+      href="assets/icons/foodexer-logo.ico"
+      type="image/x-icon"
+    />
+  </head>
 
-    <form>
-      <label for="choose-activity">Choose an activity</label>
-      <select id="choose-activity" name="choose-activity">
-        <option value="food">Food</option>
-        <option value="exercise">Exercise</option>
-        <option value="combined">Combined</option>
-      </select>
-      <button id="submit-button" class="submit" type="submit">Submit</button>
-    </form>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="logo-container">
+          <div class="logo-image">
+            <img
+              id="logo"
+              src="assets/icons/foodexer-logo.png"
+              alt="FoodExer logo"
+              width="50"
+              height="50"
+            />
+          </div>
+          <div class="navlinks">
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Site Map</a></li>
+              <li><a href="#">Attributions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="hero-container">
+          <section class="user-login">
+            <h1>User Login</h1>
+            <p>Customize your FoodExer profile for a better experience!</p>
+            <form action="" name="sign-up" class="foodexer-signup">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+              />
+              <button id="signup" type="submit">Sign Up</button>
+            </form>
+          </section>
+          <div class="hero-image">
+            <img
+              src="assets/images/foodexer-banner-1.webp"
+              alt="FoodExer banner hero image from Freepik"
+              width="1200"
+              height="300"
+            />
+          </div>
+        </div>
+        <h1>Welcome to FoodExer!</h1>
+      </div>
+    </header>
 
-    <h2>
-      Fetch API sample from
-      <a href="https://rapidapi.com/" target="_blank">https://rapidapi.com/</a>
-    </h2>
-    <label for="checkbox">Use local json for testing</label>
-    <input type="checkbox" id="localjson-check" name="localjson" checked />
-    <span id="fetched-data"></span>
+    <main>
+      <section>
+        <p>
+          At FoodExer, we believe in a balanced lifestyle of healthy food and
+          exercise. Whether you're exploring nutritious recipes, tracking your
+          fitness, or staying motivated, FoodExer is here to help.
+        </p>
+        <p>
+          Our platform combines the best of both worlds to empower you with the
+          tools and knowledge for healthier choices. From meal ideas to workout
+          plans, we’re with you on your wellness journey.
+        </p>
+        <p>Start exploring and live a healthier, more balanced life today!</p>
+      </section>
 
-    <pre></pre>
-  </main>
-  <footer>
-    ©James Phillip K. De Guzman | BYU-Idaho | WDD 330 - Winter Semester
-  </footer>
-</body>
+      <section>
+        <h1>What would you like to do?</h1>
+      </section>
 
+      <section>
+        <div class="container-card" id="card-container">
+          <div class="food-card" id="card-food" data-category="food">
+            <h1>Food</h1>
+            <img src="assets/icons/food.svg" alt="food icon" />
+          </div>
+          <div class="exer-card" id="card-exer" data-category="exercise">
+            <h1>Exercise</h1>
+            <img src="assets/icons/exercise.svg" alt="exercise icon" />
+          </div>
+        </div>
+
+        <label for="checkbox">Use local json for testing</label>
+        <input type="checkbox" id="localjson-check" name="localjson" checked />
+        <span id="fetched-data"></span>
+
+        <pre></pre>
+
+        <h3>
+          Fetch API sample from
+          <a href="https://rapidapi.com/" target="_blank"
+            >https://rapidapi.com/</a
+          >
+        </h3>
+      </section>
+    </main>
+
+    <footer>
+      ©James Phillip K. De Guzman | BYU-Idaho | WDD 330 - Winter Semester
+    </footer>
+  </body>
 </html>

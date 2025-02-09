@@ -1,13 +1,112 @@
-html,
-pre {
-  font-family: sans-serif;
+:root {
+  /* CSS variables */
+  /* Fresh and Healthy Vibe (Food) */
+  --primary-color1: #8bc34a;
+  --secondary-color1: #ffeb3b;
+  --accent-color1: #ffffff;
+  --text-color1: #424242;
+
+  /* Modern and Minimalistic (Exercise) */
+  --primary-color2: #03a9f4;
+  --secondary-color2: #f5f5f5;
+  --accent-color2: #212121;
+
+  /* For buttons */
+  --highlight-color: #4caf50;
+  --bg-color: #a6a6a6;
+
+  /* Font definitions */
+
+  --primary-font1: "Merriweather Sans", serif;
+  --secondary-font1: "Roboto", sans-serif;
+  --primary-font2: "Bebas Neue", sans-serif;
+  --secondary-font2: "Montserrat", sans-serif;
+
+  --font-size-large: 2.5rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 1rem;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+pre {
+  font-family: var(--secondary-font1);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 80vw;
+  width: 100%;
+}
 
 /* HEADER styles */
 #logo {
-  padding: 1rem;
+  width: 50px;
+  height: auto;
 }
+
+.navlinks {
+  padding-top: 15px;
+}
+
+.navlinks ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+.navlinks ul li a {
+  text-decoration: none;
+  color: var(--accent-color2);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.user-login {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.foodexer-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.user-login h1 {
+  text-align: left;
+}
+
+.hero-image img {
+  width: 800px;
+  height: auto;
+}
+
+/* BODY Styles */
 
 body {
   display: flex;
@@ -17,8 +116,16 @@ body {
   width: 100%;
   margin: 0 auto;
   max-width: 80vw;
-  background-color: #ccc;
+  background-color: var(--bg-color);
 }
+
+/* HERO Styles */
+
+.hero-container {
+  display: flex;
+}
+
+/* MAIN Styles */
 
 main {
   margin: 0 auto;
@@ -28,14 +135,28 @@ main {
 
 h1 {
   text-align: center;
-  margin-bottom: 1rem;
+  font-family: var(--secondary-font1);
+  margin-bottom: var(--font-size-small);
+}
+
+p {
+  font-family: var(--secondary-font1);
+  color: var(--accent-color2);
 }
 
 pre {
-  line-height: 1.5;
+  line-height: var(--font-size-medium);
   letter-spacing: 0.05rem;
-  padding: 1rem;
+  padding: var(--font-size-small);
   background-color: white;
+}
+
+/* FORM Styles */
+
+form {
+  display: flex;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
 label {
@@ -48,12 +169,6 @@ select {
   padding: 5px;
 }
 
-form {
-  display: flex;
-  margin: 0 auto;
-  gap: 1rem;
-}
-
 .submit {
   width: 100px;
   padding: 5px;
@@ -62,4 +177,37 @@ form {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* CARD Styles */
+
+.container-card {
+  display: flex;
+  margin: 20px;
+  gap: 1rem;
+}
+
+.food-card {
+  border: 0.5rem solid var(--primary-color1);
+  border-radius: 5px;
+  background-color: rgba(139, 195, 74, 0.5);
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+  transition: transform 0.1s ease-in;
+}
+
+.food-card:hover,
+.exer-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.exer-card {
+  border: 0.5rem solid var(--primary-color2);
+  border-radius: 5px;
+  background-color: rgba(3, 169, 244, 0.5);
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
 }

@@ -1,8 +1,15 @@
-import { activity, fetchedData, myActivity } from "./app.mjs";
+import { activity, fetchedData, myActivity, handleCardClick } from "./app.mjs";
+
+// Global timeout Id that can be cleared each time
+let timeoutId;
+
 // This function grabs the the food local json data asynchronously
 export async function fetchExerciseData() {
-    myActivity.innerHTML = `Loading ${activity} local json...`;
-    debugger;
+    myActivity.innerHTML = "";
+
+    timeoutId = setTimeout(() => {
+        myActivity.innerHTML = `Loading ${activity} json...`;
+    }, 500);
 
 
     try {
@@ -19,6 +26,10 @@ export async function fetchExerciseData() {
             // Display it in the console
             // alert(exerciseData);
             console.log(exerciseData);
+
+            clearTimeout(timeoutId);
+            myActivity.innerHTML = "";
+
             // Display results on the HTML page
             myActivity.innerHTML = JSON.stringify(exerciseData, null, 2);
             // Determine if local data or API was fetched
@@ -38,7 +49,13 @@ export async function fetchExerciseData() {
 
 // Async function to fetch JSON and display the exercise content
 export async function fetchExerciseAPI() {
-    myActivity.innerHTML = `Loading ${activity} API...`;
+    myActivity.innerHTML = "";
+
+    timeoutId = setTimeout(() => {
+        myActivity.innerHTML = `Loading ${activity} API...`;
+    }, 500);
+
+
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const apiUrl = 'https://exercisedb.p.rapidapi.com/exercises/bodyPart/back?limit=10&offset=0';
 
@@ -61,6 +78,9 @@ export async function fetchExerciseAPI() {
         const result = await response.json();  // Assuming the response is in JSON format
         // alert(result);
         console.log(result);
+
+        clearTimeout(timeoutId);
+        myActivity.innerHTML = "";
         // Display result in pre tag
         myActivity.innerHTML = JSON.stringify(result, null, 2);
         // Determine if local data or API was fetched
