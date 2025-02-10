@@ -38,18 +38,34 @@ pre {
   font-family: var(--secondary-font1);
 }
 
+html {
+  max-width: 100vw;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   max-width: 80vw;
   width: 100%;
+  margin: 0 auto;
+  background-color: rgba(187, 204, 238, 0.5);
+
+  justify-content: space-between;
 }
 
 /* HEADER styles */
+
 #logo {
   width: 50px;
   height: auto;
+}
+
+ul.navlinks {
+  display: none;
 }
 
 .navlinks {
@@ -64,30 +80,132 @@ pre {
   gap: 2rem;
 }
 
+.navlinks ul li {
+  display: flex;
+  align-items: center;
+}
+
 .navlinks ul li a {
   text-decoration: none;
   color: var(--accent-color2);
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navlinks ul li a:hover {
+  /* color: #000; */
+  color: var(--accent-color1);
+}
+
+.navlinks ul li a::after {
+  content: "|";
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-color2);
+}
+
+.navlinks ul li a:hover::after {
+  color: var(--accent-color2);
+}
+
+.navlinks ul li:last-child a::after {
+  /* remove the last '|' symbol */
+  content: "";
 }
 
 .logo-container {
   display: flex;
   justify-content: space-between;
+  margin: 2.2rem 0;
+}
+
+.logo-image {
+  display: flex;
+  background-color: #03a9f4;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .hero-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-content: center;
+  max-width: 100vw;
+  width: 100%;
+  background-color: rgba(255, 235, 59, 0.8);
+  border-radius: 10% 5% 5% 10%;
+  outline: none;
 }
+
+/* USER LOGIN Styles */
 
 .user-login {
   display: flex;
-  position: absolute;
+  /* background-color: #ffeb3b; */
+  border-radius: 5% 0 0 5%;
   flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
+  justify-content: center;
+  align-content: center;
   padding: 2rem;
-  gap: 2rem;
+  gap: 0.2rem;
+}
+
+.user-login h1 {
+  text-align: left;
+}
+
+/* Input styles */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="month"],
+select {
+  width: 100%;
+  height: 44px;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s ease-in-out;
+}
+
+/* focus effect */
+input:focus,
+select:focus {
+  border-color: #3498db;
+  /* Light blue border on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+  /* subtle glow */
+}
+
+.sign-up {
+  height: 44px;
+  width: 100%;
+  border-radius: 25px;
+  font-weight: 600;
+  color: var(--accent-color2);
+  background-color: var(--highlight-color);
+
+  transition: color 0.5s ease background-color 0.5s ease transform 0.5s ease;
+}
+
+.sign-up:hover {
+  background-color: rgba(56, 142, 60, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--accent-color1);
+  transform: scale(1.01);
 }
 
 .foodexer-signup {
@@ -97,13 +215,38 @@ pre {
   justify-content: flex-start;
 }
 
-.user-login h1 {
-  text-align: left;
+.hero-image {
+  display: flex;
+  align-content: center;
+  border-radius: 0 5% 5% 0;
+  justify-content: flex-end;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 0.5 ease;
+  opacity: 1;
 }
 
 .hero-image img {
-  width: 800px;
+  width: 100%;
   height: auto;
+  object-fit: cover;
+}
+
+.logo-text {
+  font-size: var(--font-size-large);
+  font-family: var(--primary-font2);
+  margin-left: 2rem;
+}
+
+.highlight {
+  color: var(--secondary-color2);
+  background-color: var(--accent-color2);
+  border-radius: 5px;
+  margin-left: 0.2rem;
+  padding: 0;
+  font-size: 2.4rem;
+  text-decoration: underline;
 }
 
 /* BODY Styles */
@@ -115,8 +258,35 @@ body {
   justify-content: center;
   width: 100%;
   margin: 0 auto;
-  max-width: 80vw;
+  max-width: 100vw;
   background-color: var(--bg-color);
+}
+
+/* NAVIGATION Styles */
+
+#menu {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  display: none;
+  font-size: 2rem;
+  padding: 0.2rem 2vw;
+  position: absolute;
+  left: 0.8rem;
+  top: 10px;
+  text-align: right;
+}
+
+#menu::before {
+  content: "\2630";
+  /* Hamburger icon */
+}
+
+#menu.open::before {
+  content: "X";
+
+  /* Close icon */
 }
 
 /* HERO Styles */
@@ -130,7 +300,7 @@ body {
 main {
   margin: 0 auto;
   width: 100%;
-  max-width: 50vw;
+  max-width: 60vw;
 }
 
 h1 {
@@ -140,11 +310,13 @@ h1 {
 }
 
 p {
-  font-family: var(--secondary-font1);
+  font-family: var(--secondary-font2);
   color: var(--accent-color2);
+  line-height: 2.5rem;
 }
 
 pre {
+  text-wrap: wrap;
   line-height: var(--font-size-medium);
   letter-spacing: 0.05rem;
   padding: var(--font-size-small);
@@ -183,17 +355,36 @@ select {
 
 .container-card {
   display: flex;
-  margin: 20px;
+  /* margin: 20px; */
+  align-content: center;
+  justify-items: center;
   gap: 1rem;
 }
 
+.whatwedo {
+  margin-top: 3rem;
+}
+
+.selection-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin: 3rem;
+  padding: 0;
+}
+
 .food-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 0.5rem solid var(--primary-color1);
   border-radius: 5px;
   background-color: rgba(139, 195, 74, 0.5);
   cursor: pointer;
   width: 300px;
-  height: 300px;
+  height: auto;
   transition: transform 0.1s ease-in;
 }
 
@@ -204,10 +395,204 @@ select {
 }
 
 .exer-card {
+  display: flex;
+  flex-direction: column;
   border: 0.5rem solid var(--primary-color2);
   border-radius: 5px;
   background-color: rgba(3, 169, 244, 0.5);
   cursor: pointer;
   width: 300px;
-  height: 300px;
+  height: auto;
+}
+
+.food-card img,
+.exer-card img {
+  object-fit: cover;
+}
+
+/* FOOTER Styles */
+
+footer {
+  background-color: rgba(187, 204, 238, 0.5);
+  max-width: 100vw;
+  width: 100%;
+  height: 15vh;
+  text-align: center;
+}
+
+.highlight2 {
+  color: var(--secondary-color2);
+  background-color: var(--accent-color2);
+  border-radius: 5px;
+  margin-left: 0.2rem;
+  padding: 0;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+@media all and (max-width: 100px) {
+  .wrapper {
+    max-width: 100vw;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* MEDIA QUERIES for Mobile View or smaller screens */
+
+@media all and (max-width: 300px) {
+  p {
+    font-size: var(--font-size-small);
+    padding: var(--font-size-small);
+  }
+
+  .food-card,
+  .exer-card {
+    width: 100px;
+    height: auto;
+  }
+
+  .user-login {
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  .container-card {
+    margin: 0;
+    padding: 0;
+  }
+
+  p,
+  h1 {
+    text-align: center;
+  }
+
+  .hero-container {
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    max-width: 100vw;
+    width: 100%;
+    padding: 0;
+    margin-top: 1.2rem;
+  }
+
+  .food-card,
+  .exer-card {
+    width: 200px;
+    height: 200px;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .sign-up {
+    max-width: 100vw;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 25px;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0.2rem;
+  }
+}
+
+@media all and (max-width: 675px) {
+  #menu {
+    display: block;
+  }
+
+  .navlinks ul {
+    display: none;
+  }
+
+  ul.open {
+    display: flex;
+    /* Show menu when hamburger icon is clicked */
+  }
+
+  main {
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: var(--font-size-medium);
+  }
+
+  p {
+    font-size: var(--font-size-small);
+    padding: var(--font-size-small);
+  }
+
+  .wrapper {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+
+  .navlinks ul {
+    flex-direction: column;
+  }
+
+  .navlinks ul li a::after {
+    /* remove the last '|' symbol */
+    content: "";
+  }
+
+  .hero-container {
+    justify-items: center;
+    align-items: center;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .hero-image {
+    /* Make the image fully transparent */
+    opacity: 0;
+    display: none;
+    /* Disable interaction with the image */
+    pointer-events: none;
+  }
+
+  .user-login {
+    border-radius: 0 15% 0 15%;
+  }
+
+  .container-card {
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .container-card h1 {
+    margin: 0;
+  }
+
+  .container-card img {
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+  }
 }
