@@ -44,9 +44,12 @@
         <section class="user-login">
           <h1>User Login</h1>
           <p>Customize your FoodExer profile for a better experience!</p>
-          <form action="" name="sign-up" class="foodexer-signup">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email" />
+          <br>
+          <form novalidate action="" name="sign-up" class="foodexer-signup">
+            <label for="email">
+              <input type="email" id="email" name="email" required minlength="8" placeholder="Enter your email" />
+              <span class="error" aria-live="polite"></span>
+            </label>
             <button id="signup" class="sign-up" type="submit">Sign Up</button>
           </form>
         </section>
@@ -63,22 +66,28 @@
 
   <main>
     <section class="whatwedo">
-      <h1>Welcome to FoodExer!</h1>
-      <p>
-        At FoodExer, we believe in a balanced lifestyle of healthy food and
-        exercise. Whether you're exploring nutritious recipes, tracking your
-        fitness, or staying motivated, FoodExer is here to help.
-      </p>
-      <br>
-      <p>
-        Our platform combines the best of both worlds to empower you with the
-        tools and knowledge for healthier choices. From meal ideas to workout
-        plans, we’re with you on your wellness journey.
-      </p>
-      <p>Start exploring and live a healthier, more balanced life today!</p>
+      <div class="intro">
+        <h1 class="sticker">Welcome to FoodExer!</h1>
+        <br><br>
+        <p class="welcome">
+          At FoodExer, we believe in a balanced lifestyle of healthy food and
+          exercise. Whether you're exploring nutritious recipes, tracking your
+          fitness, or staying motivated, FoodExer is here to help.
+        </p>
+        <br>
+        <p class="welcome">
+          Our platform combines the best of both worlds to empower you with the
+          tools and knowledge for healthier choices. From meal ideas to fitness
+          ideas, we’re with you on your wellness journey.
+        </p>
+
+        <img class="hero" src="assets/images/pexels-mastercowley-1153369.jpg" alt="Photo credits by Nathan Cowley"
+          height="500" width="800">
+      </div>
+      <p class="welcome">Start exploring and live a healthier, more balanced life today!</p>
     </section>
     <section class="selection-cards">
-      <h1>What would you like to do?</h1>
+      <!-- <h1 class="sticker">What would you like to do?</h1> -->
       <div class="container-card" id="card-container">
         <div class="food-card" id="card-food" data-category="food">
           <h1>Food</h1>
@@ -118,6 +127,7 @@
         <p class="lastmodified">Last Modified:
           <span id="lastModified"></span>
         </p>
+        <br>
         <a class="branding" href="https://jamesdeguzman.com/" target="_blank">besys.tech&copy;<span
             class="currentyear"></span></a>
 

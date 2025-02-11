@@ -7,7 +7,9 @@ export default defineConfig({
     outDir: "../dist", // Build output directory
     rollupOptions: {
       // This ensures that .mjs files are resolved properly in the build process
-      input: resolve(__dirname, "src/index.html"),
+      input: {
+        main: resolve(__dirname, "src/index.html"),
+      },
     },
   },
   server: {
