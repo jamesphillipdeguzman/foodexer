@@ -2,6 +2,7 @@ import { fetchFoodData, fetchFoodAPI } from "./food.mjs";
 import { fetchExerciseData, fetchExerciseAPI } from "./exercise.mjs";
 import { loadHeaderFooter, getParams } from "./utils.mjs";
 
+loadHeaderFooter();
 
 // export const chooseActivity = document.querySelector("#choose-activity");
 export const myActivity = document.querySelector("pre");
