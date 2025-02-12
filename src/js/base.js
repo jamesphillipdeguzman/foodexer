@@ -71,59 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Email validation logic
-  const form = document.querySelector("form");
-  const email = document.querySelector("#email");
-  const emailError = document.querySelector("#email + span.error");
 
-  // List of valid email domains
-  const validDomains = [
-    "@gmail.com",
-    "@yahoo.com",
-    "@outlook.com",
-    "@info.com",
-    "@hotmail.com",
-  ];
-
-  function showError() {
-    // Reset previous error
-    emailError.textContent = "";
-
-    // Check for validity issues
-    if (email.validity.valueMissing) {
-      emailError.textContent = "Please enter an email address.";
-    } else if (email.validity.typeMismatch) {
-      emailError.textContent = "Please enter a valid email address.";
-    } else if (email.validity.tooShort) {
-      emailError.textContent = `Email should be at least ${email.minLength} characters.`;
-    } else if (!validDomains.some((domain) => email.value.endsWith(domain))) {
-      emailError.textContent =
-        "Please enter a valid email domain (e.g., @gmail.com).";
-    }
-
-    // If there is an error, add the 'shake' class
-    if (emailError.textContent) {
-      email.classList.add("shake");
-      emailError.classList.add("active", "shake");
-    } else {
-      email.classList.remove("shake");
-      emailError.classList.remove("active", "shake");
-    }
-  }
-
-  // Listen for input events on the email field
-  email.addEventListener("input", showError);
-
-  form.addEventListener("submit", (event) => {
-    // If the email field is invalid, show error and prevent form submission
-    if (!email.validity.valid || emailError.textContent) {
-      showError();
-      event.preventDefault();
-    }
-  });
-
-  // Remove shake effect after animation ends
-  email.addEventListener("animationend", () => {
-    email.classList.remove("shake");
-  });
 });

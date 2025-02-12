@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Food Exer | Food and Exercise Web App</title>
-  <meta name="description" content="Everything about food and exercise Single-Page Application" />
+  <title>Food Exer | Home </title>
+  <meta name="description" content="Everything about food and exercise" />
   <meta name="author" content="James Phillip K. De Guzman" />
 
   <!-- Consolidated Google Fonts Link -->
@@ -15,7 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/base.css" />
 
   <script src="js/app.mjs" type="module"></script>
   <script src="js/base.js" type="module"></script>
@@ -28,9 +28,12 @@
     <div class="wrapper">
       <div class="logo-container">
         <div class="logo-image">
-          <img id="logo" src="assets/icons/foodexer-logo2.png" alt="FoodExer logo" width="50" height="50" />
-          <div class="logo-text">Food<span class="highlight">Exer</span></div>
+          <a href="index.html">
+            <img id="logo" src="assets/icons/foodexer-logo2.png" alt="FoodExer logo" width="50" height="50" />
+          </a>
+          <div class="logo-text"><span class="highlight">FoodExer</span></div>
         </div>
+
         <div class="navlinks">
           <ul>
             <li><a href="#">About</a></li>
@@ -40,52 +43,56 @@
           <button id="menu" aria-label="menu"></button>
         </div>
       </div>
-      <div class="hero-container">
-        <section class="user-login">
-          <h1>User Login</h1>
-          <p>Customize your FoodExer profile for a better experience!</p>
-          <br>
-          <form novalidate action="" name="sign-up" class="foodexer-signup">
-            <label for="email">
-              <input type="email" id="email" name="email" required minlength="8" placeholder="Enter your email" />
-              <span class="error" aria-live="polite"></span>
-            </label>
-            <button id="signup" class="sign-up" type="submit">Sign Up</button>
-          </form>
-        </section>
-
-        <section class="hero-image">
-          <img src="assets/images/foodexer-banner.webp" alt="FoodExer banner hero image from Freepik" width="300"
-            height="300" />
-        </section>
-
-        <!-- https://www.freepik.com/free-photo/sport-wellbeing-active-lifestyle-concept-slim-healthy-cute-female-gym-coach-fitness-trainer_32348710.htm#fromView=search&page=1&position=5&uuid=3c5fb1d5-6b1f-48a6-8f8b-fdfb1d721c30&new_detail=true&query=food+and+exercise -->
-      </div>
+    </div>
 
   </header>
 
-  <main>
-    <section class="whatwedo">
-      <div class="intro">
-        <h1 class="sticker">Welcome to FoodExer!</h1>
-        <br><br>
-        <p class="welcome">
-          At FoodExer, we believe in a balanced lifestyle of healthy food and
-          exercise. Whether you're exploring nutritious recipes, tracking your
-          fitness, or staying motivated, FoodExer is here to help.
-        </p>
-        <br>
-        <p class="welcome">
-          Our platform combines the best of both worlds to empower you with the
-          tools and knowledge for healthier choices. From meal ideas to fitness
-          ideas, we’re with you on your wellness journey.
-        </p>
-
-        <img class="hero" src="assets/images/pexels-mastercowley-1153369.jpg" alt="Photo credits by Nathan Cowley"
-          height="500" width="800">
-      </div>
-      <p class="welcome">Start exploring and live a healthier, more balanced life today!</p>
+  <div class="hero-container">
+    <section class="user-login">
+      <h1>User Login</h1>
+      <p>Customize your FoodExer profile for a better experience!</p>
+      <br>
+      <form novalidate action="" name="sign-up" class="foodexer-signup">
+        <label for="email">
+          <input type="email" id="email" name="email" required minlength="8" placeholder="Enter your email" />
+          <span class="error" aria-live="polite"></span>
+        </label>
+        <button id="signup" class="sign-up" type="submit">Sign Up</button>
+      </form>
     </section>
+
+    <section class="hero-image">
+      <img src="assets/images/foodexer-banner.webp" alt="FoodExer banner hero image from Freepik" width="300"
+        height="300" />
+    </section>
+
+    <!-- https://www.freepik.com/free-photo/sport-wellbeing-active-lifestyle-concept-slim-healthy-cute-female-gym-coach-fitness-trainer_32348710.htm#fromView=search&page=1&position=5&uuid=3c5fb1d5-6b1f-48a6-8f8b-fdfb1d721c30&new_detail=true&query=food+and+exercise -->
+  </div>
+
+  <main>
+    <div class="wrapper">
+      <section class="whatwedo">
+        <div class="intro">
+          <h1 class="sticker">Welcome to FoodExer!</h1>
+          <br><br>
+          <p class="welcome">
+            At FoodExer, we believe in a balanced lifestyle of healthy food and
+            exercise. Whether you're exploring nutritious recipes, tracking your
+            fitness, or staying motivated, FoodExer is here to help.
+          </p>
+          <br>
+          <p class="welcome">
+            Our platform combines the best of both worlds to empower you with the
+            tools and knowledge for healthier choices. From meal ideas to fitness
+            ideas, we’re with you on your wellness journey.
+          </p>
+
+          <img class="hero" src="assets/images/pexels-mastercowley-1153369.jpg" alt="Photo credits by Nathan Cowley"
+            height="500" width="800">
+        </div>
+        <p class="welcome">Start exploring and live a healthier, more balanced life today!</p>
+      </section>
+    </div>
     <section class="selection-cards">
       <!-- <h1 class="sticker">What would you like to do?</h1> -->
       <div class="container-card" id="card-container">
@@ -99,6 +106,7 @@
         </div>
       </div>
     </section>
+
 
     <label for="checkbox">Use local json for testing</label>
     <input type="checkbox" id="localjson-check" name="localjson" checked />
@@ -135,7 +143,7 @@
       </div>
 
     </div>
-    </div>
+
   </footer>
 </body>
 
