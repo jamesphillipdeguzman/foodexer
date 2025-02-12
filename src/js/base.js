@@ -1,6 +1,4 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // Hamburger menu click event
   const hamburgerBtn = document.querySelector("#menu");
   const navigationBtn = document.querySelector(".navlinks ul");
