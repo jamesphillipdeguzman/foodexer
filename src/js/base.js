@@ -70,6 +70,4 @@ document.addEventListener("DOMContentLoaded", () => {
       // console.log('This is your first visit.');
     }
   }
-
-
 });

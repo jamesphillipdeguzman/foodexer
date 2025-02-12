@@ -9,6 +9,8 @@ export default defineConfig({
       // This ensures that .mjs files are resolved properly in the build process
       input: {
         main: resolve(__dirname, "src/index.html"),
+        food: resolve(__dirname, "src/pages/food.html"),
+        exercise: resolve(__dirname, "src/pages/exercise.html"),
       },
     },
   },
