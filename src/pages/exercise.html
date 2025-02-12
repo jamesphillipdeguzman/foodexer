@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Food | Home </title>
+    <title>Food | Home</title>
     <meta name="description" content="Food web app" />
     <meta name="author" content="James Phillip K. De Guzman" />
 
@@ -12,8 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/exercise.css" />
@@ -21,77 +21,43 @@
     <script src="../js/app.mjs" type="module"></script>
     <script src="../js/base.js" type="module"></script>
 
-    <link rel="icon" href="../assets/icons/foodexer-logo.ico" type="image/x-icon" />
-</head>
+    <link
+      rel="icon"
+      href="../assets/icons/foodexer-logo.ico"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
-    <header>
-        <div class="wrapper">
-            <div class="logo-container">
-                <div class="logo-image">
-                    <a href="../index.html">
-                        <img id="logo" src="../assets/icons/foodexer-logo2.png" alt="FoodExer logo" width="50"
-                            height="50" />
-                    </a>
-                    <div class="logo-text">Food<span class="highlight">Exer</span></div>
-                </div>
-                <div class="navlinks">
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Site Map</a></li>
-                        <li><a href="#">Attributions</a></li>
-                    </ul>
-                    <button id="menu" aria-label="menu"></button>
-                </div>
-            </div>
-
-
-    </header>
+  <body>
+    <header id="main-header"></header>
 
     <main>
-        <section class="exercise">
-            <div class="intro-exercise">
-                <h1 class="sticker">Exercise for a Stronger You</h1>
-                <br><br>
-                <p class="welcome">
-                    At FoodExer, we believe that exercise is key to a balanced lifestyle.
-                    Whether you're looking to build strength, improve flexibility, or stay active,
-                    we provide you with the guidance and resources to keep you moving and motivated.
-                </p>
+      <section class="exercise">
+        <div class="intro-exercise">
+          <h1 class="sticker">Exercise for a Stronger You</h1>
+          <br /><br />
+          <p class="welcome">
+            At FoodExer, we believe that exercise is key to a balanced
+            lifestyle. Whether you're looking to build strength, improve
+            flexibility, or stay active, we provide you with the guidance and
+            resources to keep you moving and motivated.
+          </p>
 
-                <img class="hero" src="../assets/images/pexels-karolina-grabowska-4397841.jpg"
-                    alt="Photo credits by Karolina Grabowska" height="500" width="800">
-            </div>
-            <p class="welcome">Select an exercise routine to kickstart your fitness journey</p>
-        </section>
+          <img
+            class="hero"
+            src="../assets/images/pexels-karolina-grabowska-4397841.jpg"
+            alt="Photo credits by Karolina Grabowska"
+            height="500"
+            width="800"
+          />
+        </div>
+        <p class="welcome">
+          Select an exercise routine to kickstart your fitness journey
+        </p>
+        <div class="my-exercise-card"></div>
+      </section>
     </main>
 
-
-
-    <footer class="myfooter">
-        <div class="footer-wrapper">
-
-            <div class="footer-text">
-
-                ©James Phillip K. De Guzman | BYU-Idaho | WDD 330 - Winter Semester
-
-            </div>
-
-            <div class="mysite">
-                FoodExer &copy;<span class="currentyear"></span>
-                <p class="lastmodified">Last Modified:
-                    <span id="lastModified"></span>
-                </p>
-                <br>
-                <a class="branding" href="https://jamesdeguzman.com/" target="_blank">besys.tech&copy;<span
-                        class="currentyear"></span></a>
-
-
-            </div>
-
-        </div>
-        </div>
-    </footer>
-</body>
-
+    <footer class="myfooter" id="main-footer"></footer>
+  </body>
 </html>

@@ -1,5 +1,7 @@
 import { fetchFoodData, fetchFoodAPI } from "./food.mjs";
 import { fetchExerciseData, fetchExerciseAPI } from "./exercise.mjs";
+import { loadHeaderFooter, getParams } from "./utils.mjs";
+
 
 // export const chooseActivity = document.querySelector("#choose-activity");
 export const myActivity = document.querySelector("pre");
@@ -128,11 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardFood = document.querySelector("#card-food");
   const cardExer = document.querySelector("#card-exer");
   cardFood.addEventListener("click", () => {
-    window.location.href = "./pages/food.html";
+    window.location.href = "/pages/food.html";
   });
 
   cardExer.addEventListener("click", () => {
-    window.location.href = "./pages/exercise.html";
+    window.location.href = "/pages/exercise.html";
   });
 
 });
