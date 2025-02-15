@@ -1,4 +1,5 @@
 import { activity, fetchedData, myActivity, handleCardClick } from "./app.mjs";
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 // Global timeout Id that can be cleared each time
 let timeoutId;
@@ -25,8 +26,13 @@ export async function fetchFoodData() {
       const foodData = data;
       // Display it in the console
       // alert(foodData);
+      debugger;
+      console.log("FoodData: ", foodData);
+      // Only run this if food key was not found in localstorage
+      if (!getLocalStorage("foodLocal") || getLocalStorage("foodLocal").length === 0) {
+        setLocalStorage("foodLocal", foodData);
+      }
 
-      console.log(foodData);
       clearTimeout(timeoutId);
       myActivity.innerHTML = "";
       // Display results on the HTML page
@@ -75,6 +81,14 @@ export async function fetchFoodAPI() {
     const result = await response.json();  // Assuming the response is in JSON format
     // alert(result);
     console.log(result);
+    const foodResult = result;
+    debugger;
+    console.log("FoodAPI: ", foodResult);
+    // Only run this if food key was not found in localstorage
+    if (!getLocalStorage("foodAPI") || getLocalStorage("foodAPI").length === 0) {
+      setLocalStorage("foodAPI", foodResult);
+    }
+
     clearTimeout(timeoutId);
     myActivity.innerHTML = "";
     // Display result in pre tag

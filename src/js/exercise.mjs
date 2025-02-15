@@ -1,4 +1,5 @@
 import { activity, fetchedData, myActivity, handleCardClick } from "./app.mjs";
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 // Global timeout Id that can be cleared each time
 let timeoutId;
@@ -25,7 +26,13 @@ export async function fetchExerciseData() {
             const exerciseData = data;
             // Display it in the console
             // alert(exerciseData);
-            console.log(exerciseData);
+            debugger;
+            console.log("ExerData: ", exerciseData);
+            // Only run this if food key was not found in localstorage
+            if (!getLocalStorage("exerLocal") || getLocalStorage("exerLocal").length === 0) {
+                setLocalStorage("exerLocal", exerciseData);
+            }
+
 
             clearTimeout(timeoutId);
             myActivity.innerHTML = "";
@@ -78,6 +85,14 @@ export async function fetchExerciseAPI() {
         const result = await response.json();  // Assuming the response is in JSON format
         // alert(result);
         console.log(result);
+        const exerResult = result;
+        debugger;
+        console.log("ExerAPI: ", exerResult);
+        // Only run this if food key was not found in localstorage
+        if (!getLocalStorage("exerAPI") || getLocalStorage("exerAPI").length === 0) {
+            setLocalStorage("exerAPI", exerResult);
+        }
+
 
         clearTimeout(timeoutId);
         myActivity.innerHTML = "";

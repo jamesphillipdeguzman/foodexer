@@ -46,8 +46,11 @@ export function handleCardClick(isLocalJson) {
 
   }
 
-  // Add the event listener for card clicks
-  cardContainer.addEventListener("click", cardClickHandler);
+  if (cardContainer) {
+    // Add the event listener for card clicks
+    cardContainer.removeEventListener("click", cardClickHandler); // Remove any existing listeners first
+    cardContainer.addEventListener("click", cardClickHandler);
+  }
 
 }
 
@@ -124,32 +127,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Listen for input events on the email field
-  email.addEventListener("input", showError);
+  if (email) {
+    // Listen for input events on the email field
+    email.addEventListener("input", showError);
+    // Remove shake effect after animation ends
+    email.addEventListener("animationend", () => {
+      email.classList.remove("shake");
+    });
+  }
 
-  form.addEventListener("submit", (event) => {
-    // If the email field is invalid, show error and prevent form submission
-    if (!email.validity.valid || emailError.textContent) {
-      showError();
-      event.preventDefault();
-    }
-  });
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      // If the email field is invalid, show error and prevent form submission
+      if (!email.validity.valid || emailError.textContent) {
+        showError();
+        event.preventDefault();
+      }
+    });
+  }
 
-  // Remove shake effect after animation ends
-  email.addEventListener("animationend", () => {
-    email.classList.remove("shake");
-  });
 
   // Go to selected html page
   const cardFood = document.querySelector("#card-food");
   const cardExer = document.querySelector("#card-exer");
-  cardFood.addEventListener("click", () => {
-    window.location.href = "/pages/food.html";
-  });
 
-  cardExer.addEventListener("click", () => {
-    window.location.href = "/pages/exercise.html";
-  });
+  if (cardFood) {
+    cardFood.addEventListener("click", () => {
+      window.location.href = "/pages/food.html";
+    });
+  }
+
+  if (cardExer) {
+    cardExer.addEventListener("click", () => {
+      window.location.href = "/pages/exercise.html";
+    });
+  }
+
 
 });
 
