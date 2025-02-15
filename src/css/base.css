@@ -689,10 +689,6 @@ footer {
     display: block;
   }
 
-  .navlinks ul {
-    display: none;
-  }
-
   input[type="email"],
   .sign-up {
     max-width: 100vw;
@@ -703,9 +699,18 @@ footer {
     display: none;
   }
 
+  .navlinks ul {
+    display: none;
+  }
+
   ul.open {
     display: flex;
-    /* Show menu when hamburger icon is clicked */
+  }
+
+  .navlinks ul {
+    flex-direction: column;
+    align-items: center;
+    right: 0;
   }
 
   main {
@@ -726,12 +731,6 @@ footer {
     max-width: 100%;
     width: 100%;
     margin-top: 1.2rem;
-  }
-
-  .navlinks ul {
-    flex-direction: column;
-    align-items: center;
-    right: 0;
   }
 
   .logo-image {

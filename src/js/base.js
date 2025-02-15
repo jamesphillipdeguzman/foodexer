@@ -1,30 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger menu click event
-  const hamburgerBtn = document.querySelector("#menu");
-  const navigationBtn = document.querySelector(".navlinks ul");
+  function hamburgerMenuToggle() {
+    debugger;
 
-  hamburgerBtn.addEventListener("click", () => {
-    hamburgerBtn.classList.toggle("open");
-    navigationBtn.classList.toggle("open");
-  });
+    // Hamburger menu click event
+    const hamburgerBtn = document.querySelector("#menu");
+    const navigationBtn = document.querySelector(".navlinks ul");
 
-  // Get the year
-  const todaysDate = new Date();
-  const dateFormat = { year: "numeric", month: "short", day: "numeric" };
-  const timeFormat = todaysDate.toLocaleTimeString();
-  const formattedDate = todaysDate.toLocaleDateString("en-US", dateFormat);
-  const formattedDateTime = formattedDate + " " + timeFormat;
+    if (hamburgerBtn && navigationBtn) {
+      hamburgerBtn.addEventListener("click", () => {
+        // console.log("hamburger clicked!");
+        hamburgerBtn.classList.toggle("open");
+        navigationBtn.classList.toggle("open");
+      });
+    }
+  }
 
-  const timestamp = document.querySelector("#timestamp");
+  function setCurrentYear() {
+    debugger;
+    // Get the year
+    const todaysDate = new Date();
+    // Set the current year for all elements with class 'currentyear'
+    const yearElements = document.querySelectorAll(".currentyear");
+    yearElements.forEach((element) => {
+      element.textContent = todaysDate.getFullYear(); // simplified approach
+    });
+  }
 
-  // Set the current year for all elements with class 'currentyear'
-  const yearElements = document.querySelectorAll(".currentyear");
-  yearElements.forEach((element) => {
-    element.textContent = todaysDate.getFullYear(); // simplified approach
-  });
+  function setLastModifiedDate() {
+    const todaysDate = new Date();
+    const dateFormat = { year: "numeric", month: "short", day: "numeric" };
+    const timeFormat = todaysDate.toLocaleTimeString();
+    const formattedDate = todaysDate.toLocaleDateString("en-US", dateFormat);
+    const formattedDateTime = formattedDate + " " + timeFormat;
 
-  const lastModified = document.querySelector("#lastModified");
-  lastModified.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`; // using formatted date-time
+    const timestamp = document.querySelector("#timestamp");
+
+    const lastModified = document.querySelector("#lastModified");
+
+    if (lastModified) {
+      lastModified.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`; // using formatted date-time
+    }
+  }
 
   // Function to store the current local date, time, and username based on User Agent
   function storeAccessInfo() {
@@ -70,4 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // console.log('This is your first visit.');
     }
   }
+
+  hamburgerMenuToggle();
+  setCurrentYear();
+  setLastModifiedDate();
+
+  storeAccessInfo();
+  logLastAccess();
 });

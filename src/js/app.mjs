@@ -1,8 +1,9 @@
 import { fetchFoodData, fetchFoodAPI } from "./food.mjs";
 import { fetchExerciseData, fetchExerciseAPI } from "./exercise.mjs";
 import { loadHeaderFooter, getParams } from "./utils.mjs";
+// import { storeAccessInfo, getUserId, hamburgerMenuToggle, setCurrentYear, setLastModifiedDate, logLastAccess } from './base.js';
 
-loadHeaderFooter();
+
 
 // export const chooseActivity = document.querySelector("#choose-activity");
 export const myActivity = document.querySelector("pre");
@@ -52,20 +53,32 @@ export function handleCardClick(isLocalJson) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  // hamburgerMenuToggle();
+  // setCurrentYear();
+  // setLastModifiedDate();
+  // getUserId();
+  // storeAccessInfo();
+  loadHeaderFooter();
+
+
+
   const checkLocalJson = document.querySelector("#localjson-check");
 
-  // Listen when the checkbox is ticked or not by the user
-  checkLocalJson.addEventListener("click", () => {
+  if (checkLocalJson) {
+    // Listen when the checkbox is ticked or not by the user
+    checkLocalJson.addEventListener("click", () => {
 
-    isLocalJson = checkLocalJson.checked;
-    handleCardClick(isLocalJson);
+      isLocalJson = checkLocalJson.checked;
+      handleCardClick(isLocalJson);
 
-    // Reload the page if the checkbox is checked
-    if (checkLocalJson.checked) {
-      window.location.reload();
-    }
+      // Reload the page if the checkbox is checked
+      if (checkLocalJson.checked) {
+        window.location.reload();
+      }
 
-  });
+    });
+  }
+
   // Call the function to handle card clicks
   handleCardClick(isLocalJson);
 
@@ -139,3 +152,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
