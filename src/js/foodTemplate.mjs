@@ -15,7 +15,7 @@ function foodTemplate(foodItems) {
         return foodItems.map((item) => {
             return `<li class="food-items">
                         ${item.title}
-                        <img src="${item.image}" alt="${item.title}">
+                        <img id="${item.id}" src="${item.image}" alt="${item.title}">
                     </li>`;
         }).join("");  // Joining the array into a single string
     }
@@ -27,17 +27,19 @@ function foodTemplate(foodItems) {
         return items.map((item) => {
             return `<li class="food-items">
                         ${item.title}
-                        <img src="${item.image}" alt="${item.title}">
+                        <img id="${item.id}" src="${item.image}" alt="${item.title}">
                     </li>`;
         }).join("");  // Joining the array into a single string
     }
 
     // If it's neither an array nor an object
     else {
-        console.error("foodItems is neither an array nor an object:", foodItems);
+        // console.error("foodItems is neither an array nor an object:", foodItems);
         return;
     }
 }
+
+
 
 
 export default class FoodList {

@@ -28,7 +28,9 @@
 
 .food-items img {
   margin-top: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   /* Fixed the transition syntax */
 }
 
@@ -43,6 +45,89 @@
   margin: 1rem;
   padding: 1rem;
   border-radius: 5px;
+}
+
+/* Dynamic RECIPE Modal */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 50px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#recipeTitle {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+#recipeImage {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+#recipeSummary {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+#ingredientList {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+#ingredientList li {
+  margin: 5px 0;
+}
+
+#recipeInstruction {
+  font-size: 1rem;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+#recipeInstruction li {
+  margin: 8px 0;
 }
 
 @media all and (max-width: 500px) {

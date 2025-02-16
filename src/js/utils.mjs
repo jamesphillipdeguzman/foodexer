@@ -9,7 +9,20 @@ export function qs(selector, parent = document) {
 
 // retrieve data from localstorage
 export function getLocalStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
+    const storedData = localStorage.getItem(key);
+    if (!storedData) {
+        console.warn("No data found in local storage");
+        return null;
+    }
+
+    try {
+        return JSON.parse(storedData);
+
+    } catch (error) {
+        // console.error(`Error parsing JSON for key: ${key}`, error);
+        return null;
+    }
+
 }
 // save data to local storage
 export function setLocalStorage(key, data) {
@@ -95,6 +108,14 @@ export function renderWithTemplate(template, parentElement, clear, data, callbac
     }
 
 }
+
+// Function to remove HTML tags from a string
+export function removeHtmlTags(inputString) {
+    const tempElement = document.createElement('div');
+    tempElement.innerHTML = inputString;
+    return tempElement.textContent || tempElement.innerText || '';
+}
+
 
 export function loadCarouselSlider(data) {
     debugger;
