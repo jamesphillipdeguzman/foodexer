@@ -522,7 +522,7 @@ select {
 
 .food-card:hover,
 .exer-card:hover {
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.6);
 }
 

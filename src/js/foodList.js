@@ -26,6 +26,7 @@ fetchFoodLocalBtn.addEventListener("click", () => {
     if (parsedFoodData) {
         foodList.renderList(parsedFoodData);
     } else {
-        console.log("No data available in local storage");
+        // console.log("No data available in local storage");
+        return;
     }
 });
