@@ -59,8 +59,10 @@ html {
 /* HEADER styles */
 
 #logo {
+
   width: 50px;
   height: auto;
+
 }
 
 .navlinks {
@@ -541,44 +543,8 @@ select {
   object-fit: cover;
 }
 
-/* Dynamic RECIPE Modal */
-.modal {
-  /* display: none; */
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 50px;
-}
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
 
-.close-btn {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 /* FOOTER Styles */
 
@@ -616,6 +582,8 @@ footer {
     margin: 0;
   }
 
+
+
   .sticker {
     margin-bottom: 15rem;
   }
@@ -633,6 +601,7 @@ footer {
     padding: var(--font-size-small);
   }
 
+
   .welcome {
     margin: 2rem;
     font-size: var(--font-size-small);
@@ -643,6 +612,8 @@ footer {
     width: 100px;
     height: auto;
   }
+
+
 
   .user-login p {
     text-align: center;
@@ -675,6 +646,7 @@ footer {
     height: 200px;
   }
 
+
   .logo-container {
     display: flex;
     flex-direction: column;
@@ -705,12 +677,19 @@ footer {
     max-width: 100vw;
     width: 100%;
   }
+
+
+
 }
+
+
 
 @media all and (max-width: 675px) {
   #menu {
     display: block;
   }
+
+
 
   .logo-text {
     display: none;
@@ -727,6 +706,7 @@ footer {
   .logo-image.open {
     display: none;
   }
+
 
   .navlinks ul {
     flex-direction: column;
