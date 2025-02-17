@@ -1,152 +1,136 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Food Exer | Home</title>
-    <meta name="description" content="Everything about food and exercise" />
-    <meta name="author" content="James Phillip K. De Guzman" />
 
-    <!-- Consolidated Google Fonts Link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Food Exer | Home</title>
+  <meta name="description" content="Everything about food and exercise" />
+  <meta name="author" content="James Phillip K. De Guzman" />
 
-    <link rel="stylesheet" href="css/base.css" />
+  <!-- Consolidated Google Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
 
-    <script src="js/base.js" type="module"></script>
-    <script src="js/app.mjs" type="module"></script>
+  <link rel="stylesheet" href="css/base.css" />
 
-    <link
-      rel="icon"
-      href="assets/icons/foodexer-logo.ico"
-      type="image/x-icon"
-    />
-  </head>
+  <script src="js/base.js" type="module"></script>
+  <script src="js/app.mjs" type="module"></script>
 
-  <body>
-    <header id="main-header">
-      <div class="navlinks">
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Site Map</a></li>
-          <li><a href="#">Attributions</a></li>
-        </ul>
-        <button id="menu" aria-label="menu"></button>
-      </div>
-    </header>
+  <link rel="icon" href="assets/icons/foodexer-logo.ico" type="image/x-icon" />
+</head>
 
-    <div class="hero-container">
-      <section class="user-login">
-        <h1>User Login</h1>
-        <p>Customize your FoodExer profile for a better experience!</p>
-        <br />
-        <form novalidate action="" name="sign-up" class="foodexer-signup">
-          <label for="email">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              minlength="8"
-              placeholder="Enter your email"
-            />
-            <span class="error" aria-live="polite"></span>
-          </label>
-          <button id="signup" class="sign-up" type="submit">Sign Up</button>
-        </form>
-      </section>
-
-      <section class="hero-image">
-        <img
-          src="assets/images/foodexer-banner.webp"
-          alt="FoodExer banner hero image from Freepik"
-          width="300"
-          height="300"
-        />
-      </section>
-
-      <!-- https://www.freepik.com/free-photo/sport-wellbeing-active-lifestyle-concept-slim-healthy-cute-female-gym-coach-fitness-trainer_32348710.htm#fromView=search&page=1&position=5&uuid=3c5fb1d5-6b1f-48a6-8f8b-fdfb1d721c30&new_detail=true&query=food+and+exercise -->
+<body>
+  <header id="main-header">
+    <div class="navlinks">
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Site Map</a></li>
+        <li><a href="#">Attributions</a></li>
+      </ul>
+      <button id="menu" aria-label="menu"></button>
     </div>
+    <span id="localjson-status"></span>
+    <br>
+    <label for="checkbox">Use local json for testing</label>
+    <input type="checkbox" id="localjson-check" name="localjson" checked />
+  </header>
 
-    <main>
-      <div class="wrapper">
-        <section class="whatwedo">
-          <div class="intro">
-            <h1 class="sticker">Welcome to FoodExer!</h1>
-            <br />
-            <br />
-            <p class="welcome">
-              At FoodExer, we believe in a balanced lifestyle of healthy food
-              and exercise. Whether you're exploring nutritious recipes,
-              tracking your fitness, or staying motivated, FoodExer is here to
-              help.
-            </p>
-            <br />
-            <p class="welcome">
-              Our platform combines the best of both worlds to empower you with
-              the tools and knowledge for healthier choices. From meal ideas to
-              fitness ideas, we’re with you on your wellness journey.
-            </p>
+  <div class="hero-container">
+    <section class="user-login">
+      <h1>User Login</h1>
+      <p>Customize your FoodExer profile for a better experience!</p>
+      <br />
+      <form novalidate action="" name="sign-up" class="foodexer-signup">
+        <label for="email">
+          <input type="email" id="email" name="email" required minlength="8" placeholder="Enter your email" />
+          <span class="error" aria-live="polite"></span>
+        </label>
+        <button id="signup" class="sign-up" type="submit">Sign Up</button>
+      </form>
+    </section>
 
-            <img
-              class="hero"
-              src="assets/images/pexels-mastercowley-1153369.jpg"
-              alt="Photo credits by Nathan Cowley"
-              height="500"
-              width="800"
-            />
-          </div>
+    <section class="hero-image">
+      <img src="assets/images/foodexer-banner.webp" alt="FoodExer banner hero image from Freepik" width="300"
+        height="300" />
+    </section>
+
+    <!-- https://www.freepik.com/free-photo/sport-wellbeing-active-lifestyle-concept-slim-healthy-cute-female-gym-coach-fitness-trainer_32348710.htm#fromView=search&page=1&position=5&uuid=3c5fb1d5-6b1f-48a6-8f8b-fdfb1d721c30&new_detail=true&query=food+and+exercise -->
+  </div>
+
+  <main>
+    <div class="wrapper">
+      <section class="whatwedo">
+        <div class="intro">
+          <h1 class="sticker">Welcome to FoodExer!</h1>
+          <br />
+          <br />
           <p class="welcome">
-            Start exploring and live a healthier, more balanced life today!
+            At FoodExer, we believe in a balanced lifestyle of healthy food
+            and exercise. Whether you're exploring nutritious recipes,
+            tracking your fitness, or staying motivated, FoodExer is here to
+            help.
           </p>
-        </section>
-      </div>
-      <section class="selection-cards">
-        <!-- <h1 class="sticker">What would you like to do?</h1> -->
-        <div class="container-card" id="card-container">
-          <div class="food-card" id="card-food" data-category="food">
-            <h1>Food</h1>
-            <img src="assets/icons/food.svg" alt="food icon" />
-          </div>
-          <div class="exer-card" id="card-exer" data-category="exercise">
-            <h1>Exercise</h1>
-            <img src="assets/icons/exercise.svg" alt="exercise icon" />
-          </div>
+          <br />
+          <p class="welcome">
+            Our platform combines the best of both worlds to empower you with
+            the tools and knowledge for healthier choices. From meal ideas to
+            fitness ideas, we’re with you on your wellness journey.
+          </p>
+
+          <img class="hero" src="assets/images/pexels-mastercowley-1153369.jpg" alt="Photo credits by Nathan Cowley"
+            height="500" width="800" />
         </div>
-      </section>
-
-      <label for="checkbox">Use local json for testing</label>
-      <input type="checkbox" id="localjson-check" name="localjson" checked />
-      <span id="fetched-data"></span>
-
-      <pre></pre>
-
-      <h3>
-        Fetch API sample from
-        <a href="https://rapidapi.com/" target="_blank">
-          https://rapidapi.com/
-        </a>
-      </h3>
-    </main>
-
-    <footer class="myfooter" id="main-footer">
-      <div class="mysite">
-        FoodExer &copy;
-        <span class="currentyear"></span>
-        <p class="lastmodified">
-          Last Modified:
-          <span id="lastModified"></span>
+        <p class="welcome">
+          Start exploring and live a healthier, more balanced life today!
         </p>
-        <br />
-        <a class="branding" href="https://jamesdeguzman.com/" target="_blank">
-          besys.tech&copy;
-          <span class="currentyear"></span>
-        </a>
+      </section>
+    </div>
+    <section class="selection-cards">
+      <!-- <h1 class="sticker">What would you like to do?</h1> -->
+      <div class="container-card" id="card-container">
+        <div class="food-card" id="card-food" data-category="food">
+          <h1>Food</h1>
+          <img src="assets/icons/food.svg" alt="food icon" />
+        </div>
+        <div class="exer-card" id="card-exer" data-category="exercise">
+          <h1>Exercise</h1>
+          <img src="assets/icons/exercise.svg" alt="exercise icon" />
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+
+    <span id="fetched-data"></span>
+
+    <pre></pre>
+
+    <h3>
+      Fetch API sample from
+      <a href="https://rapidapi.com/" target="_blank">
+        https://rapidapi.com/
+      </a>
+    </h3>
+  </main>
+
+  <footer class="myfooter" id="main-footer">
+    <div class="mysite">
+      FoodExer &copy;
+      <span class="currentyear"></span>
+      <p class="lastmodified">
+        Last Modified:
+        <span id="lastModified"></span>
+      </p>
+      <br />
+      <a class="branding" href="https://jamesdeguzman.com/" target="_blank">
+        besys.tech&copy;
+        <span class="currentyear"></span>
+      </a>
+    </div>
+  </footer>
+</body>
+
 </html>

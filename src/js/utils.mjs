@@ -44,7 +44,7 @@ export function getParams(param) {
     return product;
 }
 
-debugger;
+// debugger;
 export function renderListWithTemplate(
     templateFn,
     parentElement,
@@ -94,6 +94,76 @@ export async function loadHeaderFooter() {
 
 
 }
+
+export let isLocalJson;
+export function checkIsLocalJsonState() {
+    debugger;
+    let storedIsLocalJson = getLocalStorage("isLocalJson");
+
+    // If the value exists, use it; otherwise, default to true
+    if (storedIsLocalJson === null || storedIsLocalJson === undefined) {
+
+        isLocalJson = true;
+        setLocalStorage("isLocalJson", isLocalJson);
+    }
+    // Update display with status of isLocalJson
+    const localjsonStatus = document.querySelector("#localjson-status");
+    if (localjsonStatus) {
+        isLocalJson = storedIsLocalJson;
+        localjsonStatus.textContent = "isLocalJson: " + isLocalJson;
+    }
+
+    loadHeaderFooter();
+
+    // Get the checkbox element
+    const checkLocalJson = document.querySelector("#localjson-check");
+
+
+    if (checkLocalJson) {
+        // Sync checkbox with current state
+        checkLocalJson.checked = true;
+
+
+        // Listen when the checkbox is ticked or not by the user
+        checkLocalJson.addEventListener("click", () => {
+            // Change state of isLocalJson when checkbox is clicked
+            // isLocalJson = checkLocalJson.checked;
+
+            // Log the value of isLocalJson before mutation
+            console.log("Before mutation, isLocalJson: ", isLocalJson);
+
+            // Update the isLocalJson state based on the checkbox state
+            isLocalJson = document.querySelector("#localjson-check").checked;
+
+
+            // Log the value of isLocalJson after mutation
+            console.log("After mutation, isLocalJson: ", isLocalJson);
+
+            //Save the updated state to local storage
+            setLocalStorage("isLocalJson", isLocalJson);
+            // Update display
+            if (localjsonStatus) {
+                localjsonStatus.textContent = "isLocalJson: " + isLocalJson;
+            }
+
+
+        });
+    }
+}
+
+export function getIsLocalJsonFromStorage() {
+
+    let storedIsLocalJson = localStorage.getItem("isLocalJson");
+
+    // If it's not found in localStorage, default to true
+    if (storedIsLocalJson === null) {
+        storedIsLocalJson = true;  // Default to true
+        localStorage.setItem("isLocalJson", storedIsLocalJson);
+    }
+
+    return storedIsLocalJson === "true"; // Return boolean value
+}
+
 
 export function renderWithTemplate(template, parentElement, clear, data, callback) {
 

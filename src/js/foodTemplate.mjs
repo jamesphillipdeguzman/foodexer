@@ -16,6 +16,7 @@ function foodTemplate(foodItems) {
             return `<li class="food-items">
                         ${item.title}
                         <img id="${item.id}" src="${item.image}" alt="${item.title}">
+                        <span class="ingredients">${item.extendedIngredients}</span>
                     </li>`;
         }).join("");  // Joining the array into a single string
     }

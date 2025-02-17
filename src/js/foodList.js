@@ -1,11 +1,12 @@
-import { list } from "postcss";
-import { fetchFoodData, fetchFoodAPI, fetchRecipeAPI } from "./food.mjs";
+import { fetchFoodData, fetchFoodAPI, fetchRecipeData, fetchRecipeAPI } from "./food.mjs";
+// import { isLocalJson } from "./app.mjs";
 import FoodList from "./foodTemplate.mjs";
 import {
   getLocalStorage,
   qs,
   setLocalStorage,
   removeHtmlTags,
+  getIsLocalJsonFromStorage
 } from "./utils.mjs";
 
 const modal = qs("#recipeModal");
@@ -17,11 +18,14 @@ const foodContainer = qs("#food-container");
 closeModalBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
+debugger;
+let isLocalJson = getIsLocalJsonFromStorage();
 
 // Capture the recipe Id here when user clicked on the recipe image
 foodContainer.addEventListener("click", async (event) => {
   debugger;
   let recipe = "";
+
 
   const clickedEl = event.target;
   if (clickedEl.tagName === "IMG" && clickedEl.id) {
@@ -29,11 +33,23 @@ foodContainer.addEventListener("click", async (event) => {
     // console.log("Food ID: ", foodId);
     try {
       // Pass in the food item id to fetch the recipe information
+      if (isLocalJson) {
+        alert("fetchRecipeData invoked");
+        const fetchedRecipe = await fetchRecipeData(foodId);
+        setLocalStorage("recipeLocal", fetchedRecipe);
+        // Assign the contents of local storage to recipe variable
+        recipe = getLocalStorage("recipeLocal");
 
-      const fetchedRecipe = await fetchRecipeAPI(foodId);
-      setLocalStorage("recipeAPI", fetchedRecipe);
+      } else {
+        const fetchedRecipe = await fetchRecipeAPI(foodId);
+        // Save it in local storage for later processing
+        alert("fetchRecipeAPI invoked");
+        setLocalStorage("recipeAPI", fetchedRecipe);
+        // Assign the contents of local storage to recipe variable
+        recipe = getLocalStorage("recipeAPI");
+      }
 
-      recipe = getLocalStorage("recipeAPI");
+
     } catch (error) {
       // console.error("Failed to fetch recipe: ", error);
       return;
@@ -100,17 +116,46 @@ foodContainer.addEventListener("click", async (event) => {
 // Create new food list instance
 const foodList = new FoodList("food", null, foodContainer);
 
-// Button for fetching local data
-const fetchFoodLocalBtn = qs("#fetchFoodLocal");
-fetchFoodLocalBtn.addEventListener("click", () => {
-  debugger;
-  const foodData = getLocalStorage("foodLocal");
+// Button for fetching food data
+const fetchFoodBtn = qs("#fetchFood");
 
+fetchFoodBtn.addEventListener("click", () => {
+  debugger;
+  let foodData, foodAPI;
+  // Check whether foodLocal or foodAPI is available from local storage. Also, check for isLocalJson value.
+  if (getLocalStorage("foodLocal") && isLocalJson === true) {
+    fetchFoodBtn.textContent = "Show foodLocal";
+    foodData = getLocalStorage("foodLocal");
+
+  } else if (!getLocalStorage("foodLocal") && isLocalJson === true) {
+    fetchFoodData();
+  }
+
+  if (getLocalStorage("foodAPI") && isLocalJson === false) {
+    fetchFoodBtn.textContent = "Show foodAPI";
+    foodAPI = getLocalStorage("foodAPI");
+
+  } else if (!getLocalStorage("foodAPI") && isLocalJson === false) {
+    fetchFoodAPI();
+  }
+
+  // Parse food data for rendering purposes
   let parsedFoodData;
-  if (typeof foodData === "string") {
-    parsedFoodData = JSON.parse(foodData);
-  } else {
-    parsedFoodData = foodData;
+  if (foodData) {
+    // Check if the data is a string and needs to be parsed
+    if (typeof foodData === "string" && foodData !== undefined) {
+      parsedFoodData = JSON.parse(foodData);
+    } else {
+      parsedFoodData = foodData; // it's already an object, so no need to parse
+    }
+  }
+
+  if (foodAPI) {
+    if (typeof foodAPI === "string" && foodAPI !== undefined) {
+      parsedFoodData = JSON.parse(foodAPI);
+    } else {
+      parsedFoodData = foodAPI; // it's already an object, so no need to parse
+    }
   }
 
   if (parsedFoodData) {
@@ -119,4 +164,6 @@ fetchFoodLocalBtn.addEventListener("click", () => {
     // console.log("No data available in local storage");
     return;
   }
+
 });
+

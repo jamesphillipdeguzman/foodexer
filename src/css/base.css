@@ -45,6 +45,11 @@ html {
   margin: 0;
 }
 
+#localjson-status,
+label {
+  color: rgb(118, 116, 116);
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -431,7 +436,7 @@ main {
   position: absolute;
   padding: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
   z-index: 99;
   left: 0;
 }

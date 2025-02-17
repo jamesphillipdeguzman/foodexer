@@ -103,7 +103,7 @@ export async function fetchFoodAPI() {
     clearTimeout(timeoutId);
     myActivity.innerHTML = "";
     // Display result in pre tag
-    myActivity.innerHTML = JSON.stringify(result, null, 2);
+    myActivity.innerHTML = JSON.stringify(foodResult, null, 2);
     // Determine if local data or API was fetched
     fetchedData.textContent = "You fetched a Third-party API";
   } catch (error) {
@@ -113,15 +113,69 @@ export async function fetchFoodAPI() {
 }
 
 
+// This function grabs the the food local json data asynchronously
+
+export async function fetchRecipeData() {
+  if (myActivity) {
+
+    myActivity.innerHTML = "";
+
+    timeoutId = setTimeout(() => {
+      myActivity.innerHTML = `Loading recipe json...`;
+    }, 500);
+
+  }
+
+
+  try {
+
+    // Local json for food
+    let url = "/json/recipe.json";
+    // Convert promise to a response object
+    const response = await fetch(url);
+
+    // Check if response returned between 200-299, otherwise, throw error of "Data not found"
+    if (response.ok) {
+      const data = await response.json();
+      const recipeData = data;
+      // Display it in the console
+      // alert(recipeData);
+      debugger;
+      console.log("RecipeData: ", recipeData);
+      // Only run this if food key was not found in localstorage
+      if (!getLocalStorage("recipeLocal") || getLocalStorage("recipeLocal").length === 0) {
+        setLocalStorage("recipeLocal", recipeData);
+      }
+
+      clearTimeout(timeoutId);
+      if (myActivity) {
+        myActivity.innerHTML = "";
+        // Display results on the HTML page
+        myActivity.innerHTML = JSON.stringify(recipeData, null, 2);
+      }
+
+      // Determine if local data or API was fetched
+      fetchedData.textContent = "You fetched a local json data";
+    } else {
+      console.log("Data not found");
+    }
+    // Catch other errors here...
+  } catch (error) {
+    console.log(`Error: ${error.message}`);
+  }
+
+}
+
+
 // Async function to fetch JSON and display the recipe information
 export async function fetchRecipeAPI(foodId) {
   debugger;
-  // if (myActivity) {
-  //   myActivity.innerHTML = "";
-  //   timeoutId = setTimeout(() => {
-  //     myActivity.innerHTML = `Loading food recipe API...`;
-  //   }, 500);
-  // }
+  if (myActivity) {
+    myActivity.innerHTML = "";
+    timeoutId = setTimeout(() => {
+      myActivity.innerHTML = `Loading food recipe API...`;
+    }, 500);
+  }
 
 
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -148,29 +202,21 @@ export async function fetchRecipeAPI(foodId) {
     const recipeResult = result;
 
     setLocalStorage("recipeAPI", recipeResult);
-    return recipeResult;
-
-    // console.log(`RecipeAPI for ${foodId}`, recipeResult);
-    // // Only run this if food key was not found in localstorage
-    // if (getLocalStorage("recipeAPI")) {
-    //   // empty recipeAPI first
-    //   setLocalStorage("recipeAPI", []);
-    // }
-
-
-
 
     clearTimeout(timeoutId);
     if (myActivity) {
       myActivity.innerHTML = "";
       // Display result in pre tag
-      myActivity.innerHTML = JSON.stringify(result, null, 2);
+      myActivity.innerHTML = JSON.stringify(recipeResult, null, 2);
     }
 
     if (fetchedData) {
       // Determine if local data or API was fetched
       fetchedData.textContent = "You fetched a Third-party API";
     }
+    return recipeResult;
+
+
 
   } catch (error) {
     console.log('Error:', error);

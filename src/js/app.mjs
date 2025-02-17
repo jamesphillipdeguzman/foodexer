@@ -1,6 +1,6 @@
 import { fetchFoodData, fetchFoodAPI } from "./food.mjs";
 import { fetchExerciseData, fetchExerciseAPI } from "./exercise.mjs";
-import { loadHeaderFooter, getParams } from "./utils.mjs";
+import { checkIsLocalJsonState, getIsLocalJsonFromStorage } from "./utils.mjs";
 // import { storeAccessInfo, getUserId, hamburgerMenuToggle, setCurrentYear, setLastModifiedDate, logLastAccess } from './base.js';
 
 
@@ -9,16 +9,29 @@ import { loadHeaderFooter, getParams } from "./utils.mjs";
 export const myActivity = document.querySelector("pre");
 // Local JSON data (cached for testing purposes)
 export let fetchedData = document.querySelector("#fetched-data");
-// Update the URL query string withouth reloading the page
+// Update the URL query string without reloading the page
 export const currentUrl = new URL(window.location.href);
 // Update global variable for activity
 export let activity = "";
 
-export let isLocalJson = true;
 
+
+let localjsonStatus = document.querySelector("#localjson-status");
+
+let isLocalJson = getIsLocalJsonFromStorage();
 
 export function handleCardClick(isLocalJson) {
   console.log("isLocalJson: ", isLocalJson);
+
+  // Use the global `isLocalJson` directly inside this function
+  const localjsonStatus = document.querySelector("#localjson-status");
+
+
+  // Update display with status of isLocalJson
+  if (localjsonStatus) {
+    localjsonStatus.textContent = "isLocalJson: " + isLocalJson;
+  }
+
   const cardContainer = document.querySelector("#card-container");
 
 
@@ -61,25 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // setLastModifiedDate();
   // getUserId();
   // storeAccessInfo();
-  loadHeaderFooter();
+
+  debugger;
 
 
+  if (localjsonStatus) {
 
-  const checkLocalJson = document.querySelector("#localjson-check");
+    checkIsLocalJsonState();
 
-  if (checkLocalJson) {
-    // Listen when the checkbox is ticked or not by the user
-    checkLocalJson.addEventListener("click", () => {
 
-      isLocalJson = checkLocalJson.checked;
-      handleCardClick(isLocalJson);
-
-      // Reload the page if the checkbox is checked
-      if (checkLocalJson.checked) {
-        window.location.reload();
-      }
-
-    });
+  } else {
+    console.warn("localjsonStatus element not found");
   }
 
   // Call the function to handle card clicks
