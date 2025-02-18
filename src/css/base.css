@@ -456,6 +456,11 @@ main {
   margin: 0 auto;
   width: 100%;
   max-width: 100vw;
+  /* display: none; */
+}
+
+.hide {
+  display: none;
 }
 
 .sticker {
@@ -475,7 +480,8 @@ main {
 }
 
 .welcome {
-  margin: 5rem;
+  padding: 5rem;
+  margin-top: 3rem;
   color: var(--accent-color1);
   line-height: 2.5rem;
   font-size: var(--font-size-medium);
@@ -588,6 +594,7 @@ select {
 
 footer {
   background-color: rgba(187, 204, 238, 0.5);
+  margin-top: 3rem;
   max-width: 100vw;
   width: 100%;
   height: 15vh;

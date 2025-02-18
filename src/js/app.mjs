@@ -1,14 +1,12 @@
 import { fetchFoodData, fetchFoodAPI } from "./food.mjs";
 import { fetchExerciseData, fetchExerciseAPI } from "./exercise.mjs";
-import { checkIsLocalJsonState, getIsLocalJsonFromStorage } from "./utils.mjs";
-// import { storeAccessInfo, getUserId, hamburgerMenuToggle, setCurrentYear, setLastModifiedDate, logLastAccess } from './base.js';
+import { checkIsLocalJsonState, getIsLocalJsonFromStorage, qs, getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 
-
-// export const chooseActivity = document.querySelector("#choose-activity");
-export const myActivity = document.querySelector("pre");
+// export const chooseActivity = qs("#choose-activity");
+export const myActivity = qs("pre");
 // Local JSON data (cached for testing purposes)
-export let fetchedData = document.querySelector(".fetched-data");
+export let fetchedData = qs(".fetched-data");
 // Update the URL query string without reloading the page
 export const currentUrl = new URL(window.location.href);
 // Update global variable for activity
@@ -16,7 +14,7 @@ export let activity = "";
 
 
 
-let localjsonStatus = document.querySelector("#localjson-status");
+let localjsonStatus = qs("#localjson-status");
 
 let isLocalJson = getIsLocalJsonFromStorage();
 
@@ -24,7 +22,7 @@ export function handleCardClick(isLocalJson) {
   console.log("isLocalJson: ", isLocalJson);
 
   // Use the global `isLocalJson` directly inside this function
-  const localjsonStatus = document.querySelector("#localjson-status");
+  const localjsonStatus = qs("#localjson-status");
 
 
   // Update display with status of isLocalJson
@@ -32,7 +30,7 @@ export function handleCardClick(isLocalJson) {
     localjsonStatus.textContent = "isLocalJson: " + isLocalJson;
   }
 
-  const cardContainer = document.querySelector("#card-container");
+  const cardContainer = qs("#card-container");
 
 
 
@@ -67,22 +65,45 @@ export function handleCardClick(isLocalJson) {
 
 }
 
+// Check if signup email exists in local storage
+export function checkSignup() {
+
+  let main = qs("main");
+  let login = qs("#login");
+  const signup = getLocalStorage("signup");
+
+  if (signup && signup.length > 0) {
+    if (login && main) {
+      // Hide login if user has signed up using email
+      login.style.display = "none";
+      // Show the welcome content to the user
+      main.classList.remove("hide");
+    }
+
+
+  } else {
+    if (login && main) {
+      // Show login to signup
+      login.style.display = "flex";
+      // Hide welcome content if not yet signed up
+      main.classList.add("hide");
+    }
+
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  // hamburgerMenuToggle();
-  // setCurrentYear();
-  // setLastModifiedDate();
-  // getUserId();
-  // storeAccessInfo();
 
   debugger;
 
+  // Check if the user has signed up with an email address
+  checkSignup();
 
+
+  // Testing for local json data and external API
   if (localjsonStatus) {
-
     checkIsLocalJsonState();
-
-
   } else {
     console.warn("localjsonStatus element not found");
   }
@@ -93,9 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Email validation logic
-  const form = document.querySelector("form");
-  const email = document.querySelector("#email");
-  const emailError = document.querySelector("#email + span.error");
+  const form = qs("form");
+  const email = qs("#email");
+  const emailError = qs("#email + span.error");
 
   // List of valid email domains
   const validDomains = [
@@ -151,10 +172,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Listen for signup
+  debugger;
+  const signupBtn = qs("#signup-btn");
+  if (signupBtn) {
+    signupBtn.addEventListener("click", () => handleUserSignUp(email));
+  }
+
+
+  function handleUserSignUp(email) {
+    let userEmail = email.value;
+    // alert(userEmail);
+    // Save email address to local storage
+    if (signupBtn) {
+      // Save email address to local storage
+      let signup = getLocalStorage("signup") || [];
+
+      // Add email to the signup array
+      signup.push(userEmail);
+
+      // Save the updated array back to local storage
+      setLocalStorage("signup", signup);
+    }
+  }
 
   // Go to selected html page
-  const cardFood = document.querySelector("#card-food");
-  const cardExer = document.querySelector("#card-exer");
+  const cardFood = qs("#card-food");
+  const cardExer = qs("#card-exer");
 
   if (cardFood) {
     cardFood.addEventListener("click", () => {

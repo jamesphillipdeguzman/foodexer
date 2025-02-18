@@ -14,8 +14,8 @@ function foodTemplate(foodItems) {
     if (Array.isArray(foodItems)) {
         return foodItems.map((item) => {
             return `<li class="food-items">
-                        ${item.title}
                         <img id="${item.id}" src="${item.image}" alt="${item.title}">
+                        ${item.title}
                         
                     </li>`;
         }).join("");  // Joining the array into a single string

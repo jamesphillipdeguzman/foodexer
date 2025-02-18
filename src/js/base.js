@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setLastModifiedDate() {
-    const todaysDate = new Date();
+    const todaysDate = new Date(document.lastModified);
     const dateFormat = { year: "numeric", month: "short", day: "numeric" };
     const timeFormat = todaysDate.toLocaleTimeString();
     const formattedDate = todaysDate.toLocaleDateString("en-US", dateFormat);

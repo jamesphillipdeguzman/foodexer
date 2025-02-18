@@ -9,6 +9,10 @@ import {
   getIsLocalJsonFromStorage
 } from "./utils.mjs";
 
+import { checkSignup } from "./app.mjs";
+
+
+
 const modal = qs("#recipeModal");
 const closeModalBtn = qs("#closeModal");
 // Get the food container where food items will be rendered
@@ -174,3 +178,9 @@ fetchFoodBtn.addEventListener("click", () => {
 
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Check if user has signed up; If yes, show the welcome screen; otherwise, hide it
+  checkSignup();
+
+});
