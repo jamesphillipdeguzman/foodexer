@@ -95,9 +95,12 @@ export async function loadHeaderFooter() {
 
 }
 
+loadHeaderFooter();
+
 export let isLocalJson;
 export function checkIsLocalJsonState() {
     debugger;
+
     let storedIsLocalJson = getLocalStorage("isLocalJson");
 
     // If the value exists, use it; otherwise, default to true
@@ -113,15 +116,16 @@ export function checkIsLocalJsonState() {
         localjsonStatus.textContent = "isLocalJson: " + isLocalJson;
     }
 
-    loadHeaderFooter();
+
 
     // Get the checkbox element
-    const checkLocalJson = document.querySelector("#localjson-check");
+    let checkLocalJson = document.querySelector("#localjson-check");
 
 
     if (checkLocalJson) {
         // Sync checkbox with current state
-        checkLocalJson.checked = true;
+        checkLocalJson.checked = isLocalJson;
+        localjsonStatus.textContent = "isLocalJson: " + isLocalJson;
 
 
         // Listen when the checkbox is ticked or not by the user
@@ -145,6 +149,9 @@ export function checkIsLocalJsonState() {
             if (localjsonStatus) {
                 localjsonStatus.textContent = "isLocalJson: " + isLocalJson;
             }
+
+            // Refresh the page
+            window.location.reload();
 
 
         });

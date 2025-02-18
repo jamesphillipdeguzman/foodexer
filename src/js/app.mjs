@@ -8,7 +8,7 @@ import { checkIsLocalJsonState, getIsLocalJsonFromStorage } from "./utils.mjs";
 // export const chooseActivity = document.querySelector("#choose-activity");
 export const myActivity = document.querySelector("pre");
 // Local JSON data (cached for testing purposes)
-export let fetchedData = document.querySelector("#fetched-data");
+export let fetchedData = document.querySelector(".fetched-data");
 // Update the URL query string without reloading the page
 export const currentUrl = new URL(window.location.href);
 // Update global variable for activity
