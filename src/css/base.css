@@ -53,7 +53,7 @@ html {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 1rem;
-  margin-top: 0 1rem;
+  margin-top: 1rem;
 }
 
 .test-box #localjson-status {
@@ -196,6 +196,7 @@ ul.navlinks {
   border-radius: 10% 5% 5% 10%;
   outline: none;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* USER LOGIN Styles */

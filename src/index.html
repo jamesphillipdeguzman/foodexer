@@ -2,25 +2,25 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>FoodExer | Home</title>
-  <meta name="description" content="Food and exercise web app" />
-  <meta name="author" content="James Phillip K. De Guzman" />
+  <meta name="description" content="Food and exercise web app">
+  <meta name="author" content="James Phillip K. De Guzman">
 
   <!-- Consolidated Google Fonts Link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet">
 
-  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/base.css">
 
   <script src="js/base.js" type="module"></script>
   <script src="js/app.mjs" type="module"></script>
 
-  <link rel="icon" href="assets/icons/foodexer-logo.ico" type="image/x-icon" />
+  <link rel="icon" href="assets/icons/foodexer-logo.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
     <div class="test-box">
       <span id="localjson-status"></span>
       <div class="toggle-me">
-        <label for="checkbox">Use local json for testing</label>
+        <label for="localjson-check">Use local json for testing</label>
         <input type="checkbox" id="localjson-check" name="localjson">
       </div>
     </div>
@@ -47,20 +47,20 @@
     <section class="user-login">
       <h1>User Login</h1>
       <p>Customize your FoodExer profile for a better experience!</p>
-      <br />
-      <form novalidate action="" name="sign-up" class="foodexer-signup">
+      <br>
+      <form novalidate name="sign-up" class="foodexer-signup">
         <label for="email">
-          <input type="email" id="email" name="email" required minlength="8" placeholder="Enter your email" />
+          <input type="email" id="email" name="email" required minlength="8" placeholder="Enter your email">
           <span class="error" aria-live="polite"></span>
         </label>
         <button id="signup-btn" class="sign-up" type="submit">Sign Up</button>
       </form>
     </section>
 
-    <section class="hero-image">
+    <div class="hero-image">
       <img src="assets/images/foodexer-banner.webp" alt="FoodExer banner hero image from Freepik" width="300"
-        height="300" />
-    </section>
+        height="300">
+    </div>
 
     <!-- https://www.freepik.com/free-photo/sport-wellbeing-active-lifestyle-concept-slim-healthy-cute-female-gym-coach-fitness-trainer_32348710.htm#fromView=search&page=1&position=5&uuid=3c5fb1d5-6b1f-48a6-8f8b-fdfb1d721c30&new_detail=true&query=food+and+exercise -->
   </div>
@@ -70,15 +70,15 @@
       <section class="whatwedo">
         <div class="intro">
           <h1 class="sticker">Welcome to FoodExer!</h1>
-          <br />
-          <br />
+          <br>
+          <br>
           <p class="welcome">
             At FoodExer, we believe in a balanced lifestyle of healthy food
             and exercise. Whether you're exploring nutritious recipes,
             tracking your fitness, or staying motivated, FoodExer is here to
             help.
           </p>
-          <br />
+          <br>
           <p class="welcome">
             Our platform combines the best of both worlds to empower you with
             the tools and knowledge for healthier choices. From meal ideas to
@@ -86,7 +86,7 @@
           </p>
 
           <img class="hero" src="assets/images/pexels-mastercowley-1153369.jpg" alt="Photo credits by Nathan Cowley"
-            height="500" width="800" />
+            height="500" width="800">
         </div>
         <p class="welcome">
           Start exploring and live a healthier, more balanced life today!
@@ -98,11 +98,11 @@
       <div class="container-card" id="card-container">
         <div class="food-card" id="card-food" data-category="food">
           <h1>Food</h1>
-          <img src="assets/icons/food.svg" alt="food icon" />
+          <img src="assets/icons/food.svg" alt="food icon">
         </div>
         <div class="exer-card" id="card-exer" data-category="exercise">
           <h1>Exercise</h1>
-          <img src="assets/icons/exercise.svg" alt="exercise icon" />
+          <img src="assets/icons/exercise.svg" alt="exercise icon">
         </div>
       </div>
     </section>
@@ -129,8 +129,7 @@
         <span id="lastModified"></span>
         <!-- <a class="branding" href="https://jamesdeguzman.com/" target="_blank">
           besys.tech&copy; -->
-        <!-- <span class="currentyear"></span> -->
-        </a>
+        <!-- <span class="currentyear"></span> </a> -->
       </div>
     </div>
   </footer>
