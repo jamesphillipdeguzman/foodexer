@@ -1,3 +1,8 @@
+// food.mjs
+// Contains both local JSON and External APIs
+// Local JSON: 1) fetchFoodData 2) fetchRecipeData
+// External APIs 1) fetchFoodAPI 2) fetchRecipeAPI
+
 import { fetchedData, handleCardClick } from "./app.mjs";
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
@@ -47,7 +52,7 @@ export async function fetchFoodData() {
       }
 
       // Determine if local data or API was fetched
-      fetchedData.textContent = "You fetched a local json data";
+      fetchedData.textContent = "You fetched a local JSON data";
     } else {
       console.log("Data not found");
     }

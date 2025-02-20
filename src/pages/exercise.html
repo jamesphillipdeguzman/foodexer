@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Food | Home</title>
-  <meta name="description" content="Food web app" />
+  <title>FoodExer | Exercise</title>
+  <meta name="description" content="Food and exercise web app" />
   <meta name="author" content="James Phillip K. De Guzman" />
 
   <!-- Consolidated Google Fonts Link -->
@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="../css/exercise.css" />
   <script src="../js/base.js" type="module"></script>
   <script src="../js/app.mjs" type="module"></script>
+  <script src="../js/exerciseList.js" type="module"></script>
 
   <link rel="icon" href="../assets/icons/foodexer-logo.ico" type="image/x-icon" />
 </head>
@@ -27,13 +28,19 @@
   <header id="main-header">
     <div class="navlinks">
       <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Site Map</a></li>
-        <li><a href="#">Attributions</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/site.html">Site Map</a></li>
+        <li><a href="../pages/attribution.html">Attributions</a></li>
       </ul>
       <button id="menu" aria-label="menu"></button>
     </div>
-    <span id="localjson-status"></span>
+    <div class="test-box">
+      <span id="localjson-status"></span>
+      <div class="toggle-me">
+        <label for="checkbox">Use local json for testing</label>
+        <input type="checkbox" id="localjson-check" name="localjson">
+      </div>
+    </div>
   </header>
 
   <main>
@@ -55,7 +62,35 @@
       <p class="welcome">
         Select an exercise routine to kickstart your fitness journey
       </p>
+      <div class="exercise-box">
+        <button id="fetchExercise" class="exercise-button">Show Exercise</button>
+        <select id="bodyPartSelect">
+          <option value="select"></option>
+          <option value="back">Back</option>
+          <option value="cardio">Cardio</option>
+          <option value="chest">Chest</option>
+          <option value="lower arms">Lower arms</option>
+          <option value="lower legs">Lower legs</option>
+          <option value="neck">Neck</option>
+          <option value="shoulders">Shoulders</option>
+          <option value="upper arms">Upper arms</option>
+          <option value="upper legs">Upper legs</option>
+          <option value="waist">Waist</option>
+        </select>
+        <span class="fetched-data"></span>
+      </div>
       <div id="exercise-container"></div>
+      <!-- Exercise Modal -->
+      <div id="exerciseModal" class="modal">
+        <div class="modal-content">
+          <div id="closeModal" class="close-btn">&times;</div>
+          <div id="exerciseTitle">Exercise Title</div>
+          <img id="exerciseImage" src="" alt="Exercise image" />
+
+          <p><strong>Instructions</strong></p>
+          <ol id="exerciseInstruction"></ol>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -66,12 +101,11 @@
       <p class="lastmodified">
         Last Modified:
         <span id="lastModified"></span>
+        <!-- <a class="branding" href="https://jamesdeguzman.com/" target="_blank">
+          besys.tech&copy; -->
+        <!-- <span class="currentyear"></span> -->
+        </a>
       </p>
-      <br />
-      <a class="branding" href="https://jamesdeguzman.com/" target="_blank">
-        besys.tech&copy;
-        <span class="currentyear"></span>
-      </a>
     </div>
   </footer>
 </body>

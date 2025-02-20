@@ -267,3 +267,10 @@ export function loadCarouselSlider(data) {
     initializeSlider();
 
 }
+// AI helped with this
+export function toTitleCase(str) {
+    return str
+        .split(/(?=[A-Z])|\s/)  // Split at spaces or capital letters
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())  // Capitalize each word
+        .join(" ");  // Join the words back together
+}

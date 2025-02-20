@@ -42,6 +42,13 @@
   transform: scale(1.01);
 }
 
+.food-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .food-button {
   margin-bottom: 2rem;
   height: 44px;
@@ -87,7 +94,6 @@
   font-size: 25px;
   font-weight: bold;
   top: 0;
-
 }
 
 .close-btn:hover,
@@ -133,6 +139,21 @@
 
 #recipeInstruction li {
   margin: 8px 0;
+}
+
+.food-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-button:hover {
+  background-color: #0056b3;
 }
 
 @media all and (max-width: 600px) {

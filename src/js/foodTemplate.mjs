@@ -1,4 +1,4 @@
-// list.mjs - Filters products by unique brand name.
+// foodTemplate.mjs
 // - Creates the foodTemplate for individual food item display.
 // - Defines the FoodList class, which takes in the category, dataSource, and listElement.
 // - Includes the init function to render the food list.
@@ -13,9 +13,10 @@ function foodTemplate(foodItems) {
     // If foodItems is an array
     if (Array.isArray(foodItems)) {
         return foodItems.map((item) => {
+            // console.log(item);
             return `<li class="food-items">
                         <img id="${item.id}" src="${item.image}" alt="${item.title}">
-                        ${item.title}
+                        ${item.title}                        
                         
                     </li>`;
         }).join("");  // Joining the array into a single string

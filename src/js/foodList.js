@@ -1,17 +1,25 @@
-import { fetchFoodData, fetchFoodAPI, fetchRecipeData, fetchRecipeAPI } from "./food.mjs";
-// import { isLocalJson } from "./app.mjs";
+// foodList.js
+// List at least 9 data points from the foodAPI
+// 1) title 2) image 3) healthScore 4) pricePerServing 5) readyInMinutes
+// 6) servings 7) summary 8) ingredients 9) instructions
+import {
+  fetchFoodData,
+  fetchFoodAPI,
+  fetchRecipeData,
+  fetchRecipeAPI,
+} from "./food.mjs";
+
 import FoodList from "./foodTemplate.mjs";
+
 import {
   getLocalStorage,
   qs,
   setLocalStorage,
   removeHtmlTags,
-  getIsLocalJsonFromStorage
+  getIsLocalJsonFromStorage,
 } from "./utils.mjs";
 
 import { checkSignup } from "./app.mjs";
-
-
 
 const modal = qs("#recipeModal");
 const closeModalBtn = qs("#closeModal");
@@ -24,15 +32,16 @@ closeModalBtn.addEventListener("click", () => {
 });
 debugger;
 let isLocalJson = getIsLocalJsonFromStorage();
+let isFoodDataFetched = false; // Avoid user from fetching API repeatedly
 
 // Capture the recipe Id here when user clicked on the recipe image
 foodContainer.addEventListener("click", async (event) => {
   debugger;
   let recipe = "";
 
-
   const clickedEl = event.target;
   if (clickedEl) {
+    isFoodDataFetched = false;
 
     if (clickedEl.tagName === "IMG" && clickedEl.id) {
       const foodId = clickedEl.id;
@@ -45,7 +54,6 @@ foodContainer.addEventListener("click", async (event) => {
           await fetchRecipeData(foodId);
           // Assign the contents of local storage to recipe variable
           recipe = getLocalStorage("recipeLocal");
-
         } else {
           const fetchedRecipe = await fetchRecipeAPI(foodId);
           // Save it in local storage for later processing
@@ -54,8 +62,6 @@ foodContainer.addEventListener("click", async (event) => {
           // Assign the contents of local storage to recipe variable
           recipe = getLocalStorage("recipeAPI");
         }
-
-
       } catch (error) {
         // console.error("Failed to fetch recipe: ", error);
         return;
@@ -63,22 +69,33 @@ foodContainer.addEventListener("click", async (event) => {
 
       if (recipe) {
         // Set content for the modal
-        qs("#recipeTitle").textContent = recipe.title;
+        qs("#recipeTitle").innerHTML = `<h1>${recipe.title}</h1>`;
         qs("#recipeImage").src = recipe.image;
-        const cleanedSummary = removeHtmlTags(recipe.summary);
-        qs("#recipeSummary").textContent = cleanedSummary;
+        qs("#healthScore").innerHTML =
+          `<strong>Health Score:</strong> ${recipe.healthScore}`;
+        qs("#pricePerServing").innerHTML =
+          `<strong>Price per Serving:</strong> ${recipe.pricePerServing}`;
+        qs("#readyInMinutes").innerHTML =
+          `<strong>Ready in Minutes:</strong> ${recipe.readyInMinutes}`;
+        qs("#servings").innerHTML =
+          `<strong>Servings:</strong> ${recipe.servings}`;
 
+        const cleanedSummary = removeHtmlTags(recipe.summary);
+        qs("#recipeSummary").innerHTML =
+          `<br><strong>Summary:</strong> ${cleanedSummary}`;
 
         // qs("#recipeInstruction").textContent = recipe.instructions;
-
+        debugger;
         // Populate the ingredients list
         const ingredientList = qs("#ingredientList");
-        // ingredientList.innerHTML = "";
-        // recipe.extendedIngredients.forEach(ingredient => {
-        //     const listItem = document.createElement("li");
-        //     listItem.textContent = ingredient;
-        //     ingredientList.appendChild(listItem);
-        // });
+        ingredientList.innerHTML = "";
+
+        recipe.extendedIngredients.map((ingredient) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${ingredient.original}`;
+
+          ingredientList.appendChild(listItem);
+        });
         // AI helped here...
         // Populate the instructions list
         const instructionList = qs("#recipeInstruction");
@@ -133,21 +150,30 @@ const fetchFoodBtn = qs("#fetchFood");
 fetchFoodBtn.addEventListener("click", () => {
   debugger;
   let foodData, foodAPI;
+
+  // Check if API data was fetched already
+  if (isFoodDataFetched) {
+    alert("Data has already been fetched. No need to fetch it again.");
+    return;
+  }
+
   // Check whether foodLocal or foodAPI is available from local storage. Also, check for isLocalJson value.
   if (getLocalStorage("foodLocal") && isLocalJson === true) {
     fetchFoodBtn.textContent = "Show foodLocal";
     foodData = getLocalStorage("foodLocal");
-
+    isFoodDataFetched = true;
   } else if (!getLocalStorage("foodLocal")) {
     fetchFoodData();
+    isFoodDataFetched = true;
   }
 
   if (getLocalStorage("foodAPI") && isLocalJson === false) {
     fetchFoodBtn.textContent = "Show foodAPI";
     foodAPI = getLocalStorage("foodAPI");
-
+    isFoodDataFetched = true;
   } else if (!getLocalStorage("foodAPI")) {
     fetchFoodAPI();
+    isFoodDataFetched = true;
   }
 
   // Parse food data for rendering purposes
@@ -176,11 +202,16 @@ fetchFoodBtn.addEventListener("click", () => {
     return;
   }
 
+  checkFoodDataFetch(isFoodDataFetched);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+function checkFoodDataFetch(isFoodDataFetched) {
+  if (isFoodDataFetched) {
+    alert("Data was successfully fetched.");
+  }
+}
 
+document.addEventListener("DOMContentLoaded", () => {
   // Check if user has signed up; If yes, show the welcome screen; otherwise, hide it
   checkSignup();
-
 });
