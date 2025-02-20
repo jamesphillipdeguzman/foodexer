@@ -358,6 +358,37 @@ select:focus {
   transform: scale(1.01);
 }
 
+/* Animate fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animate fadeOut */
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 2s ease-in-out;
+}
+
 .foodexer-signup {
   display: flex;
   flex-direction: column;
@@ -628,6 +659,61 @@ footer {
 .lastmodified p {
   color: white;
 }
+
+.attribution,
+.site-map {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+
+}
+
+.attribution h1,
+.site-map h1 {
+  color: black;
+
+}
+
+.attribution h3,
+.site-map h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+}
+
+.attribution-details,
+.sitemap-details {
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.wf-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wireframes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.wireframes a {
+  color: white;
+  margin-top: 2rem;
+  text-decoration: none;
+}
+
+.wireframes a:hover {
+  color: yellow;
+
+}
+
+
 
 @media all and (max-width: 200px) {
   .wrapper {

@@ -78,7 +78,7 @@ async function loadTemplate(path) {
 }
 
 export async function loadHeaderFooter() {
-    debugger;
+    // debugger;
 
     const headerPath = "/partials/header.html";
     const footerPath = "/partials/footer.html";
@@ -99,7 +99,7 @@ loadHeaderFooter();
 
 export let isLocalJson;
 export function checkIsLocalJsonState() {
-    debugger;
+    // debugger;
 
     let storedIsLocalJson = getLocalStorage("isLocalJson");
 
@@ -151,7 +151,7 @@ export function checkIsLocalJsonState() {
             }
 
             // Refresh the page
-            window.location.reload();
+            // window.location.reload();
 
 
         });
@@ -195,14 +195,14 @@ export function removeHtmlTags(inputString) {
 
 
 export function loadCarouselSlider(data) {
-    debugger;
+    // debugger;
     console.log(data);
     const slides = qs(".my-food-card");
     let slideIndex = 0;
     let intervalId = null;
 
     function initializeSlider() {
-        // debugger;
+        //  debugger;
         slides[slideIndex].classList.add("displaySlide");
         intervalId = setInterval(nextSlide, 5000);
     }

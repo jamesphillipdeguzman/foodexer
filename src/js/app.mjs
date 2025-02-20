@@ -65,32 +65,52 @@ export function handleCardClick(isLocalJson) {
 
 }
 
+
 // Check if signup email exists in local storage
 export function checkSignup() {
 
-  let main = qs("main");
-  let login = qs("#login");
+  const main = qs("main");
+  const login = qs("#login");
   const signup = getLocalStorage("signup");
+  let user = qs("#user");
 
-  if (signup && signup.length > 0) {
-    if (login && main) {
+  // Default to false
+  // setLocalStorage("isAnimTriggered", false);
+  const isAnimTriggered = getLocalStorage("isAnimTriggered");
+
+
+  if (login && main && !isAnimTriggered) {
+    if (signup && signup.length > 0) {
       // Hide login if user has signed up using email
-      login.style.display = "none";
+      login.classList.add("fade-out")
+      setTimeout(() => {
+        login.style.display = "none";
+      }, 2000);
       // Show the welcome content to the user
       main.classList.remove("hide");
-    }
 
+      user.style.display = "none";
 
-  } else {
-    if (login && main) {
+      // flag that animation triggered
+      setLocalStorage("isAnimTriggered", true);
+    } else {
       // Show login to signup
+      login.classList.add("fade-in");
       login.style.display = "flex";
       // Hide welcome content if not yet signed up
       main.classList.add("hide");
-    }
+      // user.style.display = "none";
 
+
+    }
+  } else if (isAnimTriggered && signup && user && signup.length > 0) {
+    user.style.display = "none";
+    // login.style.display = "none";
   }
 }
+
+window.addEventListener("DOMContentLoaded", checkSignup);
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
