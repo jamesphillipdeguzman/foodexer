@@ -50,7 +50,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
   margin-top: 1rem;
@@ -71,7 +71,7 @@ html {
 #localjson-status,
 label {
   margin-top: 2rem;
-  color: rgb(118, 116, 116);
+  color: white;
 }
 
 .wrapper {
@@ -691,6 +691,14 @@ footer {
 .attribution-details.hero {
   align-self: center;
   margin: 0 auto;
+}
+
+.attribution-details a {
+  color: white;
+}
+
+.attribution-details a:hover {
+  color: yellow;
 }
 
 .wf-images {
