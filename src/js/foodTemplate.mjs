@@ -8,7 +8,7 @@ import { renderListWithTemplate } from "./utils.mjs";
 
 // Function for creating the food template
 function foodTemplate(foodItems) {
-    debugger;
+    // debugger;
 
     // If foodItems is an array
     if (Array.isArray(foodItems)) {
@@ -53,7 +53,7 @@ export default class FoodList {
     }
     // Use init function to initialize and grab the dataSource using the getData function from ProductData class.
     async init() {
-        debugger;
+        // debugger;
         try {
             const foodlist = await this.dataSource.getData(this.title);
 
@@ -75,7 +75,7 @@ export default class FoodList {
     }
 
     renderList(foodlist) {
-        debugger;
+        // debugger;
         // AI helped here...
         // Check if foodlist is an array and has items
         if (Array.isArray(foodlist) && foodlist.length > 0) {

@@ -35,7 +35,7 @@ export function handleCardClick(isLocalJson) {
 
 
   function cardClickHandler(event) {
-    debugger;
+    // debugger;
     // Checked which card was clicked
     const clickedCard = event.target.closest('.food-card, .exer-card');
     activity = clickedCard.dataset.category;
@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", checkSignup);
 document.addEventListener("DOMContentLoaded", () => {
 
 
-  debugger;
+  // debugger;
 
   // Check if the user has signed up with an email address
   checkSignup();
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Listen for signup
-  debugger;
+  // debugger;
   const signupBtn = qs("#signup-btn");
   if (signupBtn) {
     signupBtn.addEventListener("click", () => handleUserSignUp(email));

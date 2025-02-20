@@ -7,7 +7,7 @@ import { renderListWithTemplate, toTitleCase } from "./utils.mjs";
 
 // Function for creating the exercise template
 function exerciseTemplate(exerciseItems) {
-    debugger;
+    // debugger;
     // console.log("exerciseItems: ", exerciseItems);
 
     // If exerciseItems is an array
@@ -53,7 +53,7 @@ export default class ExerciseList {
 
 
         try {
-            debugger;
+            // debugger;
             const exerciseList = await this.dataSource.getData(this.title);
             console.log("exerciseList: ", exerciseList)
             // Render list of exercise items here...
@@ -72,7 +72,7 @@ export default class ExerciseList {
     }
 
     renderList(exerciseList) {
-        debugger;
+        // debugger;
         // Check if exerciseList is an array and has items
         if (Array.isArray(exerciseList) && exerciseList.length > 0) {
             renderListWithTemplate(exerciseTemplate, this.listElement, exerciseList);

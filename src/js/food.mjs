@@ -11,7 +11,7 @@ let timeoutId;
 // This function grabs the the food local json data asynchronously
 const myActivity = document.querySelector("pre");
 export async function fetchFoodData() {
-  debugger;
+  // debugger;
   if (myActivity) {
 
     myActivity.innerHTML = "";
@@ -36,7 +36,7 @@ export async function fetchFoodData() {
       const foodData = data;
       // Display it in the console
       // alert(foodData);
-      debugger;
+      // debugger;
       console.log("FoodData: ", foodData);
       // Only run this if food key was not found in localstorage
       if (!getLocalStorage("foodLocal") || getLocalStorage("foodLocal").length === 0) {
@@ -100,7 +100,7 @@ export async function fetchFoodAPI() {
     // alert(result);
     // console.log(result);
     const foodResult = result;
-    debugger;
+    // debugger;
     console.log("FoodAPI: ", foodResult);
     // Only run this if food key was not found in localstorage
     if (!getLocalStorage("foodAPI") || getLocalStorage("foodAPI").length === 0) {
@@ -147,7 +147,7 @@ export async function fetchRecipeData(foodId) {
       const recipeData = data;
       // Display it in the console
       // alert(recipeData);
-      debugger;
+      // debugger;
       console.log("RecipeData: ", recipeData);
       // Only run this if food key was not found in localstorage
       if (!getLocalStorage("recipeLocal") || getLocalStorage("recipeLocal").length === 0) {
@@ -179,7 +179,7 @@ export async function fetchRecipeData(foodId) {
 
 // Async function to fetch JSON and display the recipe information
 export async function fetchRecipeAPI(foodId) {
-  debugger;
+  // debugger;
   if (myActivity) {
     myActivity.innerHTML = "";
     timeoutId = setTimeout(() => {

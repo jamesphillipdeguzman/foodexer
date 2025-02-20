@@ -688,6 +688,11 @@ footer {
   gap: 2rem;
 }
 
+.attribution-details.hero {
+  align-self: center;
+  margin: 0 auto;
+}
+
 .wf-images {
   display: flex;
   flex-direction: column;

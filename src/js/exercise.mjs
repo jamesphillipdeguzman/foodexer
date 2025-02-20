@@ -28,7 +28,7 @@ function clearLoadingMessage() {
 }
 
 export async function fetchExerciseData(bodyPart) {
-    debugger;
+    // debugger;
     if (myActivity) {
         myActivity.innerHTML = "";
     }
@@ -50,7 +50,7 @@ export async function fetchExerciseData(bodyPart) {
             }
 
             clearLoadingMessage();
-            debugger;
+            // debugger;
             // Display exercise data on the page
             const exerciseList = exerciseData.map(exercise => {
                 const instructionsList = exercise.instructions.map(instruction => `<li>${instruction}</li>`).join('');
@@ -84,7 +84,7 @@ export async function fetchExerciseData(bodyPart) {
 
 // Async function to fetch JSON and display the exercise content from an external API
 export async function fetchExerciseAPI(bodyPart) {
-    debugger;
+    // debugger;
     if (myActivity) {
         myActivity.innerHTML = "";
     }

@@ -30,13 +30,13 @@ const foodContainer = qs("#food-container");
 closeModalBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
-debugger;
+// debugger;
 let isLocalJson = getIsLocalJsonFromStorage();
 let isFoodDataFetched = false; // Avoid user from fetching API repeatedly
 
 // Capture the recipe Id here when user clicked on the recipe image
 foodContainer.addEventListener("click", async (event) => {
-  debugger;
+  // debugger;
   let recipe = "";
 
   const clickedEl = event.target;
@@ -85,7 +85,7 @@ foodContainer.addEventListener("click", async (event) => {
           `<br><strong>Summary:</strong> ${cleanedSummary}`;
 
         // qs("#recipeInstruction").textContent = recipe.instructions;
-        debugger;
+        // debugger;
         // Populate the ingredients list
         const ingredientList = qs("#ingredientList");
         ingredientList.innerHTML = "";
@@ -148,7 +148,7 @@ const foodList = new FoodList("food", null, foodContainer);
 const fetchFoodBtn = qs("#fetchFood");
 
 fetchFoodBtn.addEventListener("click", () => {
-  debugger;
+  // debugger;
   let foodData, foodAPI;
 
   // Check if API data was fetched already

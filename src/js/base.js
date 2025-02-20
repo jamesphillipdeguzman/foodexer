@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   function hamburgerMenuToggle() {
-    debugger;
+    // debugger;
 
     // Hamburger menu click event
     const hamburgerBtn = document.querySelector("#menu");
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setCurrentYear() {
-    debugger;
+    // debugger;
     // Get the year
     const todaysDate = new Date();
     // Set the current year for all elements with class 'currentyear'

@@ -31,7 +31,7 @@ let bodyPart = ""; // default value
 let isExerDataFetched = false; // Avoid user from fetching API repeatedly
 
 bodyPartSelect.addEventListener("change", (event) => {
-  debugger;
+  // debugger;
   isExerDataFetched = false;
   const clickedEl = event.target;
   if (clickedEl && clickedEl.tagName === "SELECT") {
@@ -48,7 +48,7 @@ bodyPartSelect.addEventListener("change", (event) => {
 
 // Capture the exercise Id here when user clicked on the exercise image
 exerciseContainer.addEventListener("click", async (event) => {
-  debugger;
+  // debugger;
   let exercise = "";
   const clickedEl = event.target;
 
@@ -117,7 +117,7 @@ exerciseContainer.addEventListener("click", async (event) => {
     }
   });
 });
-debugger;
+// debugger;
 // Create new exercise list instance
 const exerList = new ExerciseList("exercise", null, exerciseContainer);
 
@@ -133,7 +133,7 @@ if (isLocalJson) {
 }
 
 fetchExerciseBtn.addEventListener("click", async () => {
-  debugger;
+  // debugger;
   let exerciseData, exerAPI;
 
   // Check if API data was fetched already
