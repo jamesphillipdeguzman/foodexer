@@ -101,7 +101,7 @@ export async function fetchExerciseAPI(bodyPart) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': '5f36438cdfmsh35b8aa8adc1d663p1d319cjsn3b4817b74143', // Replace with your secure API key
+            'x-rapidapi-key': '49fc0c0e0amshf3105a46ecf07e6p14d54fjsnb9c53346917f', // Replace with your secure API key
             'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
             // 'x-rapidapi-host': 'exercises-by-api-ninjas.p.rapidapi.com'
         }

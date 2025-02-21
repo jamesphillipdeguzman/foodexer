@@ -27,18 +27,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setLastModifiedDate() {
-    const todaysDate = new Date(document.lastModified);
-    const dateFormat = { year: "numeric", month: "short", day: "numeric" };
-    const timeFormat = todaysDate.toLocaleTimeString();
-    const formattedDate = todaysDate.toLocaleDateString("en-US", dateFormat);
-    const formattedDateTime = formattedDate + " " + timeFormat;
+    const lastModifiedDate = new Date(document.lastModified); // Get the last modified date of the document
+    const dateFormat = { year: "numeric", month: "short", day: "numeric" }; // Format for the date
+    const timeFormat = lastModifiedDate.toLocaleTimeString(); // Get time in the user's locale
+    const formattedDate = lastModifiedDate.toLocaleDateString("en-US", dateFormat); // Format date as "Feb 21, 2025"
+    const formattedDateTime = `${formattedDate} ${timeFormat}`; // Combine date and time
 
-    const timestamp = document.querySelector("#timestamp");
-
-    const lastModified = document.querySelector("#lastModified");
+    const lastModified = document.querySelector("#lastModified"); // Get the element to display the last modified date
 
     if (lastModified) {
-      lastModified.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`; // using formatted date-time
+      lastModified.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`; // Display formatted last modified date-time
+    }
+
+    // Optionally, if you want to display it elsewhere (e.g., #timestamp element)
+    const timestamp = document.querySelector("#timestamp");
+    if (timestamp) {
+      timestamp.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`;
     }
   }
 
