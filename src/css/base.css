@@ -456,7 +456,7 @@ body {
   font-size: 2rem;
   padding: 0.2rem 2vw;
   position: absolute;
-  left: 0.2rem;
+  left: 1rem;
   top: 15px;
   text-align: right;
 }
@@ -471,6 +471,7 @@ body {
 
   /* Close icon */
 }
+
 
 /* HERO Styles */
 

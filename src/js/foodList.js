@@ -161,7 +161,7 @@ fetchFoodBtn.addEventListener("click", () => {
 
   // Check whether foodLocal or foodAPI is available from local storage. Also, check for isLocalJson value.
   if (getLocalStorage("foodLocal") && isLocalJson === true) {
-    fetchFoodBtn.textContent = "Show foodLocal";
+    // fetchFoodBtn.textContent = "Show foodLocal";
     foodData = getLocalStorage("foodLocal");
     isFoodDataFetched = true;
   } else if (!getLocalStorage("foodLocal")) {
@@ -170,7 +170,7 @@ fetchFoodBtn.addEventListener("click", () => {
   }
 
   if (getLocalStorage("foodAPI") && isLocalJson === false) {
-    fetchFoodBtn.textContent = "Show foodAPI";
+    // fetchFoodBtn.textContent = "Show foodAPI";
     foodAPI = getLocalStorage("foodAPI");
     isFoodDataFetched = true;
   } else if (!getLocalStorage("foodAPI")) {

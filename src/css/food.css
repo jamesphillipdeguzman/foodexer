@@ -51,11 +51,44 @@
 }
 
 .food-button {
-  margin-bottom: 2rem;
-  height: 44px;
-  margin: 1rem;
-  padding: 1rem;
+  display: flex;
+  /* Use flexbox layout */
+  align-items: center;
+  /* Vertically center the items */
+  justify-content: center;
+  /* Horizontally center the content */
+  padding: 10px 20px;
+  /* Add padding around the button */
+  background-color: #007bff;
+  /* Example background color */
+  color: white;
+  /* Text color */
+  border: none;
+  /* Remove the border */
   border-radius: 5px;
+  /* Optional rounded corners */
+  font-size: 16px;
+  /* Button text font size */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+}
+
+/* BUTTON arrow style */
+.food-button .arrow-right-fill {
+  margin-left: 8px;
+  /* Add space between the text and the arrow */
+  width: 16px;
+  /* Set a size for the arrow */
+  height: 16px;
+  /* Set a size for the arrow */
+  transition: transform 0.3s ease;
+  /* Optional: smooth hover animation */
+}
+
+/* Optional: hover effect */
+.food-button:hover .arrow-right-fill {
+  transform: translateX(3px);
+  /* Add a small movement on hover */
 }
 
 /* Dynamic RECIPE Modal */
