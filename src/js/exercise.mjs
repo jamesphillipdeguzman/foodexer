@@ -79,7 +79,7 @@ export async function fetchExerciseData(bodyPart) {
                     myActivity.innerHTML = exerciseList;
                 }
 
-                fetchedData.textContent = "You fetched a local JSON data";
+                // fetchedData.textContent = "You fetched a local JSON data";
             } else {
                 console.error("Invalid exercise data structure");
                 fetchedData.textContent = "Exercise data format is invalid.";
@@ -136,7 +136,7 @@ export async function fetchExerciseAPI(bodyPart) {
             myActivity.innerHTML = JSON.stringify(result, null, 2);
         }
 
-        fetchedData.textContent = "You fetched a Third-party API";
+        // fetchedData.textContent = "You fetched a Third-party API";
     } catch (error) {
         clearLoadingMessage();
         // alert(`Error: ${error.message}`);

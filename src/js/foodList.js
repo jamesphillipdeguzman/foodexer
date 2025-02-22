@@ -154,7 +154,7 @@ fetchFoodBtn.addEventListener("click", () => {
 
   // Check if API data was fetched already
   if (isFoodDataFetched) {
-    foodPrompt.textContent = "Data has already been fetched.";
+    foodPrompt.textContent = "Data has already been loaded.";
     // alert("Data has already been fetched. No need to fetch it again.");
     return;
   }
@@ -209,7 +209,7 @@ fetchFoodBtn.addEventListener("click", () => {
 
 function checkFoodDataFetch(isFoodDataFetched) {
   if (isFoodDataFetched) {
-    foodPrompt.textContent = "Data was successfully fetched.";
+    foodPrompt.textContent = "Data was successfully loaded.";
     // alert("Data was successfully fetched.");
   }
 }

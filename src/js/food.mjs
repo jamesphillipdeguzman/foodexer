@@ -52,7 +52,7 @@ export async function fetchFoodData() {
       }
 
       // Determine if local data or API was fetched
-      fetchedData.textContent = "You fetched a local JSON data";
+      // fetchedData.textContent = "You fetched a local JSON data";
     } else {
       console.log("Data not found");
     }
@@ -112,7 +112,7 @@ export async function fetchFoodAPI() {
     // Display result in pre tag
     myActivity.innerHTML = JSON.stringify(foodResult, null, 2);
     // Determine if local data or API was fetched
-    fetchedData.textContent = "You fetched a Third-party API";
+    // fetchedData.textContent = "You fetched a Third-party API";
   } catch (error) {
     // alert('Error:', error);
     console.log(`Error: ${error.message}`);
@@ -165,7 +165,7 @@ export async function fetchRecipeData(foodId) {
       }
 
       // Determine if local data or API was fetched
-      fetchedData.textContent = "You fetched a local json data";
+      // fetchedData.textContent = "You fetched a local json data";
     } else {
       console.log("Data not found");
     }
@@ -222,7 +222,7 @@ export async function fetchRecipeAPI(foodId) {
 
     if (fetchedData) {
       // Determine if local data or API was fetched
-      fetchedData.textContent = "You fetched a Third-party API";
+      // fetchedData.textContent = "You fetched a Third-party API";
     }
     return recipeResult;
 

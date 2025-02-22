@@ -54,6 +54,9 @@ html {
   border-radius: 5px;
   padding: 1rem;
   margin-top: 1rem;
+  display: none;
+  /* remove this if you want to see the test-box for troubleshooting purposes */
+
 }
 
 .test-box #localjson-status {
@@ -495,6 +498,7 @@ main {
 .sticker {
   text-align: center;
   font-family: var(--secondary-font1);
+  font-size: 2.3rem;
   margin-bottom: var(--font-size-small);
   background-color: var(--accent-color1);
   max-width: 100vw;
@@ -770,10 +774,6 @@ footer p {
     padding: var(--font-size-small);
   }
 
-  .welcome {
-    margin: 2rem;
-    font-size: var(--font-size-small);
-  }
 
   .food-card,
   .exer-card {
@@ -836,7 +836,7 @@ footer p {
   } */
 }
 
-@media all and (max-width: 510px) {
+@media all and (max-width: 515px) {
   .hero {
     width: 20rem;
     height: 200px;
@@ -845,6 +845,14 @@ footer p {
   .user-login {
     max-width: 100vw;
     width: 100%;
+  }
+
+  .sticker {
+    font-size: 1.5rem;
+  }
+
+  .welcome {
+    font-size: 0.8rem;
   }
 }
 

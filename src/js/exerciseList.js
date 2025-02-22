@@ -141,7 +141,7 @@ fetchExerciseBtn.addEventListener("click", async () => {
 
   // Check if API data was fetched already
   if (isExerDataFetched) {
-    exercisePrompt.textContent = "Data has already been fetched.";
+    exercisePrompt.textContent = "Data has already been loaded.";
     // alert("Data has already been fetched. No need to fetch it again.");
     return;
   }
@@ -208,7 +208,7 @@ fetchExerciseBtn.addEventListener("click", async () => {
 
 function checkExerDataFetch(isExerDataFetched) {
   if (isExerDataFetched) {
-    exercisePrompt.textContent = "Data was successfully fetched.";
+    exercisePrompt.textContent = "Data was successfully loaded.";
     // alert("Data was successfully fetched.");
   }
 }
