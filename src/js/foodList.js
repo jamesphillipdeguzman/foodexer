@@ -25,6 +25,7 @@ const modal = qs("#recipeModal");
 const closeModalBtn = qs("#closeModal");
 // Get the food container where food items will be rendered
 const foodContainer = qs("#food-container");
+let foodPrompt = qs("#foodPrompt");
 
 // Close the modal
 closeModalBtn.addEventListener("click", () => {
@@ -49,7 +50,7 @@ foodContainer.addEventListener("click", async (event) => {
       try {
         // Pass in the food item id to fetch the recipe information
         if (isLocalJson) {
-          alert("fetchRecipeData invoked");
+          // alert("fetchRecipeData invoked");
 
           await fetchRecipeData(foodId);
           // Assign the contents of local storage to recipe variable
@@ -57,7 +58,7 @@ foodContainer.addEventListener("click", async (event) => {
         } else {
           const fetchedRecipe = await fetchRecipeAPI(foodId);
           // Save it in local storage for later processing
-          alert("fetchRecipeAPI invoked");
+          // alert("fetchRecipeAPI invoked");
           setLocalStorage("recipeAPI", fetchedRecipe);
           // Assign the contents of local storage to recipe variable
           recipe = getLocalStorage("recipeAPI");
@@ -153,7 +154,8 @@ fetchFoodBtn.addEventListener("click", () => {
 
   // Check if API data was fetched already
   if (isFoodDataFetched) {
-    alert("Data has already been fetched. No need to fetch it again.");
+    foodPrompt.textContent = "Data has already been fetched.";
+    // alert("Data has already been fetched. No need to fetch it again.");
     return;
   }
 
@@ -207,7 +209,8 @@ fetchFoodBtn.addEventListener("click", () => {
 
 function checkFoodDataFetch(isFoodDataFetched) {
   if (isFoodDataFetched) {
-    alert("Data was successfully fetched.");
+    foodPrompt.textContent = "Data was successfully fetched.";
+    // alert("Data was successfully fetched.");
   }
 }
 

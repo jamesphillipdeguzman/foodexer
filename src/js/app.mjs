@@ -73,25 +73,31 @@ export function checkSignup() {
   const login = qs("#login");
   const signup = getLocalStorage("signup");
   let user = qs("#user");
+  let welcomeMessage = qs("#welcome-message");
+  let userName = qs("#user-name"); // For displaying the user's name or email in the welcome message
 
   // Default to false
-  // setLocalStorage("isAnimTriggered", false);
   const isAnimTriggered = getLocalStorage("isAnimTriggered");
-
 
   if (login && main && !isAnimTriggered) {
     if (signup && signup.length > 0) {
       // Hide login if user has signed up using email
-      login.classList.add("fade-out")
+      login.classList.add("fade-out");
       setTimeout(() => {
         login.style.display = "none";
       }, 2000);
+
       // Show the welcome content to the user
       main.classList.remove("hide");
 
-      user.style.display = "none";
+      // Replace the user login div with a welcome message
+      user.style.display = "none"; // This line hides the user div
+      welcomeMessage.classList.remove("hide");
 
-      // flag that animation triggered
+      // Display the user's email or username in the welcome message
+      userName.textContent = signup[signup.length - 1]; // Show the most recent user email
+
+      // Flag that animation triggered
       setLocalStorage("isAnimTriggered", true);
     } else {
       // Show login to signup
@@ -99,15 +105,18 @@ export function checkSignup() {
       login.style.display = "flex";
       // Hide welcome content if not yet signed up
       main.classList.add("hide");
-      // user.style.display = "none";
-
-
     }
   } else if (isAnimTriggered && signup && user && signup.length > 0) {
+    // Keep user div hidden once signup is successful
     user.style.display = "none";
-    // login.style.display = "none";
+    // Hide login section
+    login.style.display = "none";
+    // Display welcome message
+    welcomeMessage.classList.remove("hide");
+    userName.textContent = signup[signup.length - 1]; // Show most recent signup email
   }
 }
+
 
 window.addEventListener("DOMContentLoaded", checkSignup);
 

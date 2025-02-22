@@ -29,6 +29,7 @@ closeModalBtn.addEventListener("click", () => {
 let isLocalJson = getIsLocalJsonFromStorage();
 let bodyPart = ""; // default value
 let isExerDataFetched = false; // Avoid user from fetching API repeatedly
+let exercisePrompt = qs("#exercisePrompt");
 
 bodyPartSelect.addEventListener("change", (event) => {
   // debugger;
@@ -37,10 +38,12 @@ bodyPartSelect.addEventListener("change", (event) => {
   if (clickedEl && clickedEl.tagName === "SELECT") {
     bodyPart = clickedEl.value;
     if (bodyPart === "") {
-      alert("Please select a body part.");
-    } else {
-      alert("Body Part: " + bodyPart);
+      exercisePrompt.textContent = "Please select a body part.";
+
     }
+    // else {
+    //   console.log("Body Part: " + bodyPart);
+    // }
 
     // const exerData = await fetchExerciseData(bodyPart);
   }
@@ -57,13 +60,13 @@ exerciseContainer.addEventListener("click", async (event) => {
 
     try {
       if (isLocalJson) {
-        alert("fetchExerciseData invoked");
+        // alert("fetchExerciseData invoked");
         await fetchExerciseData(bodyPart);
         // Assign the contents of local storage to exercise variable
         exercise = getLocalStorage("exerLocal");
       } else {
         const fetchedExercise = await fetchExerciseAPI(bodyPart);
-        alert("fetchExerciseAPI invoked");
+        // alert("fetchExerciseAPI invoked");
         // Save it in local storage for later processing
         setLocalStorage("exerAPI", fetchedExercise);
         // Assign the contents of local storage to exercise variable
@@ -138,13 +141,14 @@ fetchExerciseBtn.addEventListener("click", async () => {
 
   // Check if API data was fetched already
   if (isExerDataFetched) {
-    alert("Data has already been fetched. No need to fetch it again.");
+    exercisePrompt.textContent = "Data has already been fetched.";
+    // alert("Data has already been fetched. No need to fetch it again.");
     return;
   }
 
   // Check whether exerLocal or exerAPI is available from local storage
   if (getLocalStorage("exerLocal") && isLocalJson === true) {
-    fetchExerciseBtn.textContent = "Show exerLocal";
+    fetchExerciseBtn.textContent = "Show Exercises";
 
     exerciseData = await fetchExerciseData(bodyPart);
     exerciseData = getLocalStorage("exerLocal");
@@ -156,9 +160,10 @@ fetchExerciseBtn.addEventListener("click", async () => {
   }
 
   if (getLocalStorage("exerAPI") && isLocalJson === false) {
-    fetchExerciseBtn.textContent = "Show exerAPI";
+    // fetchExerciseBtn.textContent = "Show exerAPI";
     if (bodyPart === "") {
-      alert("Please select a body part.");
+      exercisePrompt.textContent = "Please select a body part.";
+      // alert("Please select a body part.");
     } else {
       exerAPI = await fetchExerciseAPI(bodyPart);
       exerAPI = getLocalStorage("exerAPI");
@@ -167,7 +172,8 @@ fetchExerciseBtn.addEventListener("click", async () => {
     }
   } else if (!getLocalStorage("exerAPI")) {
     if (bodyPart === "") {
-      alert("Please select a body part.");
+      exercisePrompt.textContent = "Please select a body part.";
+      // alert("Please select a body part.");
     } else {
       // Fetch from API if no local data exists
       exerAPI = await fetchExerciseAPI(bodyPart);
@@ -202,7 +208,8 @@ fetchExerciseBtn.addEventListener("click", async () => {
 
 function checkExerDataFetch(isExerDataFetched) {
   if (isExerDataFetched) {
-    alert("Data was successfully fetched.");
+    exercisePrompt.textContent = "Data was successfully fetched.";
+    // alert("Data was successfully fetched.");
   }
 }
 

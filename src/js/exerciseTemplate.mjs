@@ -3,41 +3,64 @@
 // - Defines the ExerciseList class, which takes in the category, dataSource, and listElement.
 // - Includes the init function to render the exercise list.
 
+// exerciseTemplate.mjs
+// - Creates the exerciseTemplate for individual exercise item display.
+// - Defines the ExerciseList class, which takes in the category, dataSource, and listElement.
+// - Includes the init function to render the exercise list.
+
 import { renderListWithTemplate, toTitleCase } from "./utils.mjs";
 
-// Function for creating the exercise template
+// Function for creating the exercise template for individual exercise item display
 function exerciseTemplate(exerciseItems) {
-    // debugger;
-    // console.log("exerciseItems: ", exerciseItems);
-
-    // If exerciseItems is an array
+    // If exerciseItems is an array, map each item into an HTML template
     if (Array.isArray(exerciseItems)) {
-        return exerciseItems.map((item) => {
-            return `<div class="exercise-box">
-                        <li class="exercise-items">
-                            ${item}
-                        </li>
-                    </div>`;
-        }).join("");  // Joining the array into a single string
+        return exerciseItems.map(item => `
+            <div class="exercise-box">
+                <li class="exercise-items">${item}</li>
+            </div>
+        `).join("");  // Joining the array into a single string
     }
-    // If exerciseItems is an object (convert object values to an array and map)
-    else if (typeof exerciseItems === "object" && exerciseItems !== null) {
-        // Object.entries will give us an array of [key, value] pairs
-        const items = Object.entries(exerciseItems);
-        return items.map(([key, item]) => {
-            const formattedKey = toTitleCase(key);
-            return `<div class="exercise-box">
+
+    // If exerciseItems is an object, map each key-value pair to create list items
+    if (typeof exerciseItems === "object" && exerciseItems !== null) {
+        return Object.entries(exerciseItems).map(([key, item]) => {
+            const formattedKey = toTitleCase(key); // Format the key to title case
+            // Handling array values (like instructions, muscles, etc.)
+            if (Array.isArray(item)) {
+                const listItems = item.map(subItem => `<li class="sub-items">${subItem}</li>`).join("");
+                return `
+                    <div class="exercise-box">
                         <li class="exercise-items">
-                            <strong>${formattedKey}:</strong> ${item}
+                            <strong>${formattedKey}:</strong>
+                            <ol>${listItems}</ol>
                         </li>
                     </div>`;
+            }
+
+            // If the item is a gif URL (string), render it as an image
+            if (formattedKey === "Gif Url" && typeof item === "string") {
+                return `
+                    <div class="exercise-box">
+                        <li class="exercise-items">
+                            <strong>${formattedKey}:</strong>
+                            <img src="${item}" alt="${formattedKey}">
+                        </li>
+                    </div>`;
+            }
+
+            // For non-array items, simply display them as text
+            return `
+                <div class="exercise-box">
+                    <li class="exercise-items">
+                        <strong>${formattedKey}:</strong> ${item}
+                    </li>
+                </div>`;
         }).join("");  // Joining the array into a single string
     }
 
-    // If it's neither an array nor an object
-    else {
-        return "<p>No exercise data available.</p>";
-    }
+    // If neither an array nor an object, return a message
+    // return "<p>No exercise data available.</p>";
+    return;
 }
 
 // ExerciseList class for rendering exercise data
@@ -48,23 +71,19 @@ export default class ExerciseList {
         this.listElement = listElement;
     }
 
-    // Use init function to initialize and grab the dataSource
+    // Use init function to initialize and fetch the dataSource
     async init() {
-
-
         try {
-            // debugger;
             const exerciseList = await this.dataSource.getData(this.title);
-            console.log("exerciseList: ", exerciseList)
-            // Render list of exercise items here...
+            console.log("exerciseList: ", exerciseList);
+
+            // Render the list of exercise items
             this.renderList(exerciseList);
 
             // Dynamically set the page title
-            if (document.title === null || document.title === "") {
-                return;
+            if (document.title) {
+                document.title = `${toTitleCase(this.title)} - Exercise List`;
             }
-
-            document.title = `${this.title.charAt(0).toUpperCase() + this.title.slice(1)} - Exercise List`;
         } catch (error) {
             console.error("Error fetching exercise data:", error);
             this.listElement.innerHTML = "<p>Failed to load exercise items. Please try again later.</p>";
@@ -72,21 +91,14 @@ export default class ExerciseList {
     }
 
     renderList(exerciseList) {
-        // debugger;
-        // Check if exerciseList is an array and has items
+        // Ensure exerciseList is not empty
         if (Array.isArray(exerciseList) && exerciseList.length > 0) {
             renderListWithTemplate(exerciseTemplate, this.listElement, exerciseList);
-        }
-        // Check if exerciseList is an object and has the expected properties (e.g., title, image)
-        else if (typeof exerciseList === "object" && exerciseList !== null && Object.keys(exerciseList).length > 0) {
-            // Assuming `exerciseList` is an object, convert it to an array of its values
-            const items = Object.values(exerciseList);
-            // Now items is an array, so we can safely call renderListWithTemplate
-            renderListWithTemplate(exerciseTemplate, this.listElement, items);
-        }
-        // If it's neither an array nor a valid object
-        else {
-            this.listElement.innerHTML = "<p>No exercise items available.</p>";
+        } else if (exerciseList && typeof exerciseList === "object" && Object.keys(exerciseList).length > 0) {
+            renderListWithTemplate(exerciseTemplate, this.listElement, Object.values(exerciseList));
+        } else {
+            // Handle empty or invalid exercise data
+            this.listElement.innerHTML = "<p>No exercise items available. Please try again later.</p>";
         }
     }
 }

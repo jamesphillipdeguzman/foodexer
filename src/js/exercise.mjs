@@ -28,13 +28,15 @@ function clearLoadingMessage() {
 }
 
 export async function fetchExerciseData(bodyPart) {
-    // debugger;
+    // Clear any existing content if myActivity is available
+    const myActivity = document.getElementById('myActivity');
+    const fetchedData = document.getElementById('fetchedData');
+
     if (myActivity) {
         myActivity.innerHTML = "";
     }
 
-
-    showLoadingMessage(activity); // Show loading message with activity name
+    showLoadingMessage(activity); // Assuming 'activity' is a defined variable
 
     try {
         const url = "/json/exercise.json";
@@ -49,37 +51,49 @@ export async function fetchExerciseData(bodyPart) {
                 setLocalStorage("exerLocal", exerciseData);
             }
 
-            clearLoadingMessage();
-            // debugger;
-            // Display exercise data on the page
-            const exerciseList = exerciseData.map(exercise => {
-                const instructionsList = exercise.instructions.map(instruction => `<li>${instruction}</li>`).join('');
-                return `
-                    <div class="exercise-card">
-                        <h3>${exercise.name}</h3>
-                        <img src="${exercise.gifUrl}" alt="${exercise.name}" />
-                        <p><strong>Body Part:</strong> ${exercise.bodyPart}</p>
-                        <p><strong>Equipment:</strong> ${exercise.equipment}</p>
-                        <p><strong>Target Muscles:</strong> ${exercise.target}</p>
-                        <p><strong>Secondary Muscles:</strong> ${exercise.secondaryMuscles.join(', ')}</p>
-                        <ul><strong>Instructions:</strong>${instructionsList}</ul>
-                    </div>
-                `;
-            }).join('');
-            if (myActivity) {
-                myActivity.innerHTML = exerciseList;
+            clearLoadingMessage(); // Clear loading message after successful data retrieval
+
+            // Check if we received the correct structure of exercise data
+            if (Array.isArray(exerciseData) && exerciseData.length > 0) {
+                const exerciseList = exerciseData.map(exercise => {
+                    // Ensure that 'secondaryMuscles' is an array before joining
+                    const secondaryMuscles = Array.isArray(exercise.secondaryMuscles) ? exercise.secondaryMuscles.join(', ') : '';
+
+                    // Instructions list
+                    const instructionsList = exercise.instructions.map(instruction => `<li>${instruction}</li>`).join('');
+
+                    return `
+                        <div class="exercise-card">
+                            <h3>${exercise.name}</h3>
+                            <img src="${exercise.gifUrl}" alt="${exercise.name}" />
+                            <p><strong>Body Part:</strong> ${exercise.bodyPart}</p>
+                            <p><strong>Equipment:</strong> ${exercise.equipment}</p>
+                            <p><strong>Target Muscles:</strong> ${exercise.target}</p>
+                            <p><strong>Secondary Muscles:</strong> ${secondaryMuscles}</p>
+                            <ul><strong>Instructions:</strong>${instructionsList}</ul>
+                        </div>
+                    `;
+                }).join('');
+
+                if (myActivity) {
+                    myActivity.innerHTML = exerciseList;
+                }
+
+                fetchedData.textContent = "You fetched a local JSON data";
+            } else {
+                console.error("Invalid exercise data structure");
+                fetchedData.textContent = "Exercise data format is invalid.";
             }
-
-
-            fetchedData.textContent = "You fetched a local JSON data";
         } else {
-            alert("Data not found");
+            alert("Data not found or the request failed.");
         }
     } catch (error) {
-        clearLoadingMessage();
-        alert(`Error: ${error.message}`);
+        clearLoadingMessage(); // Ensure loading message is cleared even if there is an error
+        console.error("Error fetching exercise data:", error);
+        // alert(`Error: ${error.message}`);
     }
 }
+
 
 
 // Async function to fetch JSON and display the exercise content from an external API
@@ -125,7 +139,7 @@ export async function fetchExerciseAPI(bodyPart) {
         fetchedData.textContent = "You fetched a Third-party API";
     } catch (error) {
         clearLoadingMessage();
-        alert(`Error: ${error.message}`);
+        // alert(`Error: ${error.message}`);
     }
 }
 

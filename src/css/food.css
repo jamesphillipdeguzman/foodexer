@@ -44,6 +44,7 @@
 
 .food-box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -156,6 +157,10 @@
   background-color: #0056b3;
 }
 
+.food-prompt {
+  color: yellow;
+  margin: 1rem;
+}
 
 
 

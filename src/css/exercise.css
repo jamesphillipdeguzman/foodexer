@@ -1,3 +1,4 @@
+/* Container for the exercise section */
 .intro-exercise {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   max-width: 1200px;
 }
 
+/* Style for each exercise card */
 .exercise-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -15,8 +17,13 @@
   background-color: rgba(0, 0, 0, 0.9);
   max-width: 100vw;
   width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for individual exercise items */
 .exercise-items {
   display: flex;
   flex-direction: column;
@@ -25,19 +32,16 @@
   list-style-type: none;
   max-width: 100vw;
   width: 90%;
-  /* Remove max-width to avoid conflict */
   padding: 1rem;
   margin: 0 auto;
   text-align: center;
   color: white;
 }
 
+/* Hover effect for exercise images */
 .exercise-items img {
   margin-top: 2rem;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  /* Fixed the transition syntax */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .exercise-items img:hover {
@@ -45,30 +49,47 @@
   transform: scale(1.01);
 }
 
+/* Title styling for exercises */
 .exercise-title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #222;
+  color: #fff;
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
+/* Description styling */
 .exercise-description {
   font-size: 1rem;
-  color: #666;
+  color: #ddd;
   text-align: center;
   margin-bottom: 1rem;
 }
 
+/* General exercise box */
 .exercise-box {
-  /* border: 1px solid #ccc; */
   display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  max-width: 50%;
 }
 
+.exercise-label {
+  color: white;
+  margin: 1rem;
+}
+
+.exercise-prompt {
+  color: yellow;
+  margin: 1rem;
+}
+
+
+/* Button style for interactions */
 .exercise-button {
   padding: 0.8rem 1.5rem;
   background-color: #007bff;
@@ -85,11 +106,20 @@
   background-color: #0056b3;
 }
 
+/* Style for sub-items (like instructions or muscles) */
+.sub-items {
+  margin: 1rem;
+  text-align: left;
+  line-height: 1.5rem;
+  color: #ccc;
+}
+
+/* Hide element class */
 .hide {
   display: none;
 }
 
-/* Dynamic EXERCISE Modal */
+/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -102,9 +132,6 @@
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
   padding-top: 50px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .modal-content {
@@ -125,7 +152,6 @@
   float: right;
   font-size: 25px;
   font-weight: bold;
-  top: 0;
 }
 
 .close-btn:hover,
@@ -162,11 +188,19 @@
 @media (max-width: 600px) {
   .exercise-card {
     grid-template-columns: 1fr;
-    /* Stack exercise cards in one column */
+    padding: 10px;
   }
 
-  .exercise-item img {
+  .exercise-items img {
     max-width: 100%;
     height: auto;
+  }
+
+  .exercise-title {
+    font-size: 1.2rem;
+  }
+
+  .exercise-description {
+    font-size: 0.9rem;
   }
 }
