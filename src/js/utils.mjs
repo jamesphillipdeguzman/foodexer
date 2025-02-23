@@ -164,7 +164,7 @@ export function getIsLocalJsonFromStorage() {
 
     // If it's not found in localStorage, default to true
     if (storedIsLocalJson === null) {
-        storedIsLocalJson = true;  // Default to true
+        storedIsLocalJson = false;  // Default to false
         localStorage.setItem("isLocalJson", storedIsLocalJson);
     }
 
