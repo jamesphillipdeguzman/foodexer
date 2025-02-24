@@ -54,7 +54,7 @@ html {
   border-radius: 5px;
   padding: 1rem;
   margin-top: 1rem;
-  /* display: none; */
+  display: none;
   /* remove this if you want to see the test-box for troubleshooting purposes */
 
 }

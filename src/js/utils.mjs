@@ -106,7 +106,7 @@ export function checkIsLocalJsonState() {
     // If the value exists, use it; otherwise, default to true
     if (storedIsLocalJson === null || storedIsLocalJson === undefined) {
 
-        isLocalJson = false; // Default to false
+        isLocalJson = true; // Default to true
         setLocalStorage("isLocalJson", isLocalJson);
     }
     // Update display with status of isLocalJson
@@ -164,7 +164,7 @@ export function getIsLocalJsonFromStorage() {
 
     // If it's not found in localStorage, default to true
     if (storedIsLocalJson === null) {
-        storedIsLocalJson = false;  // Default to false
+        storedIsLocalJson = true;  // Default to true
         localStorage.setItem("isLocalJson", storedIsLocalJson);
     }
 
