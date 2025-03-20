@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>FoodExer | Food</title>
+  <meta name="description" content="Food and exercise web app">
+  <meta name="author" content="James Phillip K. De Guzman">
+  <!-- OGP -->
+  <meta property="og:title" content="FoodExer web app">
+  <meta property="og:description" content="Web app for healthy food and simple exercise routines">
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/jamesphillipdeguzman/foodexer/refs/heads/main/src/public/assets/icons/foodexer-logo2.png">
+  <meta property="og:url" content="https://foodexer.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site-name" content="FoodExer">
+  <!-- Consolidated Google Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/food.css">
+  <script src="../js/base.js" type="module"></script>
+  <script src="../js/app.mjs" type="module"></script>
+  <script src="../js/foodList.js" type="module"></script>
+
+  <link rel="icon" href="../assets/icons/foodexer-logo.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header id="main-header">
+    <div class="navlinks">
+      <ul>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/site.html">Site Map</a></li>
+        <li><a href="../pages/attribution.html">Attributions</a></li>
+      </ul>
+      <button id="menu" aria-label="menu"></button>
+    </div>
+    <div class="test-box">
+      <span id="localjson-status"></span>
+      <div class="toggle-me">
+        <label for="localjson-check">Use local data for testing</label>
+        <input type="checkbox" id="localjson-check" name="localjson">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="food">
+      <div class="intro-food">
+        <h1 class="sticker">Healthy Food Choices</h1>
+        <br>
+        <br>
+        <p class="welcome">
+          At FoodExer, we’re passionate about helping you make nutritious food
+          choices that fuel your body and mind. Whether you’re looking for
+          delicious recipes, meal planning tips, or nutrition advice, we’re
+          here to support your wellness journey.
+        </p>
+
+        <img class="hero" src="/assets/images/pexels-goumbik-616412.webp" alt="Photo credits by Goumbik" height="400"
+          width="800">
+      </div>
+      <p class="welcome">
+        Choose a food item to explore our nutritious options
+      </p>
+      <div class="food-box">
+        <button id="fetchFood" class="food-button">Show Food<img class="arrow-right-fill"
+            src="/assets/icons/arrow-right-fill.svg" alt="arrow-right-fill"></button>
+        <span id="foodPrompt" class="food-prompt"></span>
+        <span class="fetched-data"></span>
+      </div>
+      <!-- <button id="fetchFoodAPI" class="food-button">Fetch Food API</button> -->
+      <div id="food-container" class="food-card"></div>
+
+      <!-- Recipe Modal -->
+      <div id="recipeModal" class="modal">
+        <div class="modal-content">
+          <div id="closeModal" class="close-btn">&times;</div>
+          <div id="recipeTitle">Recipe Title</div>
+          <img id="recipeImage" src="" alt="Recipe image">
+          <p id="healthScore"></p>
+          <p id="pricePerServing"></p>
+          <p id="readyInMinutes"></p>
+          <p id="servings"></p>
+          <p id="recipeSummary">Summary</p>
+          <p><strong>Ingredients</strong></p>
+          <ul id="ingredientList"></ul>
+          <p><strong>Instructions</strong></p>
+          <ol id="recipeInstruction"></ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="myfooter" id="main-footer">
+    <div class="mysite">
+      FoodExer &copy;
+      <span class="currentyear"></span>
+      <p class="lastmodified">
+        Last Modified:
+        <span id="lastModified"></span>
+        <!-- <a class="branding" href="https://jamesdeguzman.com/" target="_blank">
+          besys.tech&copy; -->
+        <!-- <span class="currentyear"></span> </a> -->
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

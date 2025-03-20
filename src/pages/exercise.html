@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>FoodExer | Exercise</title>
+  <meta name="description" content="Food and exercise web app">
+  <meta name="author" content="James Phillip K. De Guzman">
+  <!-- OGP -->
+  <meta property="og:title" content="FoodExer web app">
+  <meta property="og:description" content="Web app for healthy food and simple exercise routines">
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/jamesphillipdeguzman/foodexer/refs/heads/main/src/public/assets/icons/foodexer-logo2.png">
+  <meta property="og:url" content="https://foodexer.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site-name" content="FoodExer">
+  <!-- Consolidated Google Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/exercise.css">
+  <script src="../js/base.js" type="module"></script>
+  <script src="../js/app.mjs" type="module"></script>
+  <script src="../js/exerciseList.js" type="module"></script>
+
+  <link rel="icon" href="../assets/icons/foodexer-logo.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header id="main-header">
+    <div class="navlinks">
+      <ul>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/site.html">Site Map</a></li>
+        <li><a href="../pages/attribution.html">Attributions</a></li>
+      </ul>
+      <button id="menu" aria-label="menu"></button>
+    </div>
+    <div class="test-box">
+      <span id="localjson-status"></span>
+      <div class="toggle-me">
+        <label for="localjson-check">Use local data for testing</label>
+        <input type="checkbox" id="localjson-check" name="localjson">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="exercise">
+      <div class="intro-exercise">
+        <h1 class="sticker">Exercise for a Stronger You</h1>
+        <br><br>
+        <p class="welcome">
+          At FoodExer, we believe that exercise is key to a balanced
+          lifestyle. Whether you're looking to build strength, improve
+          flexibility, or stay active, we provide you with the guidance and
+          resources to keep you moving and motivated.
+        </p>
+
+        <img class="hero" src="/assets/images/pexels-karolina-grabowska-4397841.webp"
+          alt="Photo credits by Karolina Grabowska" height="400" width="800">
+      </div>
+      <p class="welcome">
+        Select an exercise routine to kickstart your fitness journey
+      </p>
+      <div class="exercise-box">
+
+        <span class="exercise-label">Select a body part to focus on:</span>
+        <select id="bodyPartSelect">
+          <option value="select"></option>
+          <option value="back">Back</option>
+          <option value="cardio">Cardio</option>
+          <option value="chest">Chest</option>
+          <option value="lower arms">Lower arms</option>
+          <option value="lower legs">Lower legs</option>
+          <option value="neck">Neck</option>
+          <option value="shoulders">Shoulders</option>
+          <option value="upper arms">Upper arms</option>
+          <option value="upper legs">Upper legs</option>
+          <option value="waist">Waist</option>
+        </select>
+        <button id="fetchExercise" class="exercise-button">Show Exercise
+          <img class="arrow-right-fill" src="/assets/icons/arrow-right-fill.svg" alt="arrow-right-fill">
+        </button>
+        <span id="exercisePrompt" class="exercise-prompt"></span>
+        <span class="fetched-data"></span>
+      </div>
+
+      <!-- This is where the exercise cards will be inserted -->
+      <div id="exercise-container"></div>
+
+      <!-- Exercise Modal -->
+      <div id="exerciseModal" class="modal">
+        <div class="modal-content">
+          <div id="closeModal" class="close-btn">&times;</div>
+          <div id="exerciseTitle">Exercise Title</div>
+          <img id="exerciseImage" src="" alt="Exercise image">
+          <p><strong>Instructions</strong></p>
+          <ol id="exerciseInstruction"></ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="myfooter" id="main-footer">
+    <div class="mysite">
+      FoodExer &copy;
+      <span class="currentyear"></span>
+      <p class="lastmodified">
+        Last Modified:
+        <span id="lastModified"></span>
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
