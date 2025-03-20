@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (cardFood) {
     cardFood.addEventListener("click", () => {
-      window.location.href = "pages/food.html";
+      window.location.href = "/pages/food.html";
     });
   }
 
