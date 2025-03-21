@@ -37,7 +37,7 @@ let isFoodDataFetched = false; // Avoid user from fetching API repeatedly
 
 // Capture the recipe Id here when user clicked on the recipe image
 foodContainer.addEventListener("click", async (event) => {
-  // debugger;
+  debugger;
   let recipe = "";
 
   const clickedEl = event.target;

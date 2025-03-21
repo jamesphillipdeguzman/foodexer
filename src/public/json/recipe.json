@@ -1,312 +1,1164 @@
-{
-  "id": 655438,
-  "image": "https://img.spoonacular.com/recipes/655438-556x370.jpg",
-  "imageType": "jpg",
-  "title": "Pear Salad With Walnuts and Blue Cheese",
-  "readyInMinutes": 45,
-  "servings": 6,
-  "sourceUrl": "https://spoonacular.com/pear-salad-with-walnuts-and-blue-cheese-655438",
-  "vegetarian": true,
-  "vegan": false,
-  "glutenFree": true,
-  "dairyFree": false,
-  "veryHealthy": false,
-  "cheap": false,
-  "veryPopular": false,
-  "sustainable": false,
-  "lowFodmap": false,
-  "weightWatcherSmartPoints": 8,
-  "gaps": "no",
-  "preparationMinutes": null,
-  "cookingMinutes": null,
-  "aggregateLikes": 2,
-  "healthScore": 11,
-  "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
-  "license": "CC BY 3.0",
-  "sourceName": "Foodista",
-  "pricePerServing": 140.34,
-  "extendedIngredients": [
-    {
-      "id": 1004,
-      "aisle": "Cheese",
-      "image": "blue-cheese.png",
-      "consistency": "SOLID",
-      "name": "cheese",
-      "nameClean": "blue cheese",
-      "original": "1/2 cup (125g 4 oz) Blue Cheese crumbled",
-      "originalName": "(125g 4 oz) Blue Cheese crumbled",
-      "amount": 0.5,
-      "unit": "cup",
-      "meta": ["blue", "crumbled", "(125g 4 oz)"],
-      "measures": {
-        "us": {
-          "amount": 0.5,
-          "unitShort": "cups",
-          "unitLong": "cups"
-        },
-        "metric": {
-          "amount": 67.5,
-          "unitShort": "g",
-          "unitLong": "grams"
+[
+  {
+    "id": 655438,
+    "image": "https://img.spoonacular.com/recipes/655438-556x370.jpg",
+    "imageType": "jpg",
+    "title": "Pear Salad With Walnuts and Blue Cheese",
+    "readyInMinutes": 45,
+    "servings": 6,
+    "sourceUrl": "https://spoonacular.com/pear-salad-with-walnuts-and-blue-cheese-655438",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": true,
+    "dairyFree": false,
+    "veryHealthy": false,
+    "cheap": false,
+    "veryPopular": false,
+    "sustainable": false,
+    "lowFodmap": false,
+    "weightWatcherSmartPoints": 8,
+    "gaps": "no",
+    "preparationMinutes": null,
+    "cookingMinutes": null,
+    "aggregateLikes": 2,
+    "healthScore": 11,
+    "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "license": "CC BY 3.0",
+    "sourceName": "Foodista",
+    "pricePerServing": 140.34,
+    "extendedIngredients": [
+      {
+        "id": 1004,
+        "aisle": "Cheese",
+        "image": "blue-cheese.png",
+        "consistency": "SOLID",
+        "name": "cheese",
+        "nameClean": "blue cheese",
+        "original": "1/2 cup (125g 4 oz) Blue Cheese crumbled",
+        "originalName": "(125g 4 oz) Blue Cheese crumbled",
+        "amount": 0.5,
+        "unit": "cup",
+        "meta": [
+          "blue",
+          "crumbled",
+          "(125g 4 oz)"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.5,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 67.5,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 11156,
+        "aisle": "Produce",
+        "image": "fresh-chives.jpg",
+        "consistency": "SOLID",
+        "name": "chives",
+        "nameClean": "chives",
+        "original": "2 teaspoons chopped Chives",
+        "originalName": "chopped Chives",
+        "amount": 2,
+        "unit": "teaspoons",
+        "meta": [
+          "chopped"
+        ],
+        "measures": {
+          "us": {
+            "amount": 2,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          },
+          "metric": {
+            "amount": 2,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          }
+        }
+      },
+      {
+        "id": 11152,
+        "aisle": "Produce",
+        "image": "frisee.jpg",
+        "consistency": "SOLID",
+        "name": "salad leaves curly endive",
+        "nameClean": "curly endive",
+        "original": "4 cups (90g 3 oz) mixed salad leaves curly endive, 3 stk Celery, sliced",
+        "originalName": "(90g 3 oz) mixed salad leaves curly endive, 3 stk Celery, sliced",
+        "amount": 4,
+        "unit": "cups",
+        "meta": [
+          "mixed",
+          "sliced",
+          "(90g 3 oz)"
+        ],
+        "measures": {
+          "us": {
+            "amount": 4,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 200,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 9152,
+        "aisle": "Produce",
+        "image": "lemon-juice.jpg",
+        "consistency": "LIQUID",
+        "name": "lemon juice",
+        "nameClean": "lemon juice",
+        "original": "2 teaspoons Lemon Juice",
+        "originalName": "Lemon Juice",
+        "amount": 2,
+        "unit": "teaspoons",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 2,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          },
+          "metric": {
+            "amount": 2,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          }
+        }
+      },
+      {
+        "id": 9252,
+        "aisle": "Produce",
+        "image": "pears-bosc.jpg",
+        "consistency": "SOLID",
+        "name": "pears",
+        "nameClean": "pear",
+        "original": "3 pears peeled, cored",
+        "originalName": "pears peeled, cored",
+        "amount": 3,
+        "unit": "",
+        "meta": [
+          "cored",
+          "peeled"
+        ],
+        "measures": {
+          "us": {
+            "amount": 3,
+            "unitShort": "",
+            "unitLong": ""
+          },
+          "metric": {
+            "amount": 3,
+            "unitShort": "",
+            "unitLong": ""
+          }
+        }
+      },
+      {
+        "id": 4511,
+        "aisle": "Oil, Vinegar, Salad Dressing",
+        "image": "vegetable-oil.jpg",
+        "consistency": "LIQUID",
+        "name": "safflower oil",
+        "nameClean": "safflower oil",
+        "original": "1/4 cup (60 mL/2 fl oz) Safflower Oil",
+        "originalName": "(60 mL/2 fl oz) Safflower Oil",
+        "amount": 0.25,
+        "unit": "cup",
+        "meta": [
+          "(60 mL/2 fl oz)"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.25,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 54.5,
+            "unitShort": "ml",
+            "unitLong": "milliliters"
+          }
+        }
+      },
+      {
+        "id": 4528,
+        "aisle": "Oil, Vinegar, Salad Dressing",
+        "image": "walnut-oil.jpg",
+        "consistency": "LIQUID",
+        "name": "walnut oil",
+        "nameClean": "walnut oil",
+        "original": "1/4 cup (60mL/2fl oz) Walnut oil",
+        "originalName": "(60mL/2fl oz) Walnut oil",
+        "amount": 0.25,
+        "unit": "cup",
+        "meta": [
+          "(60mL/2fl oz)"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.25,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 54.5,
+            "unitShort": "ml",
+            "unitLong": "milliliters"
+          }
+        }
+      },
+      {
+        "id": 12155,
+        "aisle": "Baking",
+        "image": "walnuts.jpg",
+        "consistency": "SOLID",
+        "name": "walnuts",
+        "nameClean": "walnuts",
+        "original": "1/2 cup (60g 2 oz) walnuts, chopped",
+        "originalName": "(60g 2 oz) walnuts, chopped",
+        "amount": 0.5,
+        "unit": "cup",
+        "meta": [
+          "chopped",
+          "(60g 2 oz)"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.5,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 58.5,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
         }
       }
-    },
-    {
-      "id": 11156,
-      "aisle": "Produce",
-      "image": "fresh-chives.jpg",
-      "consistency": "SOLID",
-      "name": "chives",
-      "nameClean": "chives",
-      "original": "2 teaspoons chopped Chives",
-      "originalName": "chopped Chives",
-      "amount": 2,
-      "unit": "teaspoons",
-      "meta": ["chopped"],
-      "measures": {
-        "us": {
-          "amount": 2,
-          "unitShort": "tsps",
-          "unitLong": "teaspoons"
-        },
-        "metric": {
-          "amount": 2,
-          "unitShort": "tsps",
-          "unitLong": "teaspoons"
+    ],
+    "summary": "Pear Salad With Walnuts and Blue Cheese might be just the hor d'oeuvre you are searching for. This recipe serves 6 and costs $1.4 per serving. One portion of this dish contains approximately 5g of protein, 28g of fat, and a total of 323 calories. 2 people were impressed by this recipe. It is a good option if you're following a gluten free and lacto ovo vegetarian diet. It is brought to you by Foodista. From preparation to the plate, this recipe takes approximately 45 minutes. A mixture of lemon juice, chives, pears, and a handful of other ingredients are all it takes to make this recipe so yummy. All things considered, we decided this recipe deserves a spoonacular score of 52%. This score is pretty good. Users who liked this recipe also liked Pear Salad With Walnuts and Blue Cheese, Persimmon and Blue Cheese Salad With Walnuts, and Persimmon and Blue Cheese Salad With Walnuts.",
+    "cuisines": [],
+    "dishTypes": [
+      "side dish",
+      "antipasti",
+      "salad",
+      "starter",
+      "snack",
+      "appetizer",
+      "antipasto",
+      "hor d'oeuvre"
+    ],
+    "diets": [
+      "gluten free",
+      "lacto ovo vegetarian"
+    ],
+    "occasions": [],
+    "instructions": "Cut base of pears so as to strand straight. Arrange a pear and salad leaves in individual bowls. Scatter an amount of celery in each bowl. Combine all dressing ingredients and pour over the salads. Sprinkle cheese and walnuts on top of each salad equally.",
+    "analyzedInstructions": [
+      {
+        "name": "",
+        "steps": [
+          {
+            "number": 1,
+            "step": "Cut base of pears so as to strand straight. Arrange a pear and salad leaves in individual bowls. Scatter an amount of celery in each bowl.",
+            "ingredients": [
+              {
+                "id": 11143,
+                "name": "celery",
+                "localizedName": "celery",
+                "image": "celery.jpg"
+              },
+              {
+                "id": 9252,
+                "name": "pear",
+                "localizedName": "pear",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/pears-bosc.jpg"
+              },
+              {
+                "id": 0,
+                "name": "base",
+                "localizedName": "base",
+                "image": ""
+              }
+            ],
+            "equipment": [
+              {
+                "id": 404783,
+                "name": "bowl",
+                "localizedName": "bowl",
+                "image": "https://spoonacular.com/cdn/equipment_100x100/bowl.jpg"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "step": "Combine all dressing ingredients and pour over the salads.",
+            "ingredients": [],
+            "equipment": []
+          },
+          {
+            "number": 3,
+            "step": "Sprinkle cheese and walnuts on top of each salad equally.",
+            "ingredients": [
+              {
+                "id": 12155,
+                "name": "walnuts",
+                "localizedName": "walnuts",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/walnuts.jpg"
+              },
+              {
+                "id": 1041009,
+                "name": "cheese",
+                "localizedName": "cheese",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/cheddar-cheese.png"
+              }
+            ],
+            "equipment": []
+          }
+        ]
+      }
+    ],
+    "originalId": null,
+    "spoonacularScore": 56.566341400146484,
+    "spoonacularSourceUrl": "https://spoonacular.com/pear-salad-with-walnuts-and-blue-cheese-655438"
+  },
+  {
+    "id": 1098388,
+    "image": "https://img.spoonacular.com/recipes/1098388-556x370.jpg",
+    "imageType": "jpg",
+    "title": "Watermelon Salad with Feta, Walnut & Nigella Seeds",
+    "readyInMinutes": 20,
+    "servings": 4,
+    "sourceUrl": "https://spoonacular.com/watermelon-salad-with-feta-walnut-nigella-seeds-1098388",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": true,
+    "dairyFree": false,
+    "veryHealthy": true,
+    "cheap": false,
+    "veryPopular": false,
+    "sustainable": false,
+    "lowFodmap": false,
+    "weightWatcherSmartPoints": 3,
+    "gaps": "no",
+    "preparationMinutes": 15,
+    "cookingMinutes": 5,
+    "aggregateLikes": 2,
+    "healthScore": 58,
+    "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "license": "CC BY 3.0",
+    "sourceName": "Foodista",
+    "pricePerServing": 69.02,
+    "extendedIngredients": [
+      {
+        "id": 93647,
+        "aisle": "Produce",
+        "image": "watermelon.jpg",
+        "consistency": "SOLID",
+        "name": "watermelon",
+        "nameClean": "watermelon",
+        "original": "2 cups diced Watermelon",
+        "originalName": "diced Watermelon",
+        "amount": 2,
+        "unit": "cups",
+        "meta": [
+          "diced"
+        ],
+        "measures": {
+          "us": {
+            "amount": 2,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 310,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 1019,
+        "aisle": "Cheese",
+        "image": "feta.jpg",
+        "consistency": "SOLID",
+        "name": "feta cheese",
+        "nameClean": "feta cheese",
+        "original": "1 cup Feta Cheese crumbled",
+        "originalName": "Feta Cheese crumbled",
+        "amount": 1,
+        "unit": "cup",
+        "meta": [
+          "crumbled"
+        ],
+        "measures": {
+          "us": {
+            "amount": 1,
+            "unitShort": "cups",
+            "unitLong": "cup"
+          },
+          "metric": {
+            "amount": 150,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 12155,
+        "aisle": "Baking",
+        "image": "walnuts.jpg",
+        "consistency": "SOLID",
+        "name": "walnuts",
+        "nameClean": "walnuts",
+        "original": "1/2 cup Walnuts chopped",
+        "originalName": "Walnuts chopped",
+        "amount": 0.5,
+        "unit": "cup",
+        "meta": [
+          "chopped"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.5,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 58.5,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 93813,
+        "aisle": "Spices and Seasonings",
+        "image": "nigella-seeds.jpg",
+        "consistency": "SOLID",
+        "name": "nigella seeds",
+        "nameClean": "nigella seeds",
+        "original": "1 teaspoon Nigella Seeds",
+        "originalName": "Nigella Seeds",
+        "amount": 1,
+        "unit": "teaspoon",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 1,
+            "unitShort": "tsp",
+            "unitLong": "teaspoon"
+          },
+          "metric": {
+            "amount": 1,
+            "unitShort": "tsp",
+            "unitLong": "teaspoon"
+          }
+        }
+      },
+      {
+        "id": 1041009,
+        "aisle": "Cheese",
+        "image": "cheddar-cheese.png",
+        "consistency": "SOLID",
+        "name": "cheese",
+        "nameClean": "cheese",
+        "original": "1 tablespoon cheese",
+        "originalName": "cheese",
+        "amount": 1,
+        "unit": "tablespoon",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 1,
+            "unitShort": "tbsp",
+            "unitLong": "tablespoon"
+          },
+          "metric": {
+            "amount": 1,
+            "unitShort": "tbsp",
+            "unitLong": "tablespoon"
+          }
+        }
+      },
+      {
+        "id": 93641,
+        "aisle": "Produce",
+        "image": "cucumber.jpg",
+        "consistency": "SOLID",
+        "name": "cucumber",
+        "nameClean": "cucumber",
+        "original": "1 cucumber",
+        "originalName": "cucumber",
+        "amount": 1,
+        "unit": "",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 1,
+            "unitShort": "",
+            "unitLong": ""
+          },
+          "metric": {
+            "amount": 1,
+            "unitShort": "",
+            "unitLong": ""
+          }
+        }
+      },
+      {
+        "id": 9156,
+        "aisle": "Produce",
+        "image": "fresh-lemon.jpg",
+        "consistency": "LIQUID",
+        "name": "lemon",
+        "nameClean": "lemon",
+        "original": "1/2 teaspoon lemon",
+        "originalName": "lemon",
+        "amount": 0.5,
+        "unit": "teaspoon",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 0.5,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          },
+          "metric": {
+            "amount": 0.5,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          }
         }
       }
-    },
-    {
-      "id": 11152,
-      "aisle": "Produce",
-      "image": "frisee.jpg",
-      "consistency": "SOLID",
-      "name": "salad leaves curly endive",
-      "nameClean": "curly endive",
-      "original": "4 cups (90g 3 oz) mixed salad leaves curly endive, 3 stk Celery, sliced",
-      "originalName": "(90g 3 oz) mixed salad leaves curly endive, 3 stk Celery, sliced",
-      "amount": 4,
-      "unit": "cups",
-      "meta": ["mixed", "sliced", "(90g 3 oz)"],
-      "measures": {
-        "us": {
-          "amount": 4,
-          "unitShort": "cups",
-          "unitLong": "cups"
-        },
-        "metric": {
-          "amount": 200,
-          "unitShort": "g",
-          "unitLong": "grams"
+    ],
+    "summary": "Watermelon Salad with Feta, Walnut & Nigella Seeds might be just the side dish you are searching for. This recipe serves 4 and costs $0.69 per serving. One portion of this dish contains approximately 6g of protein, 17g of fat, and a total of 163 calories. 2 people were impressed by this recipe. It is a good option if you're following a gluten free diet. It is brought to you by Foodista. From preparation to the plate, this recipe takes approximately 20 minutes. A mixture of nigella seeds, lemon, cucumber, and a handful of other ingredients are all it takes to make this recipe so yummy. All things considered, we decided this recipe deserves a spoonacular score of 58%. This score is pretty good. Users who liked this recipe also liked Watermelon Salad With Feta and Walnuts, Watermelon Salad With Feta Cheese, and Watermelon Salad With Feta.",
+    "cuisines": [],
+    "dishTypes": [
+      "side dish",
+      "salad"
+    ],
+    "diets": [
+      "gluten free"
+    ],
+    "occasions": [],
+    "instructions": "Toss watermelon, feta cheese, walnuts, cucumber, nigella seeds, lemon juice in a bowl. Toss until well combined.",
+    "analyzedInstructions": [
+      {
+        "name": "",
+        "steps": [
+          {
+            "number": 1,
+            "step": "Toss watermelon, feta cheese, walnuts, cucumber, nigella seeds, lemon juice in a bowl. Toss until well combined.",
+            "ingredients": [
+              {
+                "id": 93647,
+                "name": "watermelon",
+                "localizedName": "watermelon",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/watermelon.jpg"
+              },
+              {
+                "id": 1019,
+                "name": "feta cheese",
+                "localizedName": "feta cheese",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/feta.jpg"
+              },
+              {
+                "id": 12155,
+                "name": "walnuts",
+                "localizedName": "walnuts",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/walnuts.jpg"
+              },
+              {
+                "id": 93641,
+                "name": "cucumber",
+                "localizedName": "cucumber",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/cucumber.jpg"
+              },
+              {
+                "id": 93813,
+                "name": "nigella seeds",
+                "localizedName": "nigella seeds",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/nigella-seeds.jpg"
+              },
+              {
+                "id": 9156,
+                "name": "lemon",
+                "localizedName": "lemon",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/fresh-lemon.jpg"
+              }
+            ],
+            "equipment": [
+              {
+                "id": 404783,
+                "name": "bowl",
+                "localizedName": "bowl",
+                "image": "https://spoonacular.com/cdn/equipment_100x100/bowl.jpg"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "originalId": null,
+    "spoonacularScore": 58.49821472167969,
+    "spoonacularSourceUrl": "https://spoonacular.com/watermelon-salad-with-feta-walnut-nigella-seeds-1098388"
+  },
+  {
+    "id": 664912,
+    "image": "https://img.spoonacular.com/recipes/664912-556x370.jpg",
+    "imageType": "jpg",
+    "title": "Waldorf Salad",
+    "readyInMinutes": 20,
+    "servings": 4,
+    "sourceUrl": "https://spoonacular.com/waldorf-salad-664912",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": true,
+    "dairyFree": false,
+    "veryHealthy": true,
+    "cheap": false,
+    "veryPopular": false,
+    "sustainable": false,
+    "lowFodmap": false,
+    "weightWatcherSmartPoints": 4,
+    "gaps": "no",
+    "preparationMinutes": 20,
+    "cookingMinutes": 0,
+    "aggregateLikes": 3,
+    "healthScore": 65,
+    "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "license": "CC BY 3.0",
+    "sourceName": "Foodista",
+    "pricePerServing": 55.73,
+    "extendedIngredients": [
+      {
+        "id": 93647,
+        "aisle": "Produce",
+        "image": "watermelon.jpg",
+        "consistency": "SOLID",
+        "name": "apples",
+        "nameClean": "apples",
+        "original": "2 apples, cored and chopped",
+        "originalName": "apples, cored and chopped",
+        "amount": 2,
+        "unit": "",
+        "meta": [
+          "cored",
+          "chopped"
+        ],
+        "measures": {
+          "us": {
+            "amount": 2,
+            "unitShort": "",
+            "unitLong": ""
+          },
+          "metric": {
+            "amount": 2,
+            "unitShort": "",
+            "unitLong": ""
+          }
+        }
+      },
+      {
+        "id": 12155,
+        "aisle": "Baking",
+        "image": "walnuts.jpg",
+        "consistency": "SOLID",
+        "name": "walnuts",
+        "nameClean": "walnuts",
+        "original": "1/2 cup walnuts, chopped",
+        "originalName": "walnuts, chopped",
+        "amount": 0.5,
+        "unit": "cup",
+        "meta": [
+          "chopped"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.5,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 58.5,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 11090,
+        "aisle": "Produce",
+        "image": "celery.jpg",
+        "consistency": "SOLID",
+        "name": "celery",
+        "nameClean": "celery",
+        "original": "2 stalks celery, chopped",
+        "originalName": "celery, chopped",
+        "amount": 2,
+        "unit": "stalks",
+        "meta": [
+          "chopped"
+        ],
+        "measures": {
+          "us": {
+            "amount": 2,
+            "unitShort": "stalks",
+            "unitLong": "stalks"
+          },
+          "metric": {
+            "amount": 2,
+            "unitShort": "stalks",
+            "unitLong": "stalks"
+          }
+        }
+      },
+      {
+        "id": 1077,
+        "aisle": "Beverages",
+        "image": "lemon-juice.jpg",
+        "consistency": "LIQUID",
+        "name": "lemon juice",
+        "nameClean": "lemon juice",
+        "original": "2 teaspoons lemon juice",
+        "originalName": "lemon juice",
+        "amount": 2,
+        "unit": "teaspoons",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 2,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          },
+          "metric": {
+            "amount": 2,
+            "unitShort": "tsps",
+            "unitLong": "teaspoons"
+          }
+        }
+      },
+      {
+        "id": 1041009,
+        "aisle": "Cheese",
+        "image": "cheddar-cheese.png",
+        "consistency": "SOLID",
+        "name": "mayonnaise",
+        "nameClean": "mayonnaise",
+        "original": "1/2 cup mayonnaise",
+        "originalName": "mayonnaise",
+        "amount": 0.5,
+        "unit": "cup",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 0.5,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 120,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
         }
       }
-    },
-    {
-      "id": 9152,
-      "aisle": "Produce",
-      "image": "lemon-juice.jpg",
-      "consistency": "LIQUID",
-      "name": "lemon juice",
-      "nameClean": "lemon juice",
-      "original": "2 teaspoons Lemon Juice",
-      "originalName": "Lemon Juice",
-      "amount": 2,
-      "unit": "teaspoons",
-      "meta": [],
-      "measures": {
-        "us": {
-          "amount": 2,
-          "unitShort": "tsps",
-          "unitLong": "teaspoons"
-        },
-        "metric": {
-          "amount": 2,
-          "unitShort": "tsps",
-          "unitLong": "teaspoons"
+    ],
+    "summary": "Waldorf Salad might be just the side dish you are searching for. This recipe serves 4 and costs $0.56 per serving. One portion of this dish contains around 5g of protein, 30g of fat, and a total of 350 calories. 3 people were impressed by this recipe. It is a good option if you're following a gluten free diet. It is brought to you by Foodista. From preparation to the plate, this recipe takes approximately 20 minutes. A mixture of apples, mayonnaise, walnuts, and a few other ingredients are all it takes to make this recipe so flavorful.",
+    "cuisines": [],
+    "dishTypes": [
+      "side dish",
+      "salad"
+    ],
+    "diets": [
+      "gluten free"
+    ],
+    "occasions": [],
+    "instructions": "Mix apples, celery, and walnuts in a bowl. Add mayonnaise and lemon juice, and mix well. Chill and serve.",
+    "analyzedInstructions": [
+      {
+        "name": "",
+        "steps": [
+          {
+            "number": 1,
+            "step": "Mix apples, celery, and walnuts in a bowl. Add mayonnaise and lemon juice, and mix well. Chill and serve.",
+            "ingredients": [
+              {
+                "id": 93647,
+                "name": "apples",
+                "localizedName": "apples",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/apple.png"
+              },
+              {
+                "id": 11090,
+                "name": "celery",
+                "localizedName": "celery",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/celery.jpg"
+              },
+              {
+                "id": 12155,
+                "name": "walnuts",
+                "localizedName": "walnuts",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/walnuts.jpg"
+              },
+              {
+                "id": 1041009,
+                "name": "mayonnaise",
+                "localizedName": "mayonnaise",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/mayonnaise.jpg"
+              },
+              {
+                "id": 1077,
+                "name": "lemon juice",
+                "localizedName": "lemon juice",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/lemon-juice.jpg"
+              }
+            ],
+            "equipment": []
+          }
+        ]
+      }
+    ],
+    "originalId": null,
+    "spoonacularScore": 56.5,
+    "spoonacularSourceUrl": "https://spoonacular.com/waldorf-salad-664912"
+  },
+  {
+    "id": 157344,
+    "image": "https://img.spoonacular.com/recipes/157344-312x231.jpg",
+    "imageType": "jpg",
+    "title": "Spicy Salad with Kidney Beans, Cheddar, and Nuts",
+    "readyInMinutes": 20,
+    "servings": 4,
+    "sourceUrl": "https://spoonacular.com/spicy-salad-with-kidney-beans-cheddar-and-nuts-157344",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": true,
+    "dairyFree": false,
+    "veryHealthy": true,
+    "cheap": true,
+    "veryPopular": false,
+    "sustainable": false,
+    "lowFodmap": false,
+    "weightWatcherSmartPoints": 7,
+    "gaps": "no",
+    "preparationMinutes": 10,
+    "cookingMinutes": 10,
+    "aggregateLikes": 3,
+    "healthScore": 65,
+    "creditsText": "Spoonacular",
+    "license": "CC BY 3.0",
+    "sourceName": "Spoonacular",
+    "pricePerServing": 95,
+    "extendedIngredients": [
+      {
+        "id": 11124,
+        "aisle": "Canned and Jarred",
+        "image": "kidney-beans.jpg",
+        "consistency": "SOLID",
+        "name": "kidney beans",
+        "nameClean": "kidney beans",
+        "original": "1 can kidney beans",
+        "originalName": "kidney beans",
+        "amount": 1,
+        "unit": "can",
+        "meta": [],
+        "measures": {
+          "us": {
+            "amount": 1,
+            "unitShort": "can",
+            "unitLong": "can"
+          },
+          "metric": {
+            "amount": 240,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 1010,
+        "aisle": "Cheese",
+        "image": "cheddar.jpg",
+        "consistency": "SOLID",
+        "name": "cheddar cheese",
+        "nameClean": "cheddar cheese",
+        "original": "1/2 cup cheddar cheese, shredded",
+        "originalName": "cheddar cheese, shredded",
+        "amount": 0.5,
+        "unit": "cup",
+        "meta": [
+          "shredded"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.5,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 60,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 12155,
+        "aisle": "Nuts, Dried Fruits, Grains",
+        "image": "walnuts.jpg",
+        "consistency": "SOLID",
+        "name": "walnuts",
+        "nameClean": "walnuts",
+        "original": "1/4 cup walnuts, chopped",
+        "originalName": "walnuts, chopped",
+        "amount": 0.25,
+        "unit": "cup",
+        "meta": [
+          "chopped"
+        ],
+        "measures": {
+          "us": {
+            "amount": 0.25,
+            "unitShort": "cups",
+            "unitLong": "cups"
+          },
+          "metric": {
+            "amount": 30,
+            "unitShort": "g",
+            "unitLong": "grams"
+          }
+        }
+      },
+      {
+        "id": 2044,
+        "aisle": "Produce",
+        "image": "chili-pepper.jpg",
+        "consistency": "SOLID",
+        "name": "chili pepper",
+        "nameClean": "chili pepper",
+        "original": "1 fresh chili pepper, chopped",
+        "originalName": "fresh chili pepper, chopped",
+        "amount": 1,
+        "unit": "",
+        "meta": [
+          "chopped"
+        ],
+        "measures": {
+          "us": {
+            "amount": 1,
+            "unitShort": "",
+            "unitLong": ""
+          },
+          "metric": {
+            "amount": 1,
+            "unitShort": "",
+            "unitLong": ""
+          }
         }
       }
-    },
-    {
-      "id": 9252,
-      "aisle": "Produce",
-      "image": "pears-bosc.jpg",
-      "consistency": "SOLID",
-      "name": "pears",
-      "nameClean": "pear",
-      "original": "3 pears peeled, cored,",
-      "originalName": "pears peeled, cored",
-      "amount": 3,
-      "unit": "",
-      "meta": ["cored", "peeled"],
-      "measures": {
-        "us": {
-          "amount": 3,
-          "unitShort": "",
-          "unitLong": ""
-        },
-        "metric": {
-          "amount": 3,
-          "unitShort": "",
-          "unitLong": ""
+    ],
+    "summary": "Spicy Salad with Kidney Beans, Cheddar, and Nuts is a vegetarian recipe with 4 servings. This salad is full of flavor and comes together in 20 minutes, offering a healthy and hearty option. This dish is priced at $0.95 per serving, with a balanced mix of beans, cheddar cheese, and crunchy walnuts for extra texture. This recipe has a solid spoonacular score of 65%.",
+    "cuisines": [],
+    "dishTypes": [
+      "salad"
+    ],
+    "diets": [
+      "gluten free"
+    ],
+    "occasions": [],
+    "instructions": "In a large bowl, combine kidney beans, cheddar cheese, chili pepper, and walnuts. Toss well to mix. Serve chilled or at room temperature.",
+    "analyzedInstructions": [
+      {
+        "name": "",
+        "steps": [
+          {
+            "number": 1,
+            "step": "In a large bowl, combine kidney beans, cheddar cheese, chili pepper, and walnuts. Toss well to mix. Serve chilled or at room temperature.",
+            "ingredients": [
+              {
+                "id": 11124,
+                "name": "kidney beans",
+                "localizedName": "kidney beans",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/kidney-beans.jpg"
+              },
+              {
+                "id": 1010,
+                "name": "cheddar cheese",
+                "localizedName": "cheddar cheese",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/cheddar.jpg"
+              },
+              {
+                "id": 12155,
+                "name": "walnuts",
+                "localizedName": "walnuts",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/walnuts.jpg"
+              },
+              {
+                "id": 2044,
+                "name": "chili pepper",
+                "localizedName": "chili pepper",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/chili-pepper.jpg"
+              }
+            ],
+            "equipment": [
+              {
+                "id": 404783,
+                "name": "bowl",
+                "localizedName": "bowl",
+                "image": "https://spoonacular.com/cdn/equipment_100x100/bowl.jpg"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "originalId": null,
+    "spoonacularScore": 65.46861267089844,
+    "spoonacularSourceUrl": "https://spoonacular.com/spicy-salad-with-kidney-beans-cheddar-and-nuts-157344"
+  },
+  {
+    "id": 661431,
+    "image": "https://img.spoonacular.com/recipes/661431-312x231.jpg",
+    "imageType": "jpg",
+    "title": "Spring Salad with Radishes and Beets",
+    "readyInMinutes": 15,
+    "servings": 4,
+    "sourceUrl": "https://spoonacular.com/spring-salad-with-radishes-and-beets-661431",
+    "vegetarian": true,
+    "vegan": false,
+    "glutenFree": true,
+    "dairyFree": false,
+    "veryHealthy": true,
+    "cheap": true,
+    "veryPopular": false,
+    "sustainable": false,
+    "lowFodmap": false,
+    "weightWatcherSmartPoints": 4,
+    "gaps": "no",
+    "preparationMinutes": 5,
+    "cookingMinutes": 10,
+    "aggregateLikes": 5,
+    "healthScore": 70,
+    "creditsText": "Spoonacular",
+    "license": "CC BY 3.0",
+    "sourceName": "Spoonacular",
+    "pricePerServing": 100,
+    "extendedIngredients": [
+      {
+        "id": 11135,
+        "aisle": "Produce",
+        "image": "radishes.jpg",
+        "consistency": "SOLID",
+        "name": "radishes",
+        "nameClean": "radishes",
+        "original": "1 bunch radishes, sliced",
+        "originalName": "radishes, sliced",
+        "amount": 1,
+        "unit": "bunch",
+        "meta": [
+          "sliced"
+        ],
+        "measures": {
+          "us": {
+            "amount": 1,
+            "unitShort": "bunch",
+            "unitLong": "bunch"
+          },
+          "metric": {
+            "amount": 1,
+            "unitShort": "bunch",
+            "unitLong": "bunch"
+          }
+        }
+      },
+      {
+        "id": 11333,
+        "aisle": "Produce",
+        "image": "beet.jpg",
+        "consistency": "SOLID",
+        "name": "beets",
+        "nameClean": "beets",
+        "original": "2 beets, peeled and diced",
+        "originalName": "beets, peeled and diced",
+        "amount": 2,
+        "unit": "",
+        "meta": [
+          "peeled",
+          "diced"
+        ],
+        "measures": {
+          "us": {
+            "amount": 2,
+            "unitShort": "",
+            "unitLong": ""
+          },
+          "metric": {
+            "amount": 2,
+            "unitShort": "",
+            "unitLong": ""
+          }
         }
       }
-    },
-    {
-      "id": 4511,
-      "aisle": "Oil, Vinegar, Salad Dressing",
-      "image": "vegetable-oil.jpg",
-      "consistency": "LIQUID",
-      "name": "safflower oil",
-      "nameClean": "safflower oil",
-      "original": "1/4 cup (60 mL/2 fl oz) Safflower Oil",
-      "originalName": "(60 mL/2 fl oz) Safflower Oil",
-      "amount": 0.25,
-      "unit": "cup",
-      "meta": ["(60 mL/2 fl oz)"],
-      "measures": {
-        "us": {
-          "amount": 0.25,
-          "unitShort": "cups",
-          "unitLong": "cups"
-        },
-        "metric": {
-          "amount": 54.5,
-          "unitShort": "ml",
-          "unitLong": "milliliters"
-        }
+    ],
+    "summary": "Spring Salad with Radishes and Beets is a vegetarian recipe with 4 servings. This healthy, fresh salad takes only 15 minutes to make and is packed with nutrients. With a simple combination of radishes and beets, it’s a light but satisfying dish. The cost per serving is just $1.00, and it has a health score of 70%. This salad is a perfect addition to a gluten-free diet.",
+    "cuisines": [],
+    "dishTypes": [
+      "salad"
+    ],
+    "diets": [
+      "gluten free"
+    ],
+    "occasions": [],
+    "instructions": "Toss sliced radishes, diced beets, and any preferred dressing together in a bowl. Serve chilled.",
+    "analyzedInstructions": [
+      {
+        "name": "",
+        "steps": [
+          {
+            "number": 1,
+            "step": "Toss sliced radishes, diced beets, and any preferred dressing together in a bowl. Serve chilled.",
+            "ingredients": [
+              {
+                "id": 11135,
+                "name": "radishes",
+                "localizedName": "radishes",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/radishes.jpg"
+              },
+              {
+                "id": 11333,
+                "name": "beets",
+                "localizedName": "beets",
+                "image": "https://spoonacular.com/cdn/ingredients_100x100/beet.jpg"
+              }
+            ],
+            "equipment": [
+              {
+                "id": 404783,
+                "name": "bowl",
+                "localizedName": "bowl",
+                "image": "https://spoonacular.com/cdn/equipment_100x100/bowl.jpg"
+              }
+            ]
+          }
+        ]
       }
-    },
-    {
-      "id": 4528,
-      "aisle": "Oil, Vinegar, Salad Dressing",
-      "image": "walnut-oil.jpg",
-      "consistency": "LIQUID",
-      "name": "walnut oil",
-      "nameClean": "walnut oil",
-      "original": "1/4 cup (60mL/2fl oz) Walnut oil",
-      "originalName": "(60mL/2fl oz) Walnut oil",
-      "amount": 0.25,
-      "unit": "cup",
-      "meta": ["(60mL/2fl oz)"],
-      "measures": {
-        "us": {
-          "amount": 0.25,
-          "unitShort": "cups",
-          "unitLong": "cups"
-        },
-        "metric": {
-          "amount": 54.5,
-          "unitShort": "ml",
-          "unitLong": "milliliters"
-        }
-      }
-    },
-    {
-      "id": 12155,
-      "aisle": "Baking",
-      "image": "walnuts.jpg",
-      "consistency": "SOLID",
-      "name": "walnuts",
-      "nameClean": "walnuts",
-      "original": "1/2 cup (60g 2 oz) walnuts, chopped",
-      "originalName": "(60g 2 oz) walnuts, chopped",
-      "amount": 0.5,
-      "unit": "cup",
-      "meta": ["chopped", "(60g 2 oz)"],
-      "measures": {
-        "us": {
-          "amount": 0.5,
-          "unitShort": "cups",
-          "unitLong": "cups"
-        },
-        "metric": {
-          "amount": 58.5,
-          "unitShort": "g",
-          "unitLong": "grams"
-        }
-      }
-    }
-  ],
-  "summary": "Pear Salad With Walnuts and Blue Cheese might be just the hor d'oeuvre you are searching for. This recipe serves 6 and costs $1.4 per serving. One portion of this dish contains approximately <b>5g of protein</b>, <b>28g of fat</b>, and a total of <b>323 calories</b>. 2 people were impressed by this recipe. It is a good option if you're following a <b>gluten free and lacto ovo vegetarian</b> diet. It is brought to you by Foodista. From preparation to the plate, this recipe takes approximately <b>45 minutes</b>. A mixture of lemon juice, chives, pears, and a handful of other ingredients are all it takes to make this recipe so yummy. All things considered, we decided this recipe <b>deserves a spoonacular score of 52%</b>. This score is pretty good. Users who liked this recipe also liked <a href=\"https://spoonacular.com/recipes/pear-salad-with-walnuts-and-blue-cheese-1202373\">Pear Salad With Walnuts and Blue Cheese</a>, <a href=\"https://spoonacular.com/recipes/persimmon-and-blue-cheese-salad-with-walnuts-1202375\">Persimmon and Blue Cheese Salad With Walnuts</a>, and <a href=\"https://spoonacular.com/recipes/persimmon-and-blue-cheese-salad-with-walnuts-221133\">Persimmon and Blue Cheese Salad With Walnuts</a>.",
-  "cuisines": [],
-  "dishTypes": [
-    "side dish",
-    "antipasti",
-    "salad",
-    "starter",
-    "snack",
-    "appetizer",
-    "antipasto",
-    "hor d'oeuvre"
-  ],
-  "diets": ["gluten free", "lacto ovo vegetarian"],
-  "occasions": [],
-  "instructions": "<ol><li>Cut base of pears so as to strand straight. Arrange a pear and salad leaves in individual bowls. Scatter an amount of celery in each bowl. Combine all dressing ingredients and pour over the salads. Sprinkle cheese and walnuts on top of each salad equally.</li></ol>",
-  "analyzedInstructions": [
-    {
-      "name": "",
-      "steps": [
-        {
-          "number": 1,
-          "step": "Cut base of pears so as to strand straight. Arrange a pear and salad leaves in individual bowls. Scatter an amount of celery in each bowl.",
-          "ingredients": [
-            {
-              "id": 11143,
-              "name": "celery",
-              "localizedName": "celery",
-              "image": "celery.jpg"
-            },
-            {
-              "id": 9252,
-              "name": "pear",
-              "localizedName": "pear",
-              "image": "https://spoonacular.com/cdn/ingredients_100x100/pears-bosc.jpg"
-            },
-            {
-              "id": 0,
-              "name": "base",
-              "localizedName": "base",
-              "image": ""
-            }
-          ],
-          "equipment": [
-            {
-              "id": 404783,
-              "name": "bowl",
-              "localizedName": "bowl",
-              "image": "https://spoonacular.com/cdn/equipment_100x100/bowl.jpg"
-            }
-          ]
-        },
-        {
-          "number": 2,
-          "step": "Combine all dressing ingredients and pour over the salads.",
-          "ingredients": [],
-          "equipment": []
-        },
-        {
-          "number": 3,
-          "step": "Sprinkle cheese and walnuts on top of each salad equally.",
-          "ingredients": [
-            {
-              "id": 12155,
-              "name": "walnuts",
-              "localizedName": "walnuts",
-              "image": "https://spoonacular.com/cdn/ingredients_100x100/walnuts.jpg"
-            },
-            {
-              "id": 1041009,
-              "name": "cheese",
-              "localizedName": "cheese",
-              "image": "https://spoonacular.com/cdn/ingredients_100x100/cheddar-cheese.png"
-            }
-          ],
-          "equipment": []
-        }
-      ]
-    }
-  ],
-  "originalId": null,
-  "spoonacularScore": 56.566341400146484,
-  "spoonacularSourceUrl": "https://spoonacular.com/pear-salad-with-walnuts-and-blue-cheese-655438"
-}
+    ],
+    "originalId": null,
+    "spoonacularScore": 70.34080462646484,
+    "spoonacularSourceUrl": "https://spoonacular.com/spring-salad-with-radishes-and-beets-661431"
+  }
+]

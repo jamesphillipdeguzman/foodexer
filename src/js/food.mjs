@@ -123,6 +123,7 @@ export async function fetchFoodAPI() {
 // This function grabs the the food local json data asynchronously
 
 export async function fetchRecipeData(foodId) {
+  debugger;
   if (myActivity) {
 
     myActivity.innerHTML = "";
@@ -149,12 +150,14 @@ export async function fetchRecipeData(foodId) {
       // alert(recipeData);
       // debugger;
       console.log("RecipeData: ", recipeData);
-      // Only run this if food key was not found in localstorage
-      if (!getLocalStorage("recipeLocal") || getLocalStorage("recipeLocal").length === 0) {
-        if (parseInt(foodId) === recipeData.id) {
-          setLocalStorage("recipeLocal", recipeData);
-        }
+      // Find the recipe with a matching id
+      const matchingRecipe = recipeData.find(recipe => parseInt(foodId) === recipe.id);
 
+      // If matching recipe is found, save it to localStorage
+      if (matchingRecipe && (!getLocalStorage("recipeLocal") || getLocalStorage("recipeLocal").length === 0)) {
+        setLocalStorage("recipeLocal", matchingRecipe);
+      } else {
+        setLocalStorage("recipeLocal", matchingRecipe);
       }
 
       clearTimeout(timeoutId);
