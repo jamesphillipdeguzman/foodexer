@@ -8,6 +8,10 @@
   max-width: 1200px;
 }
 
+.intro-exercise img {
+  align-self: center;
+}
+
 /* Style for each exercise card */
 .exercise-card {
   display: grid;

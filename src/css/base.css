@@ -186,8 +186,9 @@ ul.navlinks {
 .hero {
   width: 500px;
   height: auto;
-  margin: 0 auto;
+  
 }
+
 
 .hero-container {
   display: flex;
@@ -523,7 +524,7 @@ main {
 .about {
   padding: 1.6rem;
   color: var(--accent-color1);
-  margin: 1rem;
+  margin: 0 auto;
   line-height: 1.5rem;
   font-size: var(--font-size-medium);
 }
@@ -704,13 +705,16 @@ footer p {
 
 .attribution-details,
 .sitemap-details {
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
-  gap: 2rem;
+  gap: 1.5rem;
+  margin: 0 auto;
 }
 
-.attribution-details.hero {
-  align-self: center;
+figcaption {
   margin: 0 auto;
+ 
 }
 
 .attribution-details a {

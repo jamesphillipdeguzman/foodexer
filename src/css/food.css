@@ -4,6 +4,10 @@
   align-self: center;
 }
 
+.intro-food img {
+  align-self: center;
+}
+
 .food-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
