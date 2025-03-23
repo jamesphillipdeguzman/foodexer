@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Select elements where the last modified date will be displayed
     const lastModified = document.querySelector("#lastModified");
+
     if (lastModified) {
+
       lastModified.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`;
     }
 
