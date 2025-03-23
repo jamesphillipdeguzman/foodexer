@@ -27,20 +27,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setLastModifiedDate() {
-    const lastModifiedDate = document.lastModified; // Get the last modified date of the document
-    // const dateFormat = { year: "numeric", month: "short", day: "numeric" }; // Format for the date
-    // const timeFormat = lastModifiedDate.toLocaleTimeString(); // Get time in the user's locale
-    // const formattedDate = lastModifiedDate.toLocaleDateString("en-US", dateFormat); // Format date as "Feb 21, 2025"
-    // const formattedDateTime = `${formattedDate} ${timeFormat}`; // Combine date and time
+    // Get the last modified date of the document as a string
+    const lastModifiedString = document.lastModified;
 
-    const lastModified = document.querySelector("#lastModified"); // Get the element to display the last modified date
+    // Convert it into a Date object
+    const lastModifiedDate = new Date(lastModifiedString);
 
+    // Define date and time formats
+    const dateFormat = { year: "numeric", month: "short", day: "numeric" };
+    const formattedDate = lastModifiedDate.toLocaleDateString("en-US", dateFormat);
+    const formattedTime = lastModifiedDate.toLocaleTimeString("en-US");
+
+    // Combine formatted date and time
+    const formattedDateTime = `${formattedDate} ${formattedTime}`;
+
+    // Select elements where the last modified date will be displayed
+    const lastModified = document.querySelector("#lastModified");
     if (lastModified) {
-
-      lastModified.innerHTML = `<span class="highlight2">${lastModifiedDate}</span>`; // Display formatted last modified date-time
+      lastModified.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`;
     }
 
-    // Optionally, if you want to display it elsewhere (e.g., #timestamp element)
+    // If there's another place (e.g., #timestamp) to display the date
     const timestamp = document.querySelector("#timestamp");
     if (timestamp) {
       timestamp.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`;
