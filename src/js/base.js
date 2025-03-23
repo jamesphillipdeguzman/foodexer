@@ -28,15 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setLastModifiedDate() {
     const lastModifiedDate = document.lastModified; // Get the last modified date of the document
-    const dateFormat = { year: "numeric", month: "short", day: "numeric" }; // Format for the date
-    const timeFormat = lastModifiedDate.toLocaleTimeString(); // Get time in the user's locale
-    const formattedDate = lastModifiedDate.toLocaleDateString("en-US", dateFormat); // Format date as "Feb 21, 2025"
-    const formattedDateTime = `${formattedDate} ${timeFormat}`; // Combine date and time
+    // const dateFormat = { year: "numeric", month: "short", day: "numeric" }; // Format for the date
+    // const timeFormat = lastModifiedDate.toLocaleTimeString(); // Get time in the user's locale
+    // const formattedDate = lastModifiedDate.toLocaleDateString("en-US", dateFormat); // Format date as "Feb 21, 2025"
+    // const formattedDateTime = `${formattedDate} ${timeFormat}`; // Combine date and time
 
     const lastModified = document.querySelector("#lastModified"); // Get the element to display the last modified date
 
     if (lastModified) {
-      lastModified.innerHTML = `<span class="highlight2">${formattedDateTime}</span>`; // Display formatted last modified date-time
+
+      lastModified.innerHTML = `<span class="highlight2">${lastModifiedDate}</span>`; // Display formatted last modified date-time
     }
 
     // Optionally, if you want to display it elsewhere (e.g., #timestamp element)
