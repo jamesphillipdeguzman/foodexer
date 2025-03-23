@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setLastModifiedDate() {
-    const lastModifiedDate = new Date(document.lastModified); // Get the last modified date of the document
+    const lastModifiedDate = document.lastModified; // Get the last modified date of the document
     const dateFormat = { year: "numeric", month: "short", day: "numeric" }; // Format for the date
     const timeFormat = lastModifiedDate.toLocaleTimeString(); // Get time in the user's locale
     const formattedDate = lastModifiedDate.toLocaleDateString("en-US", dateFormat); // Format date as "Feb 21, 2025"
